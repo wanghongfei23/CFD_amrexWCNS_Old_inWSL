@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/physical_bound.cpp 源文件</title>
+<title>CFD_inWSL_MF_initial: 2phase/physical_bound.cpp 源文件</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -107,7 +107,7 @@ $(function(){initNavTree('dc/d39/2phase_2physical__bound_8cpp_source.html','../.
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// 提取速度分量</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    GpuArray&lt;Real, BL_SPACEDIM&gt; velocity;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; BL_SPACEDIM; ++i) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        velocity[i] = primitiveVars[<a class="code hl_enumvalue" href="../../de/d60/_euler1_d_2_prob___parm_8_h.html#a4adfab0de75911f8b2bb5295e8ce6026af9a776e97493240be7e6041f8bae16bb">XMom</a> + i]; <span class="comment">// 速度分量</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        velocity[i] = primitiveVars[<a class="code hl_enumvalue" href="../../de/d60/_euler1_d_2_prob___parm_8_h.html#a7b3dd0d50d2d449513bfdd26f5fe4463af9a776e97493240be7e6041f8bae16bb">XMom</a> + i]; <span class="comment">// 速度分量</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// 计算声速</span></div>
@@ -161,7 +161,7 @@ $(function(){initNavTree('dc/d39/2phase_2physical__bound_8cpp_source.html','../.
 <div class="ttc" id="a2phase_2equation_8_h_html_afc95d4f913400192aa7bf9902ca649c8"><div class="ttname"><a href="../../df/d33/2phase_2equation_8_h.html#afc95d4f913400192aa7bf9902ca649c8">eos_prim</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real eos_prim(const VarArray &amp;prim, ProbParm const &amp;pp)</div><div class="ttdef"><b>定义</b> <a href="../../df/d33/2phase_2equation_8_h_source.html#l00071">equation.H:71</a></div></div>
 <div class="ttc" id="a2phase_2physical__bound_8_h_html"><div class="ttname"><a href="../../d3/dee/2phase_2physical__bound_8_h.html">physical_bound.H</a></div></div>
 <div class="ttc" id="a2phase_2physical__bound_8cpp_html_a0245bcf03eea2533ab7380be77a246cc"><div class="ttname"><a href="../../dc/d39/2phase_2physical__bound_8cpp.html#a0245bcf03eea2533ab7380be77a246cc">computeAlpha</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE GpuArray&lt; Real, BL_SPACEDIM &gt; computeAlpha(const GpuArray&lt; Real, BL_SPACEDIM &gt; &amp;dx, const VarArray &amp;primitiveVars, const ProbParm &amp;pp)</div><div class="ttdef"><b>定义</b> <a href="#l00018">physical_bound.cpp:18</a></div></div>
-<div class="ttc" id="a_euler1_d_2_prob___parm_8_h_html_a4adfab0de75911f8b2bb5295e8ce6026af9a776e97493240be7e6041f8bae16bb"><div class="ttname"><a href="../../de/d60/_euler1_d_2_prob___parm_8_h.html#a4adfab0de75911f8b2bb5295e8ce6026af9a776e97493240be7e6041f8bae16bb">XMom</a></div><div class="ttdeci">@ XMom</div><div class="ttdef"><b>定义</b> <a href="../../de/d60/_euler1_d_2_prob___parm_8_h_source.html#l00020">Prob_Parm.H:20</a></div></div>
+<div class="ttc" id="a_euler1_d_2_prob___parm_8_h_html_a7b3dd0d50d2d449513bfdd26f5fe4463af9a776e97493240be7e6041f8bae16bb"><div class="ttname"><a href="../../de/d60/_euler1_d_2_prob___parm_8_h.html#a7b3dd0d50d2d449513bfdd26f5fe4463af9a776e97493240be7e6041f8bae16bb">XMom</a></div><div class="ttdeci">@ XMom</div><div class="ttdef"><b>定义</b> <a href="../../de/d60/_euler1_d_2_prob___parm_8_h_source.html#l00020">Prob_Parm.H:20</a></div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="../../d4/d03/namespaceamrex.html">amrex</a></div><div class="ttdef"><b>定义</b> <a href="../../d0/d3f/linear__algebra_8_h_source.html#l00140">linear_algebra.H:140</a></div></div>
 <div class="ttc" id="astruct_positive_quantity_functions_html_a4d4f1324126234afa669fbb395d6d1ec"><div class="ttname"><a href="../../d1/d54/struct_positive_quantity_functions.html#a4d4f1324126234afa669fbb395d6d1ec">PositiveQuantityFunctions::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::GpuArray&lt; amrex::Real, 5 &gt; operator()(const VarArray &amp;U, const ProbParm &amp;pp) const</div><div class="ttdef"><b>定义</b> <a href="#l00057">physical_bound.cpp:57</a></div></div>
 <div class="ttc" id="astruct_prob_parm_html"><div class="ttname"><a href="../../d7/db7/struct_prob_parm.html">ProbParm</a></div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00012">Prob_Parm.H:12</a></div></div>

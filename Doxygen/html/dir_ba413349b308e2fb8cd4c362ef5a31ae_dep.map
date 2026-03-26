@@ -1,4 +1,4 @@
-<map id="//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Euler1D" name="//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Euler1D">
+<map id="Euler1D" name="Euler1D">
 <area shape="rect" id="node1" href="dir_ba413349b308e2fb8cd4c362ef5a31ae.html" title="Euler1D" alt="" coords="132,5,200,32"/>
 <area shape="rect" id="node2" href="dir_c00bc6c244667b5c9be71457c8466c85.html" title="reconstruction_scheme" alt="" coords="5,80,162,107"/>
 <area shape="poly" id="edge1" href="dir_000003_000006.html" alt="" coords="154,32,111,72,108,68,149,33"/>

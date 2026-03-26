@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['计算效率优化_0',['4.5 计算效率优化',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md133',1,'']]]
+  ['计算效率优化_0',['4.5 计算效率优化',['../d3/dcc/md__r_e_a_d_m_e.html#autotoc_md133',1,'']]]
 ];
