@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['adv_5fbld_0',['Adv_bld',['../_level_bld_cong_8cpp.html#ac82df8c6edc168999f1c4eaf3eb4f533',1,'LevelBldCong.cpp']]],
+  ['adv_5fprob_2ecpp_1',['Adv_prob.cpp',['../_adv__prob_8cpp.html',1,'']]],
+  ['advance_2',['advance',['../class_amr_level_cong.html#a3870169774b4021b9466bacdfd7d6fda',1,'AmrLevelCong']]],
+  ['advectionterm_3',['AdvectionTerm',['../deriv_8_h.html#a827e6fb0b2ad15ae54179f728e9a75be',1,'deriv.H']]],
+  ['alpha1_4',['Alpha1',['../2phase_2_prob___parm_8_h.html#a382a38852335f58a53739d455c7d67c9a133bd4cb3c0cd8427aa853d8bc72a439',1,'Prob_Parm.H']]],
+  ['alphaeps_5',['alphaEps',['../struct_prob_parm.html#a064d3a38b2cef5716e0ce2db63899663',1,'ProbParm']]],
+  ['alpharho1_6',['AlphaRho1',['../2phase_2_prob___parm_8_h.html#a382a38852335f58a53739d455c7d67c9a3cc38c56930f6a99882f5c7249ed94a3',1,'Prob_Parm.H']]],
+  ['alpharho2_7',['AlphaRho2',['../2phase_2_prob___parm_8_h.html#a382a38852335f58a53739d455c7d67c9ace0c7b951b8fe37319ca82d0e1988317',1,'Prob_Parm.H']]],
+  ['amrex_8',['amrex',['../namespaceamrex.html',1,'']]],
+  ['amrex_20内置输出_9',['1. AMReX 内置输出',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_bc0712e76f60344e7fb65ff9331ce10b.html#autotoc_md92',1,'']]],
+  ['amrex_20安装_10',['2. AMReX 安装',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md29',1,'']]],
+  ['amrex_20版本_11',['1. 检查 AMReX 版本',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md55',1,'']]],
+  ['amrex_5fd_5fdecl_12',['AMREX_D_DECL',['../2phase_2_prob___parm_8_h.html#a382a38852335f58a53739d455c7d67c9aa2c78976b95b3e452119f74f9379c7d9',1,'Prob_Parm.H']]],
+  ['amrex_5flevel_5fcong_20目录_13',['amrex_level_Cong 目录',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_dae505ce405bbfdac7c1a7ca2dc6dd68.html#autotoc_md3',1,'']]],
+  ['amrex_5fprobinit_14',['amrex_probinit',['../_adv__prob_8cpp.html#aad7c503e59a52243c1eac82875c38798',1,'Adv_prob.cpp']]],
+  ['amrlevelcong_15',['AmrLevelCong',['../class_amr_level_cong.html',1,'AmrLevelCong'],['../class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767',1,'AmrLevelCong::AmrLevelCong()'],['../class_amr_level_cong.html#ac691ad746468a088b82cd7d847b5400e',1,'AmrLevelCong::AmrLevelCong(amrex::Amr &amp;papa, int lev, const amrex::Geometry &amp;level_geom, const amrex::BoxArray &amp;bl, const amrex::DistributionMapping &amp;dm, amrex::Real time)']]],
+  ['amrlevelcong_20类_16',['AmrLevelCong 类',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_dae505ce405bbfdac7c1a7ca2dc6dd68.html#autotoc_md8',1,'']]],
+  ['amrlevelcong_2ecpp_17',['AmrLevelCong.cpp',['../_amr_level_cong_8cpp.html',1,'']]],
+  ['amrlevelcong_2eh_18',['AmrLevelCong.H',['../_amr_level_cong_8_h.html',1,'']]],
+  ['amrlevelcong_5fadvance_2ecpp_19',['AmrLevelCong_advance.cpp',['../_amr_level_cong__advance_8cpp.html',1,'']]],
+  ['apply_5fconvex_5fcombination_20',['apply_convex_combination',['../positive__preserving_8_h.html#a0770a3c57add91e0125b3016458c0cdd',1,'positive_preserving.H']]],
+  ['apply_5fpositive_5flimiter_21',['apply_positive_limiter',['../positive__preserving_8cpp.html#ad48aa8a0b02a1d671e8b014d2384e179',1,'apply_positive_limiter(const VarArray &amp;W, VarArray &amp;W_interpolated, const PositiveQuantityFunctions &amp;pqf, const ProbParm &amp;pp, int ncomp):&#160;positive_preserving.cpp'],['../positive__preserving_8_h.html#ad48aa8a0b02a1d671e8b014d2384e179',1,'apply_positive_limiter(const VarArray &amp;W, VarArray &amp;W_interpolated, const PositiveQuantityFunctions &amp;pqf, const ProbParm &amp;pp, int ncomp):&#160;positive_preserving.cpp']]],
+  ['apply_5fpositivive_5fpreserving_5fflux_5flimiter_22',['apply_positivive_preserving_flux_limiter',['../positive__preserving_8_h.html#a51132082139fb96170f1b8a2e399f848',1,'positive_preserving.H']]],
+  ['architecture_5fid_23',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID:&#160;CMakeCXXCompilerId.cpp']]],
+  ['avgdown_24',['avgDown',['../class_amr_level_cong.html#aac1c62d1948e82f652a9ba83c03e1e1d',1,'AmrLevelCong::avgDown()'],['../class_amr_level_cong.html#a515621ec27e77559fe6ef63b8b3effb7',1,'AmrLevelCong::avgDown(int state_indx)']]]
+];

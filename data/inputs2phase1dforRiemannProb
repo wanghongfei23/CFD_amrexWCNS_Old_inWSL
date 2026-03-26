@@ -1,0 +1,59 @@
+# ------------------  INPUTS TO MAIN PROGRAM  -------------------
+max_step = 10000000
+stop_time = 3e-4
+
+# PROBLEM SIZE & GEOMETRY
+geometry.is_periodic =  0       # 0 => non-periodic in x-direction
+geometry.coord_sys   =  0       # 0 => cartesian coordinates
+geometry.prob_lo     =  0     # Lower bound of the domain in x-direction
+geometry.prob_hi     =  1.5     # Upper bound of the domain in x-direction
+amr.n_cell           =  800     # Number of cells in x-direction
+
+# TIME STEP CONTROL
+adv.cfl            = 0.5        # CFL number for hyperbolic system
+
+adv.do_reflux = 1
+adv.num_state = 4
+
+# VERBOSITY
+adv.v              = 1          # Verbosity in Adv
+amr.v              = 1          # Verbosity in Amr
+
+# BOUNDARY CONDITIONS
+# Left boundary (lo_bc_0)
+amr.density1_lo_bc_0 = 2       # Density1 left boundary (foextrap)
+amr.density2_lo_bc_0 = 2       # Density2 left boundary (foextrap)
+amr.Momentum_X_lo_bc_0 = 2     # Momentum_X left boundary (foextrap)
+amr.energy_lo_bc_0 = 2         # TotalEnergy left boundary (foextrap)
+amr.volumeFraction1_lo_bc_0 = 2 # VolumeFraction1 left boundary (foextrap)
+
+# Right boundary (hi_bc_0)
+amr.density1_hi_bc_0 = 2       # Density1 right boundary (foextrap)
+amr.density2_hi_bc_0 = 2       # Density2 right boundary (foextrap)
+amr.Momentum_X_hi_bc_0 = 2     # Momentum_X right boundary (foextrap)
+amr.energy_hi_bc_0 = 2         # TotalEnergy right boundary (foextrap)
+amr.volumeFraction1_hi_bc_0 = 2 # VolumeFraction1 right boundary (foextrap)
+
+# REFINEMENT / REGRIDDING
+amr.max_level       = 0         # Maximum level number allowed
+amr.ref_ratio       = 2 2 2 2 2 2       # Refinement ratio
+amr.regrid_int      = 5         # How often to regrid
+amr.blocking_factor = 8         # Block factor in grid generation
+amr.max_grid_size   = 16        # Maximum grid size
+
+# CHECKPOINT FILES
+amr.checkpoint_files_output = 0 # 0 will disable checkpoint files
+amr.check_file              = chk # Root name of checkpoint file
+amr.check_int               = 10  # Number of timesteps between checkpoints
+
+# PLOTFILES
+amr.plot_files_output = 0       # 0 will disable plot files
+amr.plot_file         = plt     # Root name of plot file
+amr.plot_int          = 100     # Number of timesteps between plot files
+
+# TRACER PARTICLES
+adv.do_tracers = 0              # Disable tracer particles
+
+# ERROR TAGGING
+tagging.phierr =  1.01          # Error tagging threshold
+tagging.max_phierr_lev = 10     # Maximum level for error tagging

@@ -1,0 +1,3 @@
+/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/twoPhaseSolver.dir
+/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/edit_cache.dir
+/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/rebuild_cache.dir

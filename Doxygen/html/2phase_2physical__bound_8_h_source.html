@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/physical_bound.H 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('2phase_2physical__bound_8_h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">physical_bound.H</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="2phase_2physical__bound_8_h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="2phase_2_prob___parm_8_h.html">Prob_Parm.H</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;AMReX_REAL.H&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;AMReX_Vector.H&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// 结构体，用于存储固定数量的保正函数</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_positive_quantity_functions.html">    7</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_positive_quantity_functions.html#af81fe2f15b7298ce2d9ddcffe2192162">PositiveQuantityFunctions</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_positive_quantity_functions.html#a232fe82e14af3e6e9da636023a2b3a80">    8</a></span>    amrex::Real <a class="code hl_variable" href="struct_positive_quantity_functions.html#a232fe82e14af3e6e9da636023a2b3a80">eps</a>[5]; <span class="comment">// 使用 Vector 存储容差值</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_positive_quantity_functions.html#a5c74278f2c9a2a7c69eab114f6f2dcc5">    9</a></span>    amrex::Real <a class="code hl_variable" href="struct_positive_quantity_functions.html#a5c74278f2c9a2a7c69eab114f6f2dcc5">epsHardSwitch</a>[5];</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// 构造函数，初始化容差值</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_positive_quantity_functions.html#af81fe2f15b7298ce2d9ddcffe2192162">   12</a></span>    AMREX_GPU_HOST_DEVICE <a class="code hl_function" href="struct_positive_quantity_functions.html#af81fe2f15b7298ce2d9ddcffe2192162">PositiveQuantityFunctions</a>()</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        : <a class="code hl_variable" href="struct_positive_quantity_functions.html#a232fe82e14af3e6e9da636023a2b3a80">eps</a> { 1e-10, 1e-10, 1e-10, 1e-10, 1e-8 }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">// : eps { 0.0, 0.0, 0.0, 0.0, 0.0 }</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        , <a class="code hl_variable" href="struct_positive_quantity_functions.html#a5c74278f2c9a2a7c69eab114f6f2dcc5">epsHardSwitch</a> { 1e-11, 1e-11, 1e-11, 1e-11, 1e-9 }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// 成员函数 operator()，计算需要保正的变量</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    AMREX_GPU_HOST_DEVICE amrex::GpuArray&lt;amrex::Real, 5&gt; <a class="code hl_function" href="struct_positive_quantity_functions.html#a4d4f1324126234afa669fbb395d6d1ec">operator()</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>&amp; U, <span class="keyword">const</span> <a class="code hl_struct" href="struct_prob_parm.html">ProbParm</a>&amp; pp) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>AMREX_GPU_HOST_DEVICE</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="2phase_2physical__bound_8_h.html#ab77e032ea6ad48fe5ecb466f35925c13">   24</a></span>amrex::GpuArray&lt;amrex::Real, BL_SPACEDIM&gt; <a class="code hl_function" href="2phase_2physical__bound_8_h.html#ab77e032ea6ad48fe5ecb466f35925c13">computeAlpha</a>(<span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                                                           BL_SPACEDIM&gt;&amp; dx,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>&amp; primitiveVars,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_prob_parm.html">ProbParm</a>&amp; pp);</div>
+<div class="ttc" id="a2phase_2_prob___parm_8_h_html"><div class="ttname"><a href="2phase_2_prob___parm_8_h.html">Prob_Parm.H</a></div></div>
+<div class="ttc" id="a2phase_2_prob___parm_8_h_html_ab211beae9febf97d593bf74f51273258"><div class="ttname"><a href="2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, NVar &gt; VarArray</div><div class="ttdef"><b>定义</b> <a href="2phase_2_prob___parm_8_h_source.html#l00062">Prob_Parm.H:62</a></div></div>
+<div class="ttc" id="a2phase_2physical__bound_8_h_html_ab77e032ea6ad48fe5ecb466f35925c13"><div class="ttname"><a href="2phase_2physical__bound_8_h.html#ab77e032ea6ad48fe5ecb466f35925c13">computeAlpha</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt; computeAlpha(const amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt; &amp;dx, const VarArray &amp;primitiveVars, const ProbParm &amp;pp)</div></div>
+<div class="ttc" id="astruct_positive_quantity_functions_html_a232fe82e14af3e6e9da636023a2b3a80"><div class="ttname"><a href="struct_positive_quantity_functions.html#a232fe82e14af3e6e9da636023a2b3a80">PositiveQuantityFunctions::eps</a></div><div class="ttdeci">amrex::Real eps[5]</div><div class="ttdef"><b>定义</b> <a href="#l00008">physical_bound.H:8</a></div></div>
+<div class="ttc" id="astruct_positive_quantity_functions_html_a4d4f1324126234afa669fbb395d6d1ec"><div class="ttname"><a href="struct_positive_quantity_functions.html#a4d4f1324126234afa669fbb395d6d1ec">PositiveQuantityFunctions::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::GpuArray&lt; amrex::Real, 5 &gt; operator()(const VarArray &amp;U, const ProbParm &amp;pp) const</div><div class="ttdef"><b>定义</b> <a href="2phase_2physical__bound_8cpp_source.html#l00057">physical_bound.cpp:57</a></div></div>
+<div class="ttc" id="astruct_positive_quantity_functions_html_a5c74278f2c9a2a7c69eab114f6f2dcc5"><div class="ttname"><a href="struct_positive_quantity_functions.html#a5c74278f2c9a2a7c69eab114f6f2dcc5">PositiveQuantityFunctions::epsHardSwitch</a></div><div class="ttdeci">amrex::Real epsHardSwitch[5]</div><div class="ttdef"><b>定义</b> <a href="#l00009">physical_bound.H:9</a></div></div>
+<div class="ttc" id="astruct_positive_quantity_functions_html_af81fe2f15b7298ce2d9ddcffe2192162"><div class="ttname"><a href="struct_positive_quantity_functions.html#af81fe2f15b7298ce2d9ddcffe2192162">PositiveQuantityFunctions::PositiveQuantityFunctions</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE PositiveQuantityFunctions()</div><div class="ttdef"><b>定义</b> <a href="#l00012">physical_bound.H:12</a></div></div>
+<div class="ttc" id="astruct_prob_parm_html"><div class="ttname"><a href="struct_prob_parm.html">ProbParm</a></div><div class="ttdef"><b>定义</b> <a href="2phase_2_prob___parm_8_h_source.html#l00012">Prob_Parm.H:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_7889339b1a9a6b7aeffe8bb5d6b48ce4.html">2phase</a></li><li class="navelem"><a href="2phase_2physical__bound_8_h.html">physical_bound.H</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

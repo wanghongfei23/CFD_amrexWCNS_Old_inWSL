@@ -1,0 +1,92 @@
+# ------------------  INPUTS TO MAIN PROGRAM  -------------------
+max_step = 100000
+stop_time = 0.2
+
+
+# PROBLEM SIZE & GEOMETRY
+geometry.is_periodic =  0  0  0
+geometry.coord_sys   =  0       # 0 => cart
+geometry.prob_lo     =  0.0  0.0  0.0 
+geometry.prob_hi     =  4.0  1.0  1.0
+amr.n_cell           =  512   128   100
+
+# TIME STEP CONTROL
+adv.cfl            = 0.5     # cfl number for hyperbolic system
+                             # In this test problem, the velocity is
+			     # time-dependent.  We could use 0.9 in
+			     # the 3D test, but need to use 0.7 in 2D
+			     # to satisfy CFL condition.
+
+adv.do_reflux = 1
+adv.num_state = 4
+# VERBOSITY
+adv.v              = 1       # verbosity in Adv
+amr.v              = 1       # verbosity in Amr
+
+#BOUNDARY---------------------------------------
+# Boundary Condition Types (BCType)
+# ---------------------------------
+# | Value | Boundary Type         | Description                                                                 |
+# |-------|-----------------------|-----------------------------------------------------------------------------|
+# | -666  | bogus                | Invalid or undefined boundary type.                                         |
+# | -1    | reflect_odd          | Reflection from interior cells with sign changed, q(−i)=−q(i).               |
+# | 0     | int_dir              | Interior, including periodic boundary.                                      |
+# | 1     | reflect_even         | Reflection from interior cells with sign unchanged, q(−i)=q(i).              |
+# | 2     | foextrap             | First Order Extrapolation from last cell in interior.                        |
+# | 3     | ext_dir              | External Dirichlet. User must fill ghost cells; boundary is on domain face.  |
+# | 4     | hoextrap             | High Order Extrapolation; boundary is on domain face.                        |
+# | 5     | hoextrapcc           | High Order Extrapolation; boundary is at ghost cell center outside domain.   |
+# | 6     | ext_dir_cc           | External Dirichlet. User must fill ghost cells; boundary is at ghost center. |
+# | 7     | direction_dependent  | Direction-dependent boundary condition.                                      |
+# | 1001  | user_1               | User-defined boundary condition. User must fill ghost cells.                 |
+# | 1002  | user_2               | User-defined boundary condition. User must fill ghost cells.                 |
+# | 1003  | user_3               | User-defined boundary condition. User must fill ghost cells.                 |
+# ---------------------------------
+# Left boundary (lo_bc_0)
+amr.density_lo_bc_0 = 3       # Density left boundary 
+amr.xvelocity_lo_bc_0 = 3     # XVelocity left boundary 
+amr.yvelocity_lo_bc_0 = 3     # YVelocity left boundary
+amr.energy_lo_bc_0 = 3        # TotalEnergy left boundary
+
+# Right boundary (hi_bc_0)
+amr.density_hi_bc_0 = 2       # Density right boundary 
+amr.xvelocity_hi_bc_0 = 2     # XVelocity right boundary 
+amr.yvelocity_hi_bc_0 = 2     # YVelocity right boundary
+amr.energy_hi_bc_0 = 2        # TotalEnergy right boundary
+
+# Bottom boundary (lo_bc_1)
+amr.density_lo_bc_1 = 1       # Density bottom boundary
+amr.xvelocity_lo_bc_1 = 1     # XVelocity bottom boundary
+amr.yvelocity_lo_bc_1 = -1     # YVelocity bottom boundary
+amr.energy_lo_bc_1 = 1        # TotalEnergy bottom boundary
+
+# Top boundary (hi_bc_1)
+amr.density_hi_bc_1 = 1001       # Density top boundary
+amr.xvelocity_hi_bc_1 = 1001     # XVelocity top boundary
+amr.yvelocity_hi_bc_1 = 1001     # YVelocity top boundary
+amr.energy_hi_bc_1 = 1001        # TotalEnergy top boundary
+#BOUNDARY-----------------------------------------------------
+
+# REFINEMENT / REGRIDDING
+amr.max_level       = 2       # maximum level number allowed
+amr.ref_ratio       = 2 2 2 2 # refinement ratio
+amr.regrid_int      = 5       # how often to regrid
+amr.blocking_factor = 8       # block factor in grid generation
+amr.max_grid_size   = 16
+
+# CHECKPOINT FILES
+amr.checkpoint_files_output = 0     # 0 will disable checkpoint files
+amr.check_file              = chk   # root name of checkpoint file
+amr.check_int               = 10    # number of timesteps between checkpoints
+
+# PLOTFILES
+amr.plot_files_output = 1      # 0 will disable plot files
+amr.plot_file         = plt    # root name of plot file
+amr.plot_int          = 100    # number of timesteps between plot files
+
+# TRACER PARTICLES
+adv.do_tracers = 0
+
+# ERROR TAGGING
+tagging.phierr =  1.01  1.1   1.5
+tagging.max_phierr_lev = 10

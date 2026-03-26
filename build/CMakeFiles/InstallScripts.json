@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

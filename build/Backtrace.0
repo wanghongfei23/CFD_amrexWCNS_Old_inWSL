@@ -1,0 +1,25 @@
+Host Name: wanghf
+=== If no file names and line numbers are shown below, one can run
+            addr2line -Cpfie my_exefile my_line_address
+    to convert `my_line_address` (e.g., 0x4a6b) into file name and line number.
+    Or one can use amrex/Tools/Backtrace/parse_bt.py.
+
+=== Please note that the line number reported by addr2line may not be accurate.
+    One can use
+            readelf -wl my_exefile | grep my_line_address'
+    to find out the offset for that line.
+
+ 0: ./twoPhaseSolver(+0x11ff73) [0x60c9e693af73]
+    ?? ??:0
+
+ 1: ./twoPhaseSolver(+0x325d2) [0x60c9e684d5d2]
+    amrex::Abort(char const*) at /opt/amrex_2d/include/AMReX.H:160
+ (inlined by) main at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp:110
+
+ 2: /usr/lib/libc.so.6(+0x27488) [0x795597235488]
+
+ 3: /usr/lib/libc.so.6(__libc_start_main+0x8c) [0x79559723554c]
+
+ 4: ./twoPhaseSolver(+0x34735) [0x60c9e684f735]
+    ?? ??:0
+

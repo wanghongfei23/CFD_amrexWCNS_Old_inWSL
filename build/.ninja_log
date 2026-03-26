@@ -1,0 +1,15 @@
+# ninja log v7
+2	66	1774489788591219256	CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o	c7f523fb83803ec6
+3	107	1774489788591219256	CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o	b2f7da38d6e39c9c
+3	6690	1774489788591219256	CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o	f8c3ca945c19e687
+5	6806	1774489788595219256	CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o	cb739d3c016d30c3
+1	6809	1774489788591219256	CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o	78b32aa8c3c4aa4a
+4	8489	1774489788595219256	CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o	33b6a7ba19db184b
+3	4611	1774490384959201154	CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o	968aa906e0f72d78
+5	8719	1774489788595219256	CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o	187e867bfa3d19db
+3	9223	1774489788591219256	CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o	5011b39dd3a0efd8
+4	10005	1774489788595219256	CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o	24766fc49de53556
+5	10198	1774489788595219256	CMakeFiles/twoPhaseSolver.dir/main.cpp.o	589e269faf729492
+1	10863	1774489788591219256	CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o	a69f802b44fec75c
+4	11880	1774490384959201154	CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o	531ce7a271e40575
+11880	12140	1774490396835200844	twoPhaseSolver	86445b634f3af01f

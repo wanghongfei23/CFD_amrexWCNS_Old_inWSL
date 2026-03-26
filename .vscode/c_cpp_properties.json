@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                // "${workspaceFolder}/Euler1D/**",
+                "${workspaceFolder}/reconstruction_scheme/**",
+                "${workspaceFolder}/2phase/**",
+                "${workspaceFolder}/deriv/**",
+                "/usr/include/eigen3/**",
+                "/usr/include/**",
+                "/usr/local/include/**",
+                "/opt/amrex_1d/include"
+            ],
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c23",
+            "cppStandard": "gnu++23",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

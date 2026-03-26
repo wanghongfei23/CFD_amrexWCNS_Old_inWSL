@@ -1,0 +1,79 @@
+# ------------------  INPUTS TO MAIN PROGRAM  -------------------
+max_step = 1000000000
+stop_time = 1.6e-5
+
+# PROBLEM SIZE & GEOMETRY
+geometry.is_periodic = 0 0      # 0 => non-periodic in x/y-directions
+geometry.coord_sys   = 0        # 0 => cartesian coordinates
+geometry.prob_lo     = 0 -0.01      # Lower bounds [x, y]
+geometry.prob_hi     = 0.030 0.01  # Upper bounds [x, y]
+amr.n_cell           = 480 320  # Number of cells [x, y]
+
+
+# TIME STEP CONTROL 
+adv.cfl            = 0.5        # CFL number for hyperbolic system
+
+adv.do_reflux = 1
+adv.num_state = 5               # 新增Y方向动量
+
+# VERBOSITY
+adv.v              = 1          # Verbosity in Adv
+amr.v              = 1          # Verbosity in Amr
+
+# BOUNDARY CONDITIONS
+# ---------------------------
+# X-direction boundaries (0)
+amr.density1_lo_bc_0 = 2
+amr.density2_lo_bc_0 = 2
+amr.Momentum_X_lo_bc_0 = 2
+amr.Momentum_Y_lo_bc_0 = 2     # 新增Y动量边界条件
+amr.energy_lo_bc_0 = 2
+amr.volumeFraction1_lo_bc_0 = 2
+
+amr.density1_hi_bc_0 = 2
+amr.density2_hi_bc_0 = 2
+amr.Momentum_X_hi_bc_0 = 2
+amr.Momentum_Y_hi_bc_0 = 2     # 新增Y动量边界条件
+amr.energy_hi_bc_0 = 2
+amr.volumeFraction1_hi_bc_0 = 2
+
+# Y-direction boundaries (1)
+amr.density1_lo_bc_1 = 2
+amr.density2_lo_bc_1 = 2
+amr.Momentum_X_lo_bc_1 = 2
+amr.Momentum_Y_lo_bc_1 = 2     # 新增Y动量边界条件
+amr.energy_lo_bc_1 = 2
+amr.volumeFraction1_lo_bc_1 = 2
+
+amr.density1_hi_bc_1 = 2
+amr.density2_hi_bc_1 = 2
+amr.Momentum_X_hi_bc_1 = 2
+amr.Momentum_Y_hi_bc_1 = 2     # 新增Y动量边界条件
+amr.energy_hi_bc_1 = 2
+amr.volumeFraction1_hi_bc_1 = 2
+
+# REFINEMENT / REGRIDDING
+amr.max_level       = 1         # Maximum level number allowed
+amr.ref_ratio       = 2 2       # Refinement ratio [x, y]
+amr.regrid_int      = 4         # How often to regrid
+amr.blocking_factor = 4       # Block factor in grid generation
+amr.max_grid_size   = 64        # Increased for 2D grids
+
+# CHECKPOINT FILES
+amr.checkpoint_files_output = 1
+amr.check_file              = chk 
+amr.check_int               = 500
+
+#amr.restart=chk03000
+
+# PLOTFILES
+amr.plot_files_output = 1    
+amr.plot_file         = plt     
+amr.plot_int          = 100   
+
+# TRACER PARTICLES
+adv.do_tracers = 0              
+
+# ERROR TAGGING
+tagging.phierr = 1.01          
+tagging.max_phierr_lev = 10
