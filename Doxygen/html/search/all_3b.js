@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['扩展与改进_0',['7. 扩展与改进',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md143',1,'']]]
+  ['技术特点_0',['技术特点',['../dir_2ecf07d941498bc2a342967c40ee1930.html#autotoc_md75',1,'']]]
 ];

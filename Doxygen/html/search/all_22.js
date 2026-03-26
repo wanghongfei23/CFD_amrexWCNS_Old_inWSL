@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['主要参数_0',['inputs2phase2d 主要参数',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md37',1,'']]],
-  ['主要文件_1',['2.1 主要文件',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md116',1,'']]]
+  ['交互式分析_0',['3. 交互式分析',['../d6/d52/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_bc0712e76f60344e7fb65ff9331ce10b.html#autotoc_md111',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['计算效率优化_0',['4.5 计算效率优化',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md133',1,'']]]
+  ['调优建议_0',['调优建议',['../d4/d7b/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md46',1,'']]]
 ];

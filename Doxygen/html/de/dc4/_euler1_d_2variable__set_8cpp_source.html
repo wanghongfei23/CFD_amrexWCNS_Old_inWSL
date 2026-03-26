@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Euler1D/variable_set.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('de/dc4/_euler1_d_2variable__set_8cpp_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">variable_set.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/dc4/_euler1_d_2variable__set_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// 变量设置实现文件（一维）</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// 包含变量初始化和清理相关的函数</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/de9/_amr_level_cong_8_h.html">AmrLevelCong.H</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;AMReX_GpuMemory.H&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;AMReX_ParmParse.H&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d4/d03/namespaceamrex.html">amrex</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a5a29fe916fbf37d6be1b3170710b0f48">AmrLevelCong::variableSetUp</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    BL_ASSERT(desc_lst.size() == 0); <span class="comment">// 确保描述符列表为空</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// 初始化包含问题特定变量的结构体</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">h_prob_parm</a> = <span class="keyword">new</span> ProbParm {}; <span class="comment">// 主机端问题参数</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">d_prob_parm</a> = (ProbParm*)The_Arena()-&gt;alloc(<span class="keyword">sizeof</span>(ProbParm)); <span class="comment">// 设备端问题参数</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">h_prob_parm</a>-&gt;gamma = 1.4; <span class="comment">// 设置气体绝热指数</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// 将主机端参数复制到设备端</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">h_prob_parm</a>, <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">h_prob_parm</a> + 1, <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">d_prob_parm</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// 读取参数，设置物理边界条件</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#acfa06bad387b63ea45697de2227b7632">read_params</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// 添加状态描述符</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    desc_lst.addDescriptor(<a class="code hl_enumvalue" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a>, IndexType::TheCellType(),</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        StateDescriptor::Point, <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a029e4c6767f22719d0a1274f92d473f4">NUM_GROW</a>, <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a5f6da1fc08bcda7ac53f4ea276889428">NUM_STATE</a>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        &amp;cell_cons_interp); <span class="comment">// 使用守恒变量插值方法</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// 设置边界条件</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> lo_bc[BL_SPACEDIM]; <span class="comment">// 下界边界条件</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> hi_bc[BL_SPACEDIM]; <span class="comment">// 上界边界条件</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; BL_SPACEDIM; ++i) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        lo_bc[i] = hi_bc[i] = BCType::foextrap; <span class="comment">// 外推边界条件</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    BCRec bc(lo_bc, hi_bc); <span class="comment">// 创建边界条件记录</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// 设置边界函数</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    StateDescriptor::BndryFunc bndryfunc(<a class="code hl_function" href="../../dd/de9/_amr_level_cong_8_h.html#a9e00f9d0e7328218f0f5c7de8b72e4ae">nullfill</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    bndryfunc.setRunOnGPU(<span class="keyword">true</span>); <span class="comment">// 确保边界函数在GPU上运行</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// 设置状态变量组件</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    desc_lst.setComponent(<a class="code hl_enumvalue" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a>, 0, <span class="stringliteral">&quot;Density&quot;</span>, bc, bndryfunc); <span class="comment">// 密度</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    desc_lst.setComponent(<a class="code hl_enumvalue" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a>, 1, <span class="stringliteral">&quot;Velocity&quot;</span>, bc, bndryfunc); <span class="comment">// 速度</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    desc_lst.setComponent(<a class="code hl_enumvalue" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a>, 2, <span class="stringliteral">&quot;TotalEnergy&quot;</span>, bc, bndryfunc); <span class="comment">// 总能量</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a22193720a686e2b128f65221674d491c">AmrLevelCong::variableCleanUp</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    desc_lst.clear(); <span class="comment">// 清空描述符列表</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// 删除包含问题特定参数的结构体</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">h_prob_parm</a>; <span class="comment">// 释放主机端参数</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    The_Arena()-&gt;free(<a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">d_prob_parm</a>); <span class="comment">// 释放设备端参数</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="ttc" id="a_amr_level_cong_8_h_html"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html">AmrLevelCong.H</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a></div><div class="ttdeci">@ State_Type</div><div class="ttdef"><b>定义</b> <a href="../../dd/de9/_amr_level_cong_8_h_source.html#l00024">AmrLevelCong.H:24</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_a9e00f9d0e7328218f0f5c7de8b72e4ae"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#a9e00f9d0e7328218f0f5c7de8b72e4ae">nullfill</a></div><div class="ttdeci">void nullfill(amrex::Box const &amp;bx, amrex::FArrayBox &amp;data, const int dcomp, const int numcomp, amrex::Geometry const &amp;geom, const amrex::Real time, const amrex::Vector&lt; amrex::BCRec &gt; &amp;bcr, const int bcomp, const int scomp)</div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a029e4c6767f22719d0a1274f92d473f4"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a029e4c6767f22719d0a1274f92d473f4">AmrLevelCong::NUM_GROW</a></div><div class="ttdeci">static int NUM_GROW</div><div class="ttdef"><b>定义</b> <a href="../../dd/de9/_amr_level_cong_8_h_source.html#l00193">AmrLevelCong.H:193</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a22193720a686e2b128f65221674d491c"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a22193720a686e2b128f65221674d491c">AmrLevelCong::variableCleanUp</a></div><div class="ttdeci">static void variableCleanUp()</div><div class="ttdef"><b>定义</b> <a href="../../dc/d00/2phase_2variable__set_8cpp_source.html#l00098">variable_set.cpp:98</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a5a29fe916fbf37d6be1b3170710b0f48"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a5a29fe916fbf37d6be1b3170710b0f48">AmrLevelCong::variableSetUp</a></div><div class="ttdeci">static void variableSetUp()</div><div class="ttdef"><b>定义</b> <a href="../../dc/d00/2phase_2variable__set_8cpp_source.html#l00020">variable_set.cpp:20</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a5f6da1fc08bcda7ac53f4ea276889428"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a5f6da1fc08bcda7ac53f4ea276889428">AmrLevelCong::NUM_STATE</a></div><div class="ttdeci">static int NUM_STATE</div><div class="ttdef"><b>定义</b> <a href="../../dd/de9/_amr_level_cong_8_h_source.html#l00192">AmrLevelCong.H:192</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_aac3a5752caa975fc0c56ec00cd5324f2"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">AmrLevelCong::d_prob_parm</a></div><div class="ttdeci">static ProbParm * d_prob_parm</div><div class="ttdef"><b>定义</b> <a href="../../dd/de9/_amr_level_cong_8_h_source.html#l00197">AmrLevelCong.H:197</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_acfa06bad387b63ea45697de2227b7632"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#acfa06bad387b63ea45697de2227b7632">AmrLevelCong::read_params</a></div><div class="ttdeci">static void read_params()</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00467">AmrLevelCong.cpp:467</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_ae12e48f65b7586d64e9c687c9f2138a1"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">AmrLevelCong::h_prob_parm</a></div><div class="ttdeci">static ProbParm * h_prob_parm</div><div class="ttdef"><b>定义</b> <a href="../../dd/de9/_amr_level_cong_8_h_source.html#l00196">AmrLevelCong.H:196</a></div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="../../d4/d03/namespaceamrex.html">amrex</a></div><div class="ttdef"><b>定义</b> <a href="../../d0/d3f/linear__algebra_8_h_source.html#l00140">linear_algebra.H:140</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_ba413349b308e2fb8cd4c362ef5a31ae.html">Euler1D</a></li><li class="navelem"><a href="../../de/dc4/_euler1_d_2variable__set_8cpp.html">variable_set.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

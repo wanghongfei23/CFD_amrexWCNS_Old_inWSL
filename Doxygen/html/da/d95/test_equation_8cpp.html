@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/testEquation.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('da/d95/test_equation_8cpp.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/testEquation.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;equation.H&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+testEquation.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../de/d86/test_equation_8cpp__incl.svg" width="370" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../da/d95/test_equation_8cpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae8e47c0bf5949490775ae349f77349e8" id="r_ae8e47c0bf5949490775ae349f77349e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8e47c0bf5949490775ae349f77349e8">printVarArray</a> (const std::string &amp;name, const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;var, std::ostream &amp;out)</td></tr>
+<tr class="memitem:aa6cebb9c7e17e576921654e4f50e4395" id="r_aa6cebb9c7e17e576921654e4f50e4395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6cebb9c7e17e576921654e4f50e4395">printGpuArray3</a> (const std::string &amp;name, const amrex::GpuArray&lt; amrex::Real, 3 &gt; &amp;arr, std::ostream &amp;out)</td></tr>
+<tr class="memitem:a1d28eb546f1ccc3cbfabfccf46294dc8" id="r_a1d28eb546f1ccc3cbfabfccf46294dc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d28eb546f1ccc3cbfabfccf46294dc8">runTestCase</a> (const std::string &amp;testName, const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;cons, const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;pp, std::ostream &amp;outFile, int dimension=BL_SPACEDIM)</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函数说明</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d95/test_equation_8cpp_source.html">testEquation.cpp</a> 第 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00097">97</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00055">AMREX_D_DECL</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00144">prim_to_cons()</a> , 以及 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00030">runTestCase()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d95/test_equation_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa6cebb9c7e17e576921654e4f50e4395" name="aa6cebb9c7e17e576921654e4f50e4395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6cebb9c7e17e576921654e4f50e4395">&#9670;&#160;</a></span>printGpuArray3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printGpuArray3 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, 3 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>arr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d95/test_equation_8cpp_source.html">testEquation.cpp</a> 第 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae8e47c0bf5949490775ae349f77349e8" name="ae8e47c0bf5949490775ae349f77349e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8e47c0bf5949490775ae349f77349e8">&#9670;&#160;</a></span>printVarArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printVarArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>var</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d95/test_equation_8cpp_source.html">testEquation.cpp</a> 第 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00012">12</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00058">NVar</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00030">runTestCase()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d95/test_equation_8cpp_ae8e47c0bf5949490775ae349f77349e8_icgraph.svg" width="348" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1d28eb546f1ccc3cbfabfccf46294dc8" name="a1d28eb546f1ccc3cbfabfccf46294dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d28eb546f1ccc3cbfabfccf46294dc8">&#9670;&#160;</a></span>runTestCase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runTestCase </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>testName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cons</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>outFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dimension</em></span><span class="paramdefsep"> = </span><span class="paramdefval">BL_SPACEDIM</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d95/test_equation_8cpp_source.html">testEquation.cpp</a> 第 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00030">30</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00117">cons_to_prim()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00028">eos_cons()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00071">eos_prim()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00144">prim_to_cons()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00200">prim_to_flux()</a> , 以及 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00012">printVarArray()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d95/test_equation_8cpp_source.html#l00097">main()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d95/test_equation_8cpp_a1d28eb546f1ccc3cbfabfccf46294dc8_cgraph.svg" width="582" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../da/d95/test_equation_8cpp_a1d28eb546f1ccc3cbfabfccf46294dc8_icgraph.svg" width="204" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../da/d95/test_equation_8cpp.html">testEquation.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

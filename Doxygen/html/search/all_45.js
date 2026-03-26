@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['构建与运行_0',['6. 构建与运行',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md139',1,'']]],
-  ['构建项目_1',['6.1 构建项目',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md140',1,'']]]
+  ['查看日志文件_0',['4. 查看日志文件',['../d4/d7b/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md58',1,'']]],
+  ['查看_1',['2. 使用 ParaView 查看',['../d4/d7b/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md40',1,'']]]
 ];

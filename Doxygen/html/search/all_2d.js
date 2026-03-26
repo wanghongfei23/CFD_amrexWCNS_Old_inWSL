@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['变量分布图（建议绘制）_0',['2. 变量分布图（建议绘制）',['../dir_2ecf07d941498bc2a342967c40ee1930.html#autotoc_md69',1,'']]]
+  ['可能的扩展方向_0',['7.1 可能的扩展方向',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md144',1,'']]],
+  ['可视化技巧_1',['可视化技巧',['../d6/d52/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_bc0712e76f60344e7fb65ff9331ce10b.html#autotoc_md95',1,'']]],
+  ['可视化指南_2',['可视化指南',['../d6/d52/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_bc0712e76f60344e7fb65ff9331ce10b.html',1,'']]],
+  ['可视化软件崩溃_3',['2. 可视化软件崩溃',['../d6/d52/md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_bc0712e76f60344e7fb65ff9331ce10b.html#autotoc_md101',1,'']]]
 ];

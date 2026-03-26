@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['stop_5ftime_0',['stop_time',['../_amr_level_cong_8cpp.html#a85146e0cd88598ee77f265d7ca16c7ac',1,'AmrLevelCong.cpp']]],
-  ['switchd_5fthredhold_1',['switchd_thredhold',['../fifth__order__thinc__recon_8_h.html#a4d47c8a65fe3529bd6f396ff03c20113',1,'fifth_order_thinc_recon.H']]]
+  ['tau_5fxyz_0',['tau_xyz',['../d2/d85/class_amr_level_cong.html#a92c0d2493565ca9fa1b27adb9a148e2d',1,'AmrLevelCong']]],
+  ['term_5findices_1',['term_indices',['../d0/d77/class_first_order_derivative_term_usr.html#a3014c1c9524ef5712880aa171c330cd2',1,'FirstOrderDerivativeTermUsr']]]
 ];

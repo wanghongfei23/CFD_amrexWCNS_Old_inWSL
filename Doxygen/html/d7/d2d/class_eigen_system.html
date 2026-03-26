@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: EigenSystem类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('d7/d2d/class_eigen_system.html','../../','d7/d17/class_eigen_system-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">EigenSystem类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d0/d9f/eigen__system_8_h_source.html">eigen_system.H</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac356f0e33473a7fc054eddfa018428fa" id="r_ac356f0e33473a7fc054eddfa018428fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac356f0e33473a7fc054eddfa018428fa">EigenSystem</a> (<a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;primL, <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;primR, amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp)</td></tr>
+<tr class="memitem:aa88e18544bd3e467b26f02cde9e62c90" id="r_aa88e18544bd3e467b26f02cde9e62c90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa88e18544bd3e467b26f02cde9e62c90">EigenSystem</a> ()=delete</td></tr>
+<tr class="memitem:aef285be901008e54329f7fc71c2ed97e" id="r_aef285be901008e54329f7fc71c2ed97e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef285be901008e54329f7fc71c2ed97e">EigenSystem</a> (const <a class="el" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> &amp;)=delete</td></tr>
+<tr class="memitem:a52601e134cedf9ee10cb4a389f71b038" id="r_a52601e134cedf9ee10cb4a389f71b038"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52601e134cedf9ee10cb4a389f71b038">operator=</a> (const <a class="el" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> &amp;)=delete</td></tr>
+<tr class="memitem:ac57d3b99019a05bfc3bc51e10796b53e" id="r_ac57d3b99019a05bfc3bc51e10796b53e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac57d3b99019a05bfc3bc51e10796b53e">prim_to_char</a> (<a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;prim, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp) const</td></tr>
+<tr class="memitem:a2941038b5f816489363fe073f9f8b10a" id="r_a2941038b5f816489363fe073f9f8b10a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2941038b5f816489363fe073f9f8b10a">char_to_prim</a> (<a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;charVars, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp) const</td></tr>
+<tr class="memitem:a3e2a4907e605852bd3716e912fdb15c3" id="r_a3e2a4907e605852bd3716e912fdb15c3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e2a4907e605852bd3716e912fdb15c3">char_to_cons</a> (<a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;charVars, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp) const</td></tr>
+<tr class="memitem:ab7dfe63ac8618afdb7bd53b3f06f762e" id="r_ab7dfe63ac8618afdb7bd53b3f06f762e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#a704e94131fa0f67dc4b6c1f3cf1a1aec">VarMatrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7dfe63ac8618afdb7bd53b3f06f762e">getLeftEig</a> () const</td></tr>
+<tr class="memitem:a0540bfbf3da9feb5a2b983d011554016" id="r_a0540bfbf3da9feb5a2b983d011554016"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#a704e94131fa0f67dc4b6c1f3cf1a1aec">VarMatrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0540bfbf3da9feb5a2b983d011554016">getRightEig</a> () const</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../d0/d9f/eigen__system_8_h_source.html">eigen_system.H</a> 第 <a class="el" href="../../d0/d9f/eigen__system_8_h_source.html#l00012">12</a> 行定义.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="ac356f0e33473a7fc054eddfa018428fa" name="ac356f0e33473a7fc054eddfa018428fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac356f0e33473a7fc054eddfa018428fa">&#9670;&#160;</a></span>EigenSystem() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EigenSystem::EigenSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>primL</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>primR</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="#aef285be901008e54329f7fc71c2ed97e">EigenSystem()</a> , 以及 <a class="el" href="#a52601e134cedf9ee10cb4a389f71b038">operator=()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_ac356f0e33473a7fc054eddfa018428fa_icgraph.svg" width="430" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aa88e18544bd3e467b26f02cde9e62c90" name="aa88e18544bd3e467b26f02cde9e62c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88e18544bd3e467b26f02cde9e62c90">&#9670;&#160;</a></span>EigenSystem() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EigenSystem::EigenSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef285be901008e54329f7fc71c2ed97e" name="aef285be901008e54329f7fc71c2ed97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef285be901008e54329f7fc71c2ed97e">&#9670;&#160;</a></span>EigenSystem() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EigenSystem::EigenSystem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="#ac356f0e33473a7fc054eddfa018428fa">EigenSystem()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_aef285be901008e54329f7fc71c2ed97e_cgraph.svg" width="430" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a3e2a4907e605852bd3716e912fdb15c3" name="a3e2a4907e605852bd3716e912fdb15c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e2a4907e605852bd3716e912fdb15c3">&#9670;&#160;</a></span>char_to_cons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> EigenSystem::char_to_cons </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>charVars</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>特征变量转为守恒变量 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charVars</td><td>特征变量 </td></tr>
+    <tr><td class="paramname">pp</td><td>问题参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>守恒变量cons</dd></dl>
+<p>将特征变量转换为守恒变量 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charVars</td><td>特征变量 </td></tr>
+    <tr><td class="paramname">pp</td><td>问题参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>守恒变量cons </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html">eigen_system.cpp</a> 第 <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00168">168</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d0/d3f/linear__algebra_8_h_source.html#l00085">LA_M_X()</a> , 以及 <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00144">prim_to_cons()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00169">characteristic_reconstruction()</a> , 以及 <a class="el" href="../../d5/d71/fifth__order__recon_8_h_source.html#l00020">reconstruction()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_a3e2a4907e605852bd3716e912fdb15c3_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_a3e2a4907e605852bd3716e912fdb15c3_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a2941038b5f816489363fe073f9f8b10a" name="a2941038b5f816489363fe073f9f8b10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2941038b5f816489363fe073f9f8b10a">&#9670;&#160;</a></span>char_to_prim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> EigenSystem::char_to_prim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>charVars</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>特征变量转为原始变量 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charVars</td><td>特征变量 </td></tr>
+    <tr><td class="paramname">pp</td><td>问题参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>原始变量prim</dd></dl>
+<p>将特征变量转换为原始变量 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charVars</td><td>特征变量 </td></tr>
+    <tr><td class="paramname">pp</td><td>问题参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>原始变量prim </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html">eigen_system.cpp</a> 第 <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00155">155</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d0/d3f/linear__algebra_8_h_source.html#l00085">LA_M_X()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_a2941038b5f816489363fe073f9f8b10a_cgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab7dfe63ac8618afdb7bd53b3f06f762e" name="ab7dfe63ac8618afdb7bd53b3f06f762e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dfe63ac8618afdb7bd53b3f06f762e">&#9670;&#160;</a></span>getLeftEig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#a704e94131fa0f67dc4b6c1f3cf1a1aec">VarMatrix</a> &amp; EigenSystem::getLeftEig </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d9f/eigen__system_8_h_source.html">eigen_system.H</a> 第 <a class="el" href="../../d0/d9f/eigen__system_8_h_source.html#l00051">51</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d2/d43/test_eigen_system_8cpp_source.html#l00068">main()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_ab7dfe63ac8618afdb7bd53b3f06f762e_icgraph.svg" width="275" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a0540bfbf3da9feb5a2b983d011554016" name="a0540bfbf3da9feb5a2b983d011554016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0540bfbf3da9feb5a2b983d011554016">&#9670;&#160;</a></span>getRightEig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#a704e94131fa0f67dc4b6c1f3cf1a1aec">VarMatrix</a> &amp; EigenSystem::getRightEig </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d9f/eigen__system_8_h_source.html">eigen_system.H</a> 第 <a class="el" href="../../d0/d9f/eigen__system_8_h_source.html#l00058">58</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d2/d43/test_eigen_system_8cpp_source.html#l00068">main()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_a0540bfbf3da9feb5a2b983d011554016_icgraph.svg" width="284" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a52601e134cedf9ee10cb4a389f71b038" name="a52601e134cedf9ee10cb4a389f71b038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52601e134cedf9ee10cb4a389f71b038">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> &amp; EigenSystem::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">引用了 <a class="el" href="#ac356f0e33473a7fc054eddfa018428fa">EigenSystem()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_a52601e134cedf9ee10cb4a389f71b038_cgraph.svg" width="407" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ac57d3b99019a05bfc3bc51e10796b53e" name="ac57d3b99019a05bfc3bc51e10796b53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57d3b99019a05bfc3bc51e10796b53e">&#9670;&#160;</a></span>prim_to_char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> EigenSystem::prim_to_char </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>prim</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>原始变量转为特征变量 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prim</td><td>原始变量 </td></tr>
+    <tr><td class="paramname">pp</td><td>问题参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>特征变量charVars</dd></dl>
+<p>将原始变量转换为特征变量 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prim</td><td>原始变量 </td></tr>
+    <tr><td class="paramname">pp</td><td>问题参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>特征变量charVars </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html">eigen_system.cpp</a> 第 <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00142">142</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d0/d3f/linear__algebra_8_h_source.html#l00085">LA_M_X()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00169">characteristic_reconstruction()</a> , 以及 <a class="el" href="../../d5/d71/fifth__order__recon_8_h_source.html#l00020">reconstruction()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_ac57d3b99019a05bfc3bc51e10796b53e_cgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d2d/class_eigen_system_ac57d3b99019a05bfc3bc51e10796b53e_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme/<a class="el" href="../../d0/d9f/eigen__system_8_h_source.html">eigen_system.H</a></li>
+<li>//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/<a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html">eigen_system.cpp</a></li>
+<li>//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Euler1D/<a class="el" href="../../df/d78/_euler1_d_2eigen__system_8cpp_source.html">eigen_system.cpp</a></li>
+<li>//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Euler2D/<a class="el" href="../../da/d83/_euler2_d_2eigen__system_8cpp_source.html">eigen_system.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d7/d2d/class_eigen_system.html">EigenSystem</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

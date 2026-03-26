@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Euler2D/physical_bound.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('df/d14/_euler2_d_2physical__bound_8cpp_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">physical_bound.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d14/_euler2_d_2physical__bound_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// 物理边界实现文件</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// 包含计算alpha值的函数，用于时间步进中的方向权重</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../d7/dbd/_euler2_d_2physical__bound_8_h.html">physical_bound.H</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d4/d03/namespaceamrex.html">amrex</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// 计算alpha值函数</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// 输入：网格间距dx，原始变量primitiveVars，问题参数pp</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// 输出：每个维度的alpha值数组</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>AMREX_GPU_HOST_DEVICE</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../df/d14/_euler2_d_2physical__bound_8cpp.html#a0245bcf03eea2533ab7380be77a246cc">   12</a></span>GpuArray&lt;Real, BL_SPACEDIM&gt; <a class="code hl_function" href="../../df/d14/_euler2_d_2physical__bound_8cpp.html#a0245bcf03eea2533ab7380be77a246cc">computeAlpha</a>(<span class="keyword">const</span> GpuArray&lt;Real, BL_SPACEDIM&gt;&amp; dx, <span class="keyword">const</span> <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>&amp; primitiveVars, <span class="keyword">const</span> <a class="code hl_struct" href="../../d7/db7/struct_prob_parm.html">ProbParm</a>&amp; pp)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// 假设 primitiveVars 存储了密度 (rho), 速度 (u, v, w), 压力 (p)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Real rho = primitiveVars[0];</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    GpuArray&lt;Real, BL_SPACEDIM&gt; velocity;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; BL_SPACEDIM; ++i) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        velocity[i] = primitiveVars[i + 1]; <span class="comment">// 速度分量</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Real p = primitiveVars[BL_SPACEDIM + 1];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// 计算声速</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Real c = std::sqrt(pp.<a class="code hl_variable" href="../../d7/db7/struct_prob_parm.html#a75a011085eaff6da7774a482576140fc">gamma</a> * p / rho);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// 计算每个维度的 tau</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    GpuArray&lt;Real, BL_SPACEDIM&gt; tau;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; BL_SPACEDIM; ++i) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        tau[i] = (std::abs(velocity[i]) + c) / dx[i];</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// 计算 alpha</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    GpuArray&lt;Real, BL_SPACEDIM&gt; alpha;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Real tau_sum = 0.0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; BL_SPACEDIM; ++i) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        tau_sum += tau[i];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; BL_SPACEDIM; ++i) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        alpha[i] = tau[i] / tau_sum;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> alpha;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+</div>
+<div class="ttc" id="a2phase_2_prob___parm_8_h_html_ab211beae9febf97d593bf74f51273258"><div class="ttname"><a href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, NVar &gt; VarArray</div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00062">Prob_Parm.H:62</a></div></div>
+<div class="ttc" id="a_euler2_d_2physical__bound_8_h_html"><div class="ttname"><a href="../../d7/dbd/_euler2_d_2physical__bound_8_h.html">physical_bound.H</a></div></div>
+<div class="ttc" id="a_euler2_d_2physical__bound_8cpp_html_a0245bcf03eea2533ab7380be77a246cc"><div class="ttname"><a href="../../df/d14/_euler2_d_2physical__bound_8cpp.html#a0245bcf03eea2533ab7380be77a246cc">computeAlpha</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE GpuArray&lt; Real, BL_SPACEDIM &gt; computeAlpha(const GpuArray&lt; Real, BL_SPACEDIM &gt; &amp;dx, const VarArray &amp;primitiveVars, const ProbParm &amp;pp)</div><div class="ttdef"><b>定义</b> <a href="#l00012">physical_bound.cpp:12</a></div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="../../d4/d03/namespaceamrex.html">amrex</a></div><div class="ttdef"><b>定义</b> <a href="../../d0/d3f/linear__algebra_8_h_source.html#l00140">linear_algebra.H:140</a></div></div>
+<div class="ttc" id="astruct_prob_parm_html"><div class="ttname"><a href="../../d7/db7/struct_prob_parm.html">ProbParm</a></div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00012">Prob_Parm.H:12</a></div></div>
+<div class="ttc" id="astruct_prob_parm_html_a75a011085eaff6da7774a482576140fc"><div class="ttname"><a href="../../d7/db7/struct_prob_parm.html#a75a011085eaff6da7774a482576140fc">ProbParm::gamma</a></div><div class="ttdeci">amrex::Real gamma[2]</div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00014">Prob_Parm.H:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_4026dc0d56d05d42ae3d19d754838291.html">Euler2D</a></li><li class="navelem"><a href="../../df/d14/_euler2_d_2physical__bound_8cpp.html">physical_bound.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

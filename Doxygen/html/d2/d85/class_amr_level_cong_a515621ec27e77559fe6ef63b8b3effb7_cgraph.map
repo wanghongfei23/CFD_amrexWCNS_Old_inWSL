@@ -1,0 +1,9 @@
+<map id="AmrLevelCong::avgDown" name="AmrLevelCong::avgDown">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,6,176,33"/>
+<area shape="rect" id="Node000002" href="$d2/d85/class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767" title=" " alt="" coords="436,6,637,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,8,224,5,306,3,388,5,423,9,418,10,388,10,306,8,224,10,177,14"/>
+<area shape="rect" id="Node000003" href="$d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501" title=" " alt="" coords="224,44,388,70"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,31,212,40,207,41,171,36"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="388,41,432,36,438,36,389,46"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="269,42,263,35,267,25,282,19,306,17,331,20,347,29,341,28,330,25,306,22,283,24,271,29,268,35,274,44"/>
+</map>

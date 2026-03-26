@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme/fifth_order_recon.H 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('d5/d71/fifth__order__recon_8_h_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">fifth_order_recon.H</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d71/fifth__order__recon_8_h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d9f/eigen__system_8_h.html">eigen_system.H</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../da/dd9/interpolation__schemes_8_h.html">interpolation_schemes.H</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d3f/linear__algebra_8_h.html">linear_algebra.H</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../d3/d3b/positive__preserving_8_h.html">positive_preserving.H</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;AMReX_Array4.H&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;AMReX_BLassert.H&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// #include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// 模板函数 reconstruction：进行数值重构，计算特征值、特征向量，并返回拼接后的结果</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// 参数：</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//   i, j, k: 网格的索引位置</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//   primin_array: 存储物理量（例如，压力、速度等）的 4D 数组</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//   NUM_STATE: 物理状态量的数量（例如，速度、温度等）</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//   norm: 用于计算方向的归一化向量，默认为 {1, 0, 0}，表示沿 i 方向的单位向量</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span> &lt;<span class="keywordtype">int</span> dir = 0&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>AMREX_GPU_HOST_DEVICE</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    AMREX_FORCE_INLINE</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        amrex::GpuArray&lt;VarArray, 2&gt;</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d5/d71/fifth__order__recon_8_h.html#ab855e294c7c3d2014d1d76c5e3bf0733">   20</a></span>        <a class="code hl_function" href="../../d5/d71/fifth__order__recon_8_h.html#ab855e294c7c3d2014d1d76c5e3bf0733">reconstruction</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; primin_array,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordtype">int</span> NUM_STATE, <a class="code hl_struct" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> <span class="keyword">const</span>&amp; pp,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            amrex::GpuArray&lt;amrex::Real, 3&gt; norm,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt; dx)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// 定义 offset 来控制某一维度的操作</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    amrex::Dim3 offset = amrex::IntVect::TheDimensionVector(dir).dim3();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// 初始化 primLR 向量，用于存储从 primin_array 中提取的物理量（大小为 NUM_STATE * 2）</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> primCellL, primCellR;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; NUM_STATE; ivar++) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        primCellL[ivar] = primin_array(i - 1 * offset.x, j - 1 * offset.y, k - 1 * offset.z, ivar); <span class="comment">// 提取并存储到 primLR 中</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        primCellR[ivar] = primin_array(i - 0 * offset.x, j - 0 * offset.y, k - 0 * offset.z, ivar); <span class="comment">// 提取并存储到 primLR 中</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// 使用 Roe 平均法对 primLR 进行处理，得到 primRef</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="../../d7/d2d/class_eigen_system.html">EigenSystem</a> eig(primCellL, primCellR, norm, pp);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// 初始化变量 it，qL 和 qR 用于存储左/右特征矩阵的变换结果</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    amrex::GpuArray&lt;amrex::GpuArray&lt;amrex::Real, 5&gt;, <a class="code hl_enumvalue" href="../../d1/de4/2phase_2_prob___parm_8_h.html#a382a38852335f58a53739d455c7d67c9a5650ae79ff8b1cd60d52c94ab8aa74c1">NVar</a>&gt; qL, qR;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// 遍历指定方向，计算每个位置的物理量，并进行特征矩阵变换</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = -3; ii &lt;= 2; ii++) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> primj;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; NUM_STATE; ivar++) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            primj[ivar] = primin_array(i + ii * offset.x, j + ii * offset.y, k + ii * offset.z, ivar); <span class="comment">// 获取当前点的物理量</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">int</span> left_index = ii + 3;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="comment">// 计算 charTemp 为特征矩阵的变换结果</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">auto</span> charTemp</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            = eig.<a class="code hl_function" href="../../d7/d2d/class_eigen_system.html#ac57d3b99019a05bfc3bc51e10796b53e">prim_to_char</a>(primj, pp);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="comment">// 将 charTemp 存入 qL 和 qR 中，用于后续计算</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (left_index &lt; 5) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; NUM_STATE; ivar++) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                qL[ivar][left_index] = charTemp[ivar];</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="comment">// 计算 qR（右特征矩阵），并存储变换结果</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">int</span> right_index = 5 - left_index;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (right_index &lt; 5) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; NUM_STATE; ivar++) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                qR[ivar][right_index] = charTemp[ivar];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// 对左、右特征矩阵的数据进行 WENO5 重构</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> charReconL, charReconR;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; NUM_STATE; ivar++) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        charReconL[ivar] = <a class="code hl_function" href="../../da/dd9/interpolation__schemes_8_h.html#a64ec87980d37e662dd02f9548ce8a745">weno_is</a>(qL[ivar]);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        charReconR[ivar] = <a class="code hl_function" href="../../da/dd9/interpolation__schemes_8_h.html#a64ec87980d37e662dd02f9548ce8a745">weno_is</a>(qR[ivar]);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// 使用 LA_M_X 进行矩阵-向量乘法，将计算结果存入 res</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> consL = eig.<a class="code hl_function" href="../../d7/d2d/class_eigen_system.html#a3e2a4907e605852bd3716e912fdb15c3">char_to_cons</a>(charReconL, pp); <span class="comment">// 计算并将结果存储到 res 中</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> consR = eig.<a class="code hl_function" href="../../d7/d2d/class_eigen_system.html#a3e2a4907e605852bd3716e912fdb15c3">char_to_cons</a>(charReconR, pp); <span class="comment">// 继续将结果存储到 res 中</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// 将原始变量 primCellL 和 primCellR 转换为守恒变量</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> consCellL = <a class="code hl_function" href="../../df/d33/2phase_2equation_8_h.html#aa4b11e88ccc231740ce4bc8af2cd6825">prim_to_cons</a>(primCellL, pp);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> consCellR = <a class="code hl_function" href="../../df/d33/2phase_2equation_8_h.html#aa4b11e88ccc231740ce4bc8af2cd6825">prim_to_cons</a>(primCellR, pp);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">const</span> <a class="code hl_struct" href="../../d1/d54/struct_positive_quantity_functions.html">PositiveQuantityFunctions</a> pqf;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// 对 consL 和 consR 应用保正限制器</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="../../d7/ddc/positive__preserving_8cpp.html#ad48aa8a0b02a1d671e8b014d2384e179">apply_positive_limiter</a>(consCellL, consL, pqf, pp, NUM_STATE);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="../../d7/ddc/positive__preserving_8cpp.html#ad48aa8a0b02a1d671e8b014d2384e179">apply_positive_limiter</a>(consCellR, consR, pqf, pp, NUM_STATE);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// 将保正后的守恒变量转换回原始变量</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> primL = <a class="code hl_function" href="../../df/d33/2phase_2equation_8_h.html#a59b7c8ae2d89ef254c24ced244772fbf">cons_to_prim</a>(consL, pp);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_typedef" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> primR = <a class="code hl_function" href="../../df/d33/2phase_2equation_8_h.html#a59b7c8ae2d89ef254c24ced244772fbf">cons_to_prim</a>(consR, pp);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// 返回拼接后的结果</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> { primL, primR };</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="ttc" id="a2phase_2_prob___parm_8_h_html_a382a38852335f58a53739d455c7d67c9a5650ae79ff8b1cd60d52c94ab8aa74c1"><div class="ttname"><a href="../../d1/de4/2phase_2_prob___parm_8_h.html#a382a38852335f58a53739d455c7d67c9a5650ae79ff8b1cd60d52c94ab8aa74c1">NVar</a></div><div class="ttdeci">@ NVar</div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00058">Prob_Parm.H:58</a></div></div>
+<div class="ttc" id="a2phase_2_prob___parm_8_h_html_ab211beae9febf97d593bf74f51273258"><div class="ttname"><a href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, NVar &gt; VarArray</div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00062">Prob_Parm.H:62</a></div></div>
+<div class="ttc" id="a2phase_2equation_8_h_html_a59b7c8ae2d89ef254c24ced244772fbf"><div class="ttname"><a href="../../df/d33/2phase_2equation_8_h.html#a59b7c8ae2d89ef254c24ced244772fbf">cons_to_prim</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE VarArray cons_to_prim(VarArray cons, ProbParm const &amp;pp)</div><div class="ttdef"><b>定义</b> <a href="../../df/d33/2phase_2equation_8_h_source.html#l00117">equation.H:117</a></div></div>
+<div class="ttc" id="a2phase_2equation_8_h_html_aa4b11e88ccc231740ce4bc8af2cd6825"><div class="ttname"><a href="../../df/d33/2phase_2equation_8_h.html#aa4b11e88ccc231740ce4bc8af2cd6825">prim_to_cons</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE VarArray prim_to_cons(VarArray prim, ProbParm const &amp;pp)</div><div class="ttdef"><b>定义</b> <a href="../../df/d33/2phase_2equation_8_h_source.html#l00144">equation.H:144</a></div></div>
+<div class="ttc" id="aclass_eigen_system_html"><div class="ttname"><a href="../../d7/d2d/class_eigen_system.html">EigenSystem</a></div><div class="ttdef"><b>定义</b> <a href="../../d0/d9f/eigen__system_8_h_source.html#l00012">eigen_system.H:12</a></div></div>
+<div class="ttc" id="aclass_eigen_system_html_a3e2a4907e605852bd3716e912fdb15c3"><div class="ttname"><a href="../../d7/d2d/class_eigen_system.html#a3e2a4907e605852bd3716e912fdb15c3">EigenSystem::char_to_cons</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE VarArray char_to_cons(VarArray const &amp;charVars, ProbParm const &amp;pp) const</div><div class="ttdef"><b>定义</b> <a href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00168">eigen_system.cpp:168</a></div></div>
+<div class="ttc" id="aclass_eigen_system_html_ac57d3b99019a05bfc3bc51e10796b53e"><div class="ttname"><a href="../../d7/d2d/class_eigen_system.html#ac57d3b99019a05bfc3bc51e10796b53e">EigenSystem::prim_to_char</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE VarArray prim_to_char(VarArray const &amp;prim, ProbParm const &amp;pp) const</div><div class="ttdef"><b>定义</b> <a href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00142">eigen_system.cpp:142</a></div></div>
+<div class="ttc" id="aeigen__system_8_h_html"><div class="ttname"><a href="../../d0/d9f/eigen__system_8_h.html">eigen_system.H</a></div></div>
+<div class="ttc" id="afifth__order__recon_8_h_html_ab855e294c7c3d2014d1d76c5e3bf0733"><div class="ttname"><a href="../../d5/d71/fifth__order__recon_8_h.html#ab855e294c7c3d2014d1d76c5e3bf0733">reconstruction</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; VarArray, 2 &gt; reconstruction(int i, int j, int k, amrex::Array4&lt; amrex::Real const &gt; const &amp;primin_array, int NUM_STATE, ProbParm const &amp;pp, amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dx)</div><div class="ttdef"><b>定义</b> <a href="#l00020">fifth_order_recon.H:20</a></div></div>
+<div class="ttc" id="ainterpolation__schemes_8_h_html"><div class="ttname"><a href="../../da/dd9/interpolation__schemes_8_h.html">interpolation_schemes.H</a></div></div>
+<div class="ttc" id="ainterpolation__schemes_8_h_html_a64ec87980d37e662dd02f9548ce8a745"><div class="ttname"><a href="../../da/dd9/interpolation__schemes_8_h.html#a64ec87980d37e662dd02f9548ce8a745">weno_is</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real weno_is(amrex::GpuArray&lt; amrex::Real, 5 &gt; q)</div><div class="ttdef"><b>定义</b> <a href="../../da/dd9/interpolation__schemes_8_h_source.html#l00136">interpolation_schemes.H:136</a></div></div>
+<div class="ttc" id="alinear__algebra_8_h_html"><div class="ttname"><a href="../../d0/d3f/linear__algebra_8_h.html">linear_algebra.H</a></div></div>
+<div class="ttc" id="apositive__preserving_8_h_html"><div class="ttname"><a href="../../d3/d3b/positive__preserving_8_h.html">positive_preserving.H</a></div></div>
+<div class="ttc" id="apositive__preserving_8cpp_html_ad48aa8a0b02a1d671e8b014d2384e179"><div class="ttname"><a href="../../d7/ddc/positive__preserving_8cpp.html#ad48aa8a0b02a1d671e8b014d2384e179">apply_positive_limiter</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void apply_positive_limiter(const VarArray &amp;W, VarArray &amp;W_interpolated, const PositiveQuantityFunctions &amp;pqf, const ProbParm &amp;pp, int ncomp)</div><div class="ttdef"><b>定义</b> <a href="../../d7/ddc/positive__preserving_8cpp_source.html#l00365">positive_preserving.cpp:365</a></div></div>
+<div class="ttc" id="astruct_positive_quantity_functions_html"><div class="ttname"><a href="../../d1/d54/struct_positive_quantity_functions.html">PositiveQuantityFunctions</a></div><div class="ttdef"><b>定义</b> <a href="../../d3/dee/2phase_2physical__bound_8_h_source.html#l00007">physical_bound.H:7</a></div></div>
+<div class="ttc" id="astruct_prob_parm_html"><div class="ttname"><a href="../../d7/db7/struct_prob_parm.html">ProbParm</a></div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00012">Prob_Parm.H:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_c00bc6c244667b5c9be71457c8466c85.html">reconstruction_scheme</a></li><li class="navelem"><a href="../../d5/d71/fifth__order__recon_8_h.html">fifth_order_recon.H</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

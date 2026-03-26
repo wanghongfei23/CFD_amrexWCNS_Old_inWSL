@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['未来扩展方向_0',['未来扩展方向',['../dir_2ecf07d941498bc2a342967c40ee1930.html#autotoc_md81',1,'']]]
+  ['构建与运行_0',['6. 构建与运行',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md139',1,'']]],
+  ['构建项目_1',['6.1 构建项目',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md140',1,'']]]
 ];

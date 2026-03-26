@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme/fifth_order_thinc_recon.H 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('d5/da8/fifth__order__thinc__recon_8_h.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">fifth_order_thinc_recon.H 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d9f/eigen__system_8_h_source.html">eigen_system.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/dd9/interpolation__schemes_8_h_source.html">interpolation_schemes.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d3f/linear__algebra_8_h_source.html">linear_algebra.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d3b/positive__preserving_8_h_source.html">positive_preserving.H</a>&quot;</code><br />
+<code>#include &lt;AMReX_Array4.H&gt;</code><br />
+<code>#include &lt;AMReX_BLassert.H&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+fifth_order_thinc_recon.H 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d8/d95/fifth__order__thinc__recon_8_h__incl.svg" width="100%" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../db/d12/fifth__order__thinc__recon_8_h__dep__incl.svg" width="242" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a35a84e49e7f38d8188a802c570b308df" id="r_a35a84e49e7f38d8188a802c570b308df"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35a84e49e7f38d8188a802c570b308df">phi_THINC</a> (amrex::Real phi_im1, amrex::Real phi_i, amrex::Real phi_ip1, amrex::Real x, amrex::Real beta=1.8)</td></tr>
+<tr class="memitem:a6fc4f383a933ec63ca8493eb361d9738" id="r_a6fc4f383a933ec63ca8493eb361d9738"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fc4f383a933ec63ca8493eb361d9738">phi_THINC3</a> (amrex::Real phi_im1, amrex::Real phi_i, amrex::Real phi_ip1, amrex::Real x, amrex::Real beta=1.8)</td></tr>
+<tr class="memitem:aafbb97577f86a0fd45dd343246861ae7" id="r_aafbb97577f86a0fd45dd343246861ae7"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafbb97577f86a0fd45dd343246861ae7">phi_THINC_bounded</a> (amrex::Real phi_im1, amrex::Real phi_i, amrex::Real phi_ip1, amrex::Real x, amrex::Real beta=1.8)</td></tr>
+<tr class="memitem:a70a476f97d53fcd76a8e5f31283166c5" id="r_a70a476f97d53fcd76a8e5f31283166c5"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70a476f97d53fcd76a8e5f31283166c5">primitive_reconstruction</a> (int i, int j, int k, amrex::Array4&lt; amrex::Real const &gt; const &amp;primin_array, int NUM_STATE, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp, amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, amrex::Dim3 offset, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dx)</td></tr>
+<tr class="memitem:aca64cbc7dbb09c53bc30b51f1b644765" id="r_aca64cbc7dbb09c53bc30b51f1b644765"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca64cbc7dbb09c53bc30b51f1b644765">characteristic_reconstruction</a> (int i, int j, int k, amrex::Array4&lt; amrex::Real const &gt; const &amp;primin_array, int NUM_STATE, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp, amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, amrex::Dim3 offset, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dx)</td></tr>
+<tr class="memitem:a480de3be6a0376bc7f26e4ec7881dea6" id="r_a480de3be6a0376bc7f26e4ec7881dea6"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a480de3be6a0376bc7f26e4ec7881dea6">mixture_reconstruction</a> (int i, int j, int k, amrex::Array4&lt; amrex::Real const &gt; const &amp;primin_array, int NUM_STATE, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp, amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, amrex::Dim3 offset, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dx)</td></tr>
+<tr class="memitem:ab855e294c7c3d2014d1d76c5e3bf0733" id="r_ab855e294c7c3d2014d1d76c5e3bf0733"><td class="memTemplParams" colspan="2">template&lt;int dir = 0&gt; </td></tr>
+<tr class="memitem:ab855e294c7c3d2014d1d76c5e3bf0733 template"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab855e294c7c3d2014d1d76c5e3bf0733">reconstruction</a> (int i, int j, int k, amrex::Array4&lt; amrex::Real const &gt; const &amp;primin_array, int NUM_STATE, <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;pp, amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dx)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a4d47c8a65fe3529bd6f396ff03c20113" id="r_a4d47c8a65fe3529bd6f396ff03c20113"><td class="memItemLeft" align="right" valign="top">constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d47c8a65fe3529bd6f396ff03c20113">switchd_thredhold</a> = 1e-3</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函数说明</h2>
+<a id="aca64cbc7dbb09c53bc30b51f1b644765" name="aca64cbc7dbb09c53bc30b51f1b644765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca64cbc7dbb09c53bc30b51f1b644765">&#9670;&#160;</a></span>characteristic_reconstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt; characteristic_reconstruction </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>primin_array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>NUM_STATE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Dim3</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt;</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00169">169</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d7/ddc/positive__preserving_8cpp_source.html#l00365">apply_positive_limiter()</a>, <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00168">EigenSystem::char_to_cons()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00117">cons_to_prim()</a>, <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00058">NVar</a>, <a class="el" href="../../d4/d0b/2phase_2eigen__system_8cpp_source.html#l00142">EigenSystem::prim_to_char()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00144">prim_to_cons()</a> , 以及 <a class="el" href="../../da/dd9/interpolation__schemes_8_h_source.html#l00136">weno_is()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00645">reconstruction()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_aca64cbc7dbb09c53bc30b51f1b644765_cgraph.svg" width="100%" height="546"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_aca64cbc7dbb09c53bc30b51f1b644765_icgraph.svg" width="351" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a480de3be6a0376bc7f26e4ec7881dea6" name="a480de3be6a0376bc7f26e4ec7881dea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a480de3be6a0376bc7f26e4ec7881dea6">&#9670;&#160;</a></span>mixture_reconstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt; mixture_reconstruction </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>primin_array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>NUM_STATE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Dim3</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt;</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00385">385</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00057">Alpha1</a>, <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00053">AlphaRho1</a>, <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00054">AlphaRho2</a>, <a class="el" href="../../d7/ddc/positive__preserving_8cpp_source.html#l00365">apply_positive_limiter()</a>, <a class="el" href="../../d0/d3f/linear__algebra_8_h_source.html#l00254">compute_normal_vector()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00117">cons_to_prim()</a>, <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00058">NVar</a>, <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00072">phi_THINC_bounded()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00144">prim_to_cons()</a>, <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00243">switchd_thredhold</a> , 以及 <a class="el" href="../../da/dd9/interpolation__schemes_8_h_source.html#l00136">weno_is()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00645">reconstruction()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_a480de3be6a0376bc7f26e4ec7881dea6_cgraph.svg" width="100%" height="537"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_a480de3be6a0376bc7f26e4ec7881dea6_icgraph.svg" width="316" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a35a84e49e7f38d8188a802c570b308df" name="a35a84e49e7f38d8188a802c570b308df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a84e49e7f38d8188a802c570b308df">&#9670;&#160;</a></span>phi_THINC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE amrex::Real phi_THINC </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_im1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_ip1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>beta</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.8</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6fc4f383a933ec63ca8493eb361d9738" name="a6fc4f383a933ec63ca8493eb361d9738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fc4f383a933ec63ca8493eb361d9738">&#9670;&#160;</a></span>phi_THINC3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE amrex::Real phi_THINC3 </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_im1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_ip1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>beta</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.8</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aafbb97577f86a0fd45dd343246861ae7" name="aafbb97577f86a0fd45dd343246861ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafbb97577f86a0fd45dd343246861ae7">&#9670;&#160;</a></span>phi_THINC_bounded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE amrex::Real phi_THINC_bounded </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_im1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>phi_ip1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real</td>          <td class="paramname"><span class="paramname"><em>beta</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.8</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00072">72</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00385">mixture_reconstruction()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_aafbb97577f86a0fd45dd343246861ae7_icgraph.svg" width="507" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a70a476f97d53fcd76a8e5f31283166c5" name="a70a476f97d53fcd76a8e5f31283166c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a476f97d53fcd76a8e5f31283166c5">&#9670;&#160;</a></span>primitive_reconstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt; primitive_reconstruction </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>primin_array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>NUM_STATE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Dim3</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt;</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00099">99</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d7/ddc/positive__preserving_8cpp_source.html#l00365">apply_positive_limiter()</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00117">cons_to_prim()</a>, <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00058">NVar</a>, <a class="el" href="../../df/d33/2phase_2equation_8_h_source.html#l00144">prim_to_cons()</a> , 以及 <a class="el" href="../../da/dd9/interpolation__schemes_8_h_source.html#l00136">weno_is()</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_a70a476f97d53fcd76a8e5f31283166c5_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ab855e294c7c3d2014d1d76c5e3bf0733" name="ab855e294c7c3d2014d1d76c5e3bf0733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab855e294c7c3d2014d1d76c5e3bf0733">&#9670;&#160;</a></span>reconstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dir = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a>, 2 &gt; reconstruction </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>primin_array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>NUM_STATE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt;</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00645">645</a> 行定义.</p>
+
+<p class="reference">引用了 <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00057">Alpha1</a>, <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00169">characteristic_reconstruction()</a>, <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00385">mixture_reconstruction()</a> , 以及 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00243">switchd_thredhold</a>.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d5/da8/fifth__order__thinc__recon_8_h_ab855e294c7c3d2014d1d76c5e3bf0733_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">变量说明</h2>
+<a id="a4d47c8a65fe3529bd6f396ff03c20113" name="a4d47c8a65fe3529bd6f396ff03c20113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d47c8a65fe3529bd6f396ff03c20113">&#9670;&#160;</a></span>switchd_thredhold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real switchd_thredhold = 1e-3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html">fifth_order_thinc_recon.H</a> 第 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00243">243</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00385">mixture_reconstruction()</a> , 以及 <a class="el" href="../../d5/da8/fifth__order__thinc__recon_8_h_source.html#l00645">reconstruction()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_c00bc6c244667b5c9be71457c8466c85.html">reconstruction_scheme</a></li><li class="navelem"><a href="../../d5/da8/fifth__order__thinc__recon_8_h.html">fifth_order_thinc_recon.H</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

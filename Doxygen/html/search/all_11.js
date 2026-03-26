@@ -1,16 +1,9 @@
 var searchData=
 [
-  ['if_0',['if',['../_amr_level_cong_8cpp.html#a19c4c8ed9558f75152b77673938b1c3a',1,'if(post_regrid_flag==1):&#160;AmrLevelCong.cpp'],['../_amr_level_cong_8cpp.html#a7f7fe5d0658dcd8c49511f975bf4e540',1,'if(stop_time &gt;=0.0):&#160;AmrLevelCong.cpp']]],
-  ['info_5farch_1',['info_arch',['../_c_make_c_compiler_id_8c.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fcompiler_2',['info_compiler',['../_c_make_c_compiler_id_8c.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fextensions_5fdefault_3',['info_language_extensions_default',['../_c_make_c_compiler_id_8c.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'info_language_extensions_default:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'info_language_extensions_default:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fstandard_5fdefault_4',['info_language_standard_default',['../_c_make_c_compiler_id_8c.html#a4607cccf070750927b458473ca82c090',1,'info_language_standard_default:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a4607cccf070750927b458473ca82c090',1,'info_language_standard_default:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fplatform_5',['info_platform',['../_c_make_c_compiler_id_8c.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform:&#160;CMakeCXXCompilerId.cpp']]],
-  ['init_6',['init',['../class_amr_level_cong.html#a7bc23b174de68df31491bd955c98f18f',1,'AmrLevelCong::init(amrex::AmrLevel &amp;old) override'],['../class_amr_level_cong.html#a07db12910358510dcc63fdfe15fac9d0',1,'AmrLevelCong::init() override']]],
-  ['initdata_7',['initData',['../class_amr_level_cong.html#a707932ecf0d1b31f6c1f2ddc2242c139',1,'AmrLevelCong']]],
-  ['initdata_8',['initdata',['../_euler1_d_2equation_8_h.html#a2855fe3a36434bfe9ffe43594422110d',1,'initdata(int level, amrex::Real time, const amrex::Box &amp;box, amrex::FArrayBox &amp;state, const amrex::Real *dx, const amrex::Real *problo, const ProbParm &amp;pp):&#160;equation.H'],['../_euler2_d_2equation_8_h.html#a2855fe3a36434bfe9ffe43594422110d',1,'initdata(int level, amrex::Real time, const amrex::Box &amp;box, amrex::FArrayBox &amp;state, const amrex::Real *dx, const amrex::Real *problo, const ProbParm &amp;pp):&#160;equation.H']]],
-  ['initialtimestep_9',['initialTimeStep',['../class_amr_level_cong.html#a5efdc885b2d2e95496fa9b84f11ab315',1,'AmrLevelCong']]],
-  ['inputs2phase2d_20主要参数_10',['inputs2phase2d 主要参数',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_05eece26b5b0e259b3d61386a29a28b7.html#autotoc_md37',1,'']]],
-  ['interpolation_5fschemes_2eh_11',['interpolation_schemes.H',['../interpolation__schemes_8_h.html',1,'']]],
-  ['isidentitymatrix_12',['isIdentityMatrix',['../test_eigen_system_8cpp.html#a2c0fb46e1bb3f62a5d7bc9aa98cb2fc8',1,'testEigenSystem.cpp']]]
+  ['la_5fm_5fx_0',['LA_M_X',['../d0/d3f/linear__algebra_8_h.html#ab2fa326a77149c924169e5af105ec127',1,'linear_algebra.H']]],
+  ['levelbldadv_1',['LevelBldAdv',['../d3/d38/class_level_bld_adv.html',1,'']]],
+  ['levelbldcong_2ecpp_2',['LevelBldCong.cpp',['../d2/dbe/_level_bld_cong_8cpp.html',1,'']]],
+  ['lincomb3_3',['LinComb3',['../d4/d03/namespaceamrex.html#a3751bf21e8eed9d19954ea19462edc10',1,'amrex']]],
+  ['lincomb4_4',['LinComb4',['../d4/d03/namespaceamrex.html#ab93c06d5bf3e2eb659010ca693c248e8',1,'amrex']]],
+  ['linear_5falgebra_2eh_5',['linear_algebra.H',['../d0/d3f/linear__algebra_8_h.html',1,'']]]
 ];

@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['fifth_5forder_5frecon_2eh_0',['fifth_order_recon.H',['../fifth__order__recon_8_h.html',1,'']]],
-  ['fifth_5forder_5fthinc_5frecon_2eh_1',['fifth_order_thinc_recon.H',['../fifth__order__thinc__recon_8_h.html',1,'']]],
-  ['first_5forder_5frecon_2eh_2',['first_order_recon.H',['../first__order__recon_8_h.html',1,'']]],
-  ['firstorderderivativeterm_3',['FirstOrderDerivativeTerm',['../class_first_order_derivative_term.html',1,'FirstOrderDerivativeTerm&lt; Derived &gt;'],['../class_first_order_derivative_term.html#a55802f37594d6eec227f79e3845d6049',1,'FirstOrderDerivativeTerm::FirstOrderDerivativeTerm()']]],
-  ['firstorderderivativeterm_20模板_4',['FirstOrderDerivativeTerm 模板',['../md__2_2wsl_8localhost_2arch__zyc_2home_2archwanghongfei_2_documents_2_git_hub_w_s_l_2_c_f_d__in_dae505ce405bbfdac7c1a7ca2dc6dd68.html#autotoc_md9',1,'']]],
-  ['firstorderderivativeterm_3c_20firstorderderivativetermusr_20_3e_5',['FirstOrderDerivativeTerm&lt; FirstOrderDerivativeTermUsr &gt;',['../class_first_order_derivative_term.html',1,'']]],
-  ['firstorderderivativetermusr_6',['FirstOrderDerivativeTermUsr',['../class_first_order_derivative_term_usr.html',1,'FirstOrderDerivativeTermUsr'],['../class_first_order_derivative_term_usr.html#a3386f78496152ee52d054a8769bfbcdf',1,'FirstOrderDerivativeTermUsr::FirstOrderDerivativeTermUsr()'],['../class_first_order_derivative_term_usr.html#a3386f78496152ee52d054a8769bfbcdf',1,'FirstOrderDerivativeTermUsr::FirstOrderDerivativeTermUsr()'],['../class_first_order_derivative_term_usr.html#a3386f78496152ee52d054a8769bfbcdf',1,'FirstOrderDerivativeTermUsr::FirstOrderDerivativeTermUsr()']]],
-  ['flux_7',['flux',['../struct_flux_solve_params.html#a25f2a0719e008b1a81c94033c5aed1d3',1,'FluxSolveParams']]],
-  ['flux_5freg_8',['flux_reg',['../class_amr_level_cong.html#a1c6d1510b6a57c0cc905f70297c15826',1,'AmrLevelCong']]],
-  ['flux_5fsolve_5fin_5fdim_9',['flux_solve_in_dim',['../class_amr_level_cong.html#ac98beb1909a6897e46e64f00da5a448b',1,'AmrLevelCong']]],
-  ['fluxsolveparams_10',['FluxSolveParams',['../struct_flux_solve_params.html',1,'']]],
-  ['for_11',['for',['../_amr_level_cong_8cpp.html#adef55f659baa4f689645be91292a6065',1,'AmrLevelCong.cpp']]]
+  ['gamma_0',['gamma',['../d7/db7/struct_prob_parm.html#a75a011085eaff6da7774a482576140fc',1,'ProbParm']]],
+  ['get_5fdirection_1',['get_direction',['../d0/d3f/linear__algebra_8_h.html#aab6a12818f25acb37ad9c34df406193f',1,'get_direction():&#160;linear_algebra.H'],['../d0/d3f/linear__algebra_8_h.html#a118f0f63aec15f189bbb3e6ec8ee6fa1',1,'get_direction(int dir):&#160;linear_algebra.H']]],
+  ['get_5fface_5fvelocity_2',['get_face_velocity',['../dd/de9/_amr_level_cong_8_h.html#ab37009098a73ca201aa908e6894773ca',1,'AmrLevelCong.H']]],
+  ['get_5frk_5ftime_5fcoefficients_3',['get_RK_time_coefficients',['../d6/d4d/_amr_level_cong__advance_8cpp.html#a774a3655d725af88995af1753c89de00',1,'AmrLevelCong_advance.cpp']]],
+  ['get_5ftagging_5fparams_4',['get_tagging_params',['../d2/d85/class_amr_level_cong.html#af8ed03226ba5f746e6135d6dd18eeafc',1,'AmrLevelCong']]],
+  ['getfluxreg_5',['getFluxReg',['../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2',1,'AmrLevelCong::getFluxReg()'],['../d2/d85/class_amr_level_cong.html#a325253a79655f838b8c7609f462ef101',1,'AmrLevelCong::getFluxReg(int lev)']]],
+  ['getlefteig_6',['getLeftEig',['../d7/d2d/class_eigen_system.html#ab7dfe63ac8618afdb7bd53b3f06f762e',1,'EigenSystem']]],
+  ['getlevel_7',['getLevel',['../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501',1,'AmrLevelCong']]],
+  ['getlevelbld_8',['getLevelBld',['../d2/dbe/_level_bld_cong_8cpp.html#a2061dc81308a5b23e3caecd857579736',1,'getLevelBld():&#160;LevelBldCong.cpp'],['../df/d0a/main_8cpp.html#a0e655cef6648cfb52e8f9bfe5c45552a',1,'getLevelBld():&#160;LevelBldCong.cpp']]],
+  ['getrighteig_9',['getRightEig',['../d7/d2d/class_eigen_system.html#a0540bfbf3da9feb5a2b983d011554016',1,'EigenSystem']]],
+  ['gettargettermindices_10',['getTargetTermIndices',['../d7/d39/class_first_order_derivative_term.html#aceb1433141555b4b0c4a05013ed027bc',1,'FirstOrderDerivativeTerm']]],
+  ['gettermindices_11',['getTermIndices',['../d0/d77/class_first_order_derivative_term_usr.html#a9ae93b835b3f563f7de14348b2212f1a',1,'FirstOrderDerivativeTermUsr::getTermIndices()'],['../d0/d77/class_first_order_derivative_term_usr.html#a9ae93b835b3f563f7de14348b2212f1a',1,'FirstOrderDerivativeTermUsr::getTermIndices()'],['../d0/d77/class_first_order_derivative_term_usr.html#a9ae93b835b3f563f7de14348b2212f1a',1,'FirstOrderDerivativeTermUsr::getTermIndices()']]]
 ];

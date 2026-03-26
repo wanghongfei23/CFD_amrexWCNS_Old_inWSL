@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['注意事项_0',['注意事项',['../dir_2ecf07d941498bc2a342967c40ee1930.html#autotoc_md80',1,'']]]
+  ['清理构建文件_0',['6.3 清理构建文件',['..///wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/README.md#autotoc_md142',1,'']]]
 ];

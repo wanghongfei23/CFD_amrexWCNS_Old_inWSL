@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: FirstOrderDerivativeTerm&lt; Derived &gt; 模板类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('d7/d39/class_first_order_derivative_term.html','../../','dd/dea/class_first_order_derivative_term-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">FirstOrderDerivativeTerm&lt; Derived &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a>&gt;</code></p>
+<div class="dynheader">
+类 FirstOrderDerivativeTerm&lt; Derived &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d3/d4e/class_first_order_derivative_term__inherit__graph.svg" width="283" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a55802f37594d6eec227f79e3845d6049" id="r_a55802f37594d6eec227f79e3845d6049"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55802f37594d6eec227f79e3845d6049">FirstOrderDerivativeTerm</a> ()</td></tr>
+<tr class="memitem:a287cbd76ec7bc453cba19f8d35f77251" id="r_a287cbd76ec7bc453cba19f8d35f77251"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a287cbd76ec7bc453cba19f8d35f77251">computeCoefficient</a> (const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;prim, const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;pp, const amrex::GpuArray&lt; amrex::Real, 3 &gt; norm) const</td></tr>
+<tr class="memitem:a7a11ea5a86f8ad3772fea9a00f45fecc" id="r_a7a11ea5a86f8ad3772fea9a00f45fecc"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a11ea5a86f8ad3772fea9a00f45fecc">computeFlux</a> (const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;left_prim, const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;right_prim, const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;pp, const amrex::GpuArray&lt; amrex::Real, 3 &gt; norm, amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt; dx) const</td></tr>
+<tr class="memitem:ab89cfdb290d2cfb9c32f4bcfa5a51f38" id="r_ab89cfdb290d2cfb9c32f4bcfa5a51f38"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab89cfdb290d2cfb9c32f4bcfa5a51f38">computeNodeFlux</a> (const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;prim, const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;pp, const amrex::GpuArray&lt; amrex::Real, 3 &gt; norm) const</td></tr>
+<tr class="memitem:aceb1433141555b4b0c4a05013ed027bc" id="r_aceb1433141555b4b0c4a05013ed027bc"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; int, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb1433141555b4b0c4a05013ed027bc">getTargetTermIndices</a> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:a8a4a7a82277ef005bdddd9a5fb5b8efc" id="r_a8a4a7a82277ef005bdddd9a5fb5b8efc"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> = Derived::num_terms</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Derived&gt;<br />
+class FirstOrderDerivativeTerm&lt; Derived &gt;</div>
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00011">11</a> 行定义.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="a55802f37594d6eec227f79e3845d6049" name="a55802f37594d6eec227f79e3845d6049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55802f37594d6eec227f79e3845d6049">&#9670;&#160;</a></span>FirstOrderDerivativeTerm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a>&lt; Derived &gt;::FirstOrderDerivativeTerm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a287cbd76ec7bc453cba19f8d35f77251" name="a287cbd76ec7bc453cba19f8d35f77251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287cbd76ec7bc453cba19f8d35f77251">&#9670;&#160;</a></span>computeCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt; <a class="el" href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a>&lt; Derived &gt;::computeCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>prim</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00029">29</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d6/d4d/_amr_level_cong__advance_8cpp_source.html#l00396">AmrLevelCong::flux_solve_in_dim()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d39/class_first_order_derivative_term_a287cbd76ec7bc453cba19f8d35f77251_icgraph.svg" width="610" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a7a11ea5a86f8ad3772fea9a00f45fecc" name="a7a11ea5a86f8ad3772fea9a00f45fecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a11ea5a86f8ad3772fea9a00f45fecc">&#9670;&#160;</a></span>computeFlux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt; <a class="el" href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a>&lt; Derived &gt;::computeFlux </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>left_prim</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>right_prim</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt;</td>          <td class="paramname"><span class="paramname"><em>dx</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00042">42</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d6/d4d/_amr_level_cong__advance_8cpp_source.html#l00396">AmrLevelCong::flux_solve_in_dim()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d39/class_first_order_derivative_term_a7a11ea5a86f8ad3772fea9a00f45fecc_icgraph.svg" width="610" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab89cfdb290d2cfb9c32f4bcfa5a51f38" name="ab89cfdb290d2cfb9c32f4bcfa5a51f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89cfdb290d2cfb9c32f4bcfa5a51f38">&#9670;&#160;</a></span>computeNodeFlux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt; <a class="el" href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a>&lt; Derived &gt;::computeNodeFlux </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/de4/2phase_2_prob___parm_8_h.html#ab211beae9febf97d593bf74f51273258">VarArray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>prim</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/db7/struct_prob_parm.html">ProbParm</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>norm</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00056">56</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d6/d4d/_amr_level_cong__advance_8cpp_source.html#l00396">AmrLevelCong::flux_solve_in_dim()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d39/class_first_order_derivative_term_ab89cfdb290d2cfb9c32f4bcfa5a51f38_icgraph.svg" width="610" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aceb1433141555b4b0c4a05013ed027bc" name="aceb1433141555b4b0c4a05013ed027bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb1433141555b4b0c4a05013ed027bc">&#9670;&#160;</a></span>getTargetTermIndices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; int, <a class="el" href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">num_terms</a> &gt; <a class="el" href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a>&lt; Derived &gt;::getTargetTermIndices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00068">68</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d6/d4d/_amr_level_cong__advance_8cpp_source.html#l00396">AmrLevelCong::flux_solve_in_dim()</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="../../d7/d39/class_first_order_derivative_term_aceb1433141555b4b0c4a05013ed027bc_icgraph.svg" width="610" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a8a4a7a82277ef005bdddd9a5fb5b8efc" name="a8a4a7a82277ef005bdddd9a5fb5b8efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4a7a82277ef005bdddd9a5fb5b8efc">&#9670;&#160;</a></span>num_terms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a>&lt; Derived &gt;::num_terms = Derived::num_terms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a> 第 <a class="el" href="../../de/dc7/deriv_8_h_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>//wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv/<a class="el" href="../../de/dc7/deriv_8_h_source.html">deriv.H</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../d7/d39/class_first_order_derivative_term.html">FirstOrderDerivativeTerm</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

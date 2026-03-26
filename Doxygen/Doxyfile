@@ -74,7 +74,7 @@ PROJECT_ICON           =
 # entered, it will be relative to the location where Doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/Doxygen
+OUTPUT_DIRECTORY       = .
 
 # If the CREATE_SUBDIRS tag is set to YES then Doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -85,7 +85,7 @@ OUTPUT_DIRECTORY       = //wsl.localhost/arch_zyc/home/archwanghongfei/Documents
 # control the number of sub-directories.
 # The default value is: NO.
 
-CREATE_SUBDIRS         = NO
+CREATE_SUBDIRS         = YES
 
 # Controls the number of sub-directories that will be created when
 # CREATE_SUBDIRS tag is set to YES. Level 0 represents 16 directories, and every
@@ -171,7 +171,7 @@ ALWAYS_DETAILED_SEC    = NO
 # operators of the base classes will not be shown.
 # The default value is: NO.
 
-INLINE_INHERITED_MEMB  = NO
+INLINE_INHERITED_MEMB  = YES
 
 # If the FULL_PATH_NAMES tag is set to YES, Doxygen will prepend the full path
 # before files name in the file list and in the header files. If set to NO the
@@ -1005,7 +1005,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial
+INPUT                  = ../
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1094,7 +1094,8 @@ FILE_PATTERNS          = *.c \
                          *.vhdl \
                          *.ucf \
                          *.qsf \
-                         *.ice
+                         *.ice \
+                         *.H
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -1109,7 +1110,10 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which Doxygen is
 # run.
 
-EXCLUDE                =
+EXCLUDE                = ../.git \
+                         ../.inLinux_admin_script \
+                         . \
+                         ../build
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -1271,13 +1275,13 @@ STRIP_CODE_COMMENTS    = YES
 # entity all documented functions referencing it will be listed.
 # The default value is: NO.
 
-REFERENCED_BY_RELATION = NO
+REFERENCED_BY_RELATION = YES
 
 # If the REFERENCES_RELATION tag is set to YES then for each documented function
 # all documented entities called/used by that function will be listed.
 # The default value is: NO.
 
-REFERENCES_RELATION    = NO
+REFERENCES_RELATION    = YES
 
 # If the REFERENCES_LINK_SOURCE tag is set to YES and SOURCE_BROWSER tag is set
 # to YES then the hyperlinks from functions in REFERENCES_RELATION and
@@ -1889,7 +1893,7 @@ OBFUSCATE_EMAILS       = YES
 # The default value is: png.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_FORMULA_FORMAT    = png
+HTML_FORMULA_FORMAT    = svg
 
 # Use this tag to change the font size of LaTeX formulas included as images in
 # the HTML documentation. When you change the font size after a successful
@@ -2790,7 +2794,7 @@ DOT_WRAP_THRESHOLD     = 17
 # The default value is: NO.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-TEMPLATE_RELATIONS     = NO
+TEMPLATE_RELATIONS     = YES
 
 # If the INCLUDE_GRAPH, ENABLE_PREPROCESSING and SEARCH_INCLUDES tags are set to
 # YES then Doxygen will generate a graph for each documented file showing the
@@ -2881,7 +2885,7 @@ DIR_GRAPH_MAX_DEPTH    = 1
 # The default value is: png.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-DOT_IMAGE_FORMAT       = png
+DOT_IMAGE_FORMAT       = svg
 
 # If DOT_IMAGE_FORMAT is set to svg or svg:svg or svg:svg:core, then this option
 # can be set to YES to enable generation of interactive SVG images that allow
@@ -2895,7 +2899,7 @@ DOT_IMAGE_FORMAT       = png
 # The default value is: NO.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-INTERACTIVE_SVG        = NO
+INTERACTIVE_SVG        = YES
 
 # The DOT_PATH tag can be used to specify the path where the dot tool can be
 # found. If left blank, it is assumed the dot tool can be found in the path.

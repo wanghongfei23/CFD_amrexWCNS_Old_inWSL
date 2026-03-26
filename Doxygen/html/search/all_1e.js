@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ymom_0',['YMom',['../_euler2_d_2_prob___parm_8_h.html#a0ec798052570bdd1da3f3dfbf8f5c1f2afdc02c7fb606e3aa80afb479561ae2c8',1,'Prob_Parm.H']]]
+  ['_7eamrlevelcong_0',['~AmrLevelCong',['../d2/d85/class_amr_level_cong.html#aac7a5bd0d18f96e6d5458befa77a881e',1,'AmrLevelCong']]]
 ];

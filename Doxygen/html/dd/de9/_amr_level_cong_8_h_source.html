@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CFD_inWSL_MF_initial: //wsl.localhost/arch_zyc/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong.H 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CFD_inWSL_MF_initial<span id="projectnumber">&#160;v1.0.0</span>
+   </div>
+   <div id="projectbrief">多相流计算程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('dd/de9/_amr_level_cong_8_h_source.html','../../',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AmrLevelCong.H</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/de9/_amr_level_cong_8_h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// AMR级别头文件</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// 包含AmrLevelCong类的定义，用于处理自适应网格细化和时间步进</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef _AmrLevelAdv_H_</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define _AmrLevelAdv_H_</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;AMReX_AmrLevel.H&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;AMReX_FArrayBox.H&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;AMReX_FluxRegister.H&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;AMReX_PhysBCFunct.H&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// 问题相关结构体。在Exec目录下定义。</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;Prob_Parm.H&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// 状态类型枚举</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5c">   23</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5c">StateType</a> { </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">   24</a></span>    <a class="code hl_enumvalue" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a> = 0,  <span class="comment">// 状态类型</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5ca355baaecd829874ac38a8753212a747e">   25</a></span>    <a class="code hl_enumvalue" href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5ca355baaecd829874ac38a8753212a747e">NUM_STATE_TYPE</a>   <span class="comment">// 状态类型数量</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// 通量求解参数结构体</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html">   29</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../db/d70/struct_flux_solve_params.html">FluxSolveParams</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#ae5ea3617eb52d406720129ada9c1cc35">   30</a></span>    <span class="keyword">const</span> amrex::Box&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#ae5ea3617eb52d406720129ada9c1cc35">bx</a>;                                  <span class="comment">// 计算区域</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a25f2a0719e008b1a81c94033c5aed1d3">   31</a></span>    amrex::GpuArray&lt;amrex::FArrayBox*, AMREX_SPACEDIM&gt;&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a25f2a0719e008b1a81c94033c5aed1d3">flux</a>; <span class="comment">// 通量数组</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a8b212538b822a1e0a6fbb829047d0c98">   32</a></span>    amrex::GpuArray&lt;amrex::FArrayBox*, AMREX_SPACEDIM&gt;&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a8b212538b822a1e0a6fbb829047d0c98">ncflux</a>; <span class="comment">// 非守恒通量数组</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a2fcf2bd0b7e55042c4b72c817b8c4acf">   33</a></span>    amrex::FArrayBox&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a2fcf2bd0b7e55042c4b72c817b8c4acf">cellFlux</a>;                           <span class="comment">// 单元格通量，大小=NUM_STATE</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a1ca41d999b24a4f820af49cbcf92c8a0">   34</a></span>    amrex::FArrayBox&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a1ca41d999b24a4f820af49cbcf92c8a0">cellNcFlux</a>;                         <span class="comment">// 单元格非守恒通量，大小=AdvectionTerm::num_terms</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a2c4a4e3d13e0232b18645934c22b4e4f">   35</a></span>    <span class="keyword">const</span> amrex::FArrayBox&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a2c4a4e3d13e0232b18645934c22b4e4f">primin</a>;                       <span class="comment">// 原始变量数组</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a649d755ceeb98437443284d38bded500">   36</a></span>    <span class="keyword">const</span> amrex::FArrayBox&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a649d755ceeb98437443284d38bded500">consin</a>;                       <span class="comment">// 守恒变量数组</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a7e0423ba67562b8636a2044b5ee3e7ea">   37</a></span>    amrex::FArrayBox&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a7e0423ba67562b8636a2044b5ee3e7ea">rhs</a>;                                <span class="comment">// 右端项数组</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#a45312b2d642596d90a3c682998c65546">   38</a></span>    <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Box, BL_SPACEDIM&gt;&amp; <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#a45312b2d642596d90a3c682998c65546">nbx</a>;   <span class="comment">// 邻居边界框</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#aaf096af6e10f79b6a19c01c5c869fc70">   39</a></span>    amrex::Real <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#aaf096af6e10f79b6a19c01c5c869fc70">dt</a>;                                       <span class="comment">// 时间步长</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../db/d70/struct_flux_solve_params.html#ab4f90a74e717409cc628b6da7a9b3023">   40</a></span>    amrex::Real <a class="code hl_variable" href="../../db/d70/struct_flux_solve_params.html#ab4f90a74e717409cc628b6da7a9b3023">RKTimeCoef</a>;                               <span class="comment">// Runge-Kutta时间系数</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html">   46</a></span><span class="keyword">class </span><a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767">AmrLevelCong</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    : <span class="keyword">public</span> amrex::AmrLevel {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767">AmrLevelCong</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#ac691ad746468a088b82cd7d847b5400e">   57</a></span>    <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#ac691ad746468a088b82cd7d847b5400e">AmrLevelCong</a>(amrex::Amr&amp; papa,        <span class="comment">// 父Amr对象</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">int</span> lev,                           <span class="comment">// 级别</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">const</span> amrex::Geometry&amp; level_geom,  <span class="comment">// 级别几何信息</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">const</span> amrex::BoxArray&amp; bl,         <span class="comment">// 网格数组</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">const</span> amrex::DistributionMapping&amp; dm, <span class="comment">// 分布映射</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        amrex::Real time);                 <span class="comment">// 时间</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#aac7a5bd0d18f96e6d5458befa77a881e">~AmrLevelCong</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#aa588e316d985b0cecbfab087604f6b3a">restart</a>(amrex::Amr&amp; papa,    <span class="comment">// 父Amr对象</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        std::istream&amp; is,                     <span class="comment">// 输入流</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">bool</span> bReadSpecial = <span class="keyword">false</span>) <span class="keyword">override</span>;  <span class="comment">// 是否读取特殊数据</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a05588e18720fb9fa77006227279bed52">checkPoint</a>(<span class="keyword">const</span> std::string&amp; dir,           <span class="comment">// 目录</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        std::ostream&amp; os,                                     <span class="comment">// 输出流</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        amrex::VisMF::How how = amrex::VisMF::NFiles,          <span class="comment">// 写入方式</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordtype">bool</span> dump_old = <span class="keyword">true</span>) <span class="keyword">override</span>;                        <span class="comment">// 是否转储旧数据</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a8f7d5bdca4a5a6a121d7db2d77519e55">writePlotFile</a>(<span class="keyword">const</span> std::string&amp; dir,     <span class="comment">// 目录</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        std::ostream&amp; os,                                 <span class="comment">// 输出流</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        amrex::VisMF::How how) <span class="keyword">override</span>;                  <span class="comment">// 写入方式</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a5a29fe916fbf37d6be1b3170710b0f48">variableSetUp</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a22193720a686e2b128f65221674d491c">variableCleanUp</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a707932ecf0d1b31f6c1f2ddc2242c139">initData</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a07db12910358510dcc63fdfe15fac9d0">init</a>(amrex::AmrLevel&amp; old) <span class="keyword">override</span>;  <span class="comment">// 旧AmrLevel对象</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a07db12910358510dcc63fdfe15fac9d0">init</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">virtual</span> amrex::Real <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a3870169774b4021b9466bacdfd7d6fda">advance</a>(amrex::Real time,    <span class="comment">// 时间</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        amrex::Real dt,                             <span class="comment">// 时间步长</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordtype">int</span> iteration,                              <span class="comment">// 迭代次数</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">int</span> ncycle) <span class="keyword">override</span>;                       <span class="comment">// 循环次数</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> RKOrder&gt;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a78511776da2c18d32bac60bf849eed43">  128</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a78511776da2c18d32bac60bf849eed43">compute_dSdt</a>(<span class="keywordtype">int</span> stage, <span class="keyword">const</span> amrex::MultiFab&amp; S, amrex::MultiFab&amp; dSdt, amrex::Real dt,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        amrex::FluxRegister* fr_as_crse, amrex::FluxRegister* fr_as_fine);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    amrex::Real <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#abfc4b4b88adcd13661d78604324a3f8a">estTimeStep</a>(amrex::Real dt_old);  <span class="comment">// 旧时间步长</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    amrex::Real <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a5efdc885b2d2e95496fa9b84f11ab315">initialTimeStep</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> computeInitialDt(<span class="keywordtype">int</span> finest_level,              <span class="comment">// 最细级别</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordtype">int</span> sub_cycle,                                          <span class="comment">// 子循环</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        amrex::Vector&lt;int&gt;&amp; <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a0a2134fa16137544aea2e6de54c3acd4">n_cycle</a>,                            <span class="comment">// 循环次数向量</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keyword">const</span> amrex::Vector&lt;amrex::IntVect&gt;&amp; ref_ratio,          <span class="comment">// 细化比率向量</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        amrex::Vector&lt;amrex::Real&gt;&amp; <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a7d7bcd6c6eb07797705bdf59975e754d">dt_level</a>,                   <span class="comment">// 级别时间步长向量</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        amrex::Real <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a85146e0cd88598ee77f265d7ca16c7ac">stop_time</a>) <span class="keyword">override</span>;                        <span class="comment">// 停止时间</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> computeNewDt(<span class="keywordtype">int</span> finest_level,               <span class="comment">// 最细级别</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordtype">int</span> sub_cycle,                                       <span class="comment">// 子循环</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        amrex::Vector&lt;int&gt;&amp; <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a0a2134fa16137544aea2e6de54c3acd4">n_cycle</a>,                         <span class="comment">// 循环次数向量</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keyword">const</span> amrex::Vector&lt;amrex::IntVect&gt;&amp; ref_ratio,       <span class="comment">// 细化比率向量</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        amrex::Vector&lt;amrex::Real&gt;&amp; <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#acf0b3d8829aa27beb9fac54edb29f4e0">dt_min</a>,                  <span class="comment">// 最小时间步长向量</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        amrex::Vector&lt;amrex::Real&gt;&amp; <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a7d7bcd6c6eb07797705bdf59975e754d">dt_level</a>,                <span class="comment">// 级别时间步长向量</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        amrex::Real <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a85146e0cd88598ee77f265d7ca16c7ac">stop_time</a>,                               <span class="comment">// 停止时间</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a376865689dd2414070a8a49a58f5a09e">post_regrid_flag</a>) <span class="keyword">override</span>;                      <span class="comment">// 重网格后标志</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a6f6606240d57fc42aa8d61fb7297bc35">post_timestep</a>(<span class="keywordtype">int</span> iteration) <span class="keyword">override</span>;  <span class="comment">// 迭代次数</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a4cc39485f68950d2bd5a4dc2d9bf3e3f">post_regrid</a>(<span class="keywordtype">int</span> lbase, <span class="keywordtype">int</span> new_finest) <span class="keyword">override</span>;  <span class="comment">// 基础级别和新的最细级别</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a44d43702e219bd320f7f33d76cb90c91">post_restart</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a927a0a6d1b842f74df726744f40d1783">post_init</a>(amrex::Real <a class="code hl_variable" href="../../d4/d46/_amr_level_cong_8cpp.html#a85146e0cd88598ee77f265d7ca16c7ac">stop_time</a>) <span class="keyword">override</span>;  <span class="comment">// 停止时间</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a36d08d70de0f620661fd22545dfefa36">errorEst</a>(amrex::TagBoxArray&amp; tb,          <span class="comment">// 标记框数组</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordtype">int</span> clearval,                                     <span class="comment">// 清除值</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordtype">int</span> tagval,                                       <span class="comment">// 标记值</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        amrex::Real time,                                 <span class="comment">// 时间</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordtype">int</span> n_error_buf = 0, <span class="keywordtype">int</span> ngrow = 0) <span class="keyword">override</span>;     <span class="comment">// 误差缓冲区和增长层数</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a5f6da1fc08bcda7ac53f4ea276889428">  192</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a5f6da1fc08bcda7ac53f4ea276889428">NUM_STATE</a>;  <span class="comment">// 状态变量数量</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a029e4c6767f22719d0a1274f92d473f4">  193</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a029e4c6767f22719d0a1274f92d473f4">NUM_GROW</a>;   <span class="comment">// 鬼细胞数量</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">// ProbParm类实例</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">  196</a></span>    <span class="keyword">static</span> <a class="code hl_struct" href="../../d7/db7/struct_prob_parm.html">ProbParm</a>* <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">h_prob_parm</a>;  <span class="comment">// 主机端问题参数</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">  197</a></span>    <span class="keyword">static</span> <a class="code hl_struct" href="../../d7/db7/struct_prob_parm.html">ProbParm</a>* <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">d_prob_parm</a>;  <span class="comment">// 设备端问题参数</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="comment">// 误差标记变量</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#ae790ab589ed60f9b8551a85407db1395">  200</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#ae790ab589ed60f9b8551a85407db1395">max_phierr_lev</a>;     <span class="comment">// 最大phi误差级别</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#af7aae0403a783b7ec24d578950152e89">  201</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#af7aae0403a783b7ec24d578950152e89">max_phigrad_lev</a>;    <span class="comment">// 最大phi梯度级别</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#adb4313a30b3b80c55eb43d9f4e6496e1">  202</a></span>    <span class="keyword">static</span> amrex::Vector&lt;amrex::Real&gt; <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#adb4313a30b3b80c55eb43d9f4e6496e1">phierr</a>;  <span class="comment">// phi误差数组</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a4317dee5945bedda52d7221d0ee5ac07">  203</a></span>    <span class="keyword">static</span> amrex::Vector&lt;amrex::Real&gt; <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a4317dee5945bedda52d7221d0ee5ac07">phigrad</a>; <span class="comment">// phi梯度数组</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">#if !defined(AMREX_USE_CUDA)</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="comment">// 从输入文件读取参数的函数。</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#acfa06bad387b63ea45697de2227b7632">read_params</a>();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="comment">// Zouyicong添加</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> <span class="keywordtype">id</span>im&gt;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#ac98beb1909a6897e46e64f00da5a448b">flux_solve_in_dim</a>(<span class="keyword">const</span> <a class="code hl_struct" href="../../db/d70/struct_flux_solve_params.html">FluxSolveParams</a>&amp; params);  <span class="comment">// 通量求解参数</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#af8ed03226ba5f746e6135d6dd18eeafc">get_tagging_params</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">// 下面实现的内联函数</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767">AmrLevelCong</a>&amp; <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501">getLevel</a>(<span class="keywordtype">int</span> lev);           <span class="comment">// 获取指定级别的AmrLevelCong对象</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    amrex::FluxRegister&amp; <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">getFluxReg</a>();         <span class="comment">// 获取通量寄存器</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    amrex::FluxRegister&amp; <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">getFluxReg</a>(<span class="keywordtype">int</span> lev);  <span class="comment">// 获取指定级别的通量寄存器</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#afb107f154f3c501daedea53e5260b6cf">reflux</a>();  <span class="comment">// 通量回流</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#aac1c62d1948e82f652a9ba83c03e1e1d">avgDown</a>();  <span class="comment">// 向下平均</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#aac1c62d1948e82f652a9ba83c03e1e1d">avgDown</a>(<span class="keywordtype">int</span> state_indx);  <span class="comment">// 向下平均（带状态索引）</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">     * 数据。</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a1c6d1510b6a57c0cc905f70297c15826">  236</a></span>    amrex::FluxRegister* <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a1c6d1510b6a57c0cc905f70297c15826">flux_reg</a>;  <span class="comment">// 通量寄存器</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment">     * 静态数据成员。</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a0bb19f4a26367b0e41630b09a722396e">  241</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a0bb19f4a26367b0e41630b09a722396e">verbose</a>;       <span class="comment">//  verbose级别</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a70524ca4cf1b02c56c7436ad1720b0e7">  242</a></span>    <span class="keyword">static</span> amrex::Real <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a70524ca4cf1b02c56c7436ad1720b0e7">cfl</a>;   <span class="comment">// CFL数</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#acd450843560e616e265351a98f6abbdb">  243</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#acd450843560e616e265351a98f6abbdb">do_reflux</a>;     <span class="comment">// 是否进行通量回流</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">// 限制器使用的时间参数</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a92c0d2493565ca9fa1b27adb9a148e2d">  246</a></span>    amrex::GpuArray&lt;amrex::Real, BL_SPACEDIM&gt; <a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a92c0d2493565ca9fa1b27adb9a148e2d">tau_xyz</a>;  <span class="comment">// 各方向的时间参数</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>};</div>
+</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="../../dd/de9/_amr_level_cong_8_h.html#a9e00f9d0e7328218f0f5c7de8b72e4ae">  253</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/de9/_amr_level_cong_8_h.html#a9e00f9d0e7328218f0f5c7de8b72e4ae">nullfill</a>(amrex::Box <span class="keyword">const</span>&amp; bx,         <span class="comment">// 边界框</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    amrex::FArrayBox&amp; data,                  <span class="comment">// 数据数组</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> dcomp,                         <span class="comment">// 起始组件</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> numcomp,                       <span class="comment">// 组件数量</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    amrex::Geometry <span class="keyword">const</span>&amp; geom,             <span class="comment">// 几何信息</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keyword">const</span> amrex::Real time,                  <span class="comment">// 时间</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keyword">const</span> amrex::Vector&lt;amrex::BCRec&gt;&amp; bcr,  <span class="comment">// 边界条件记录</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> bcomp,                         <span class="comment">// 边界组件</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> scomp);                        <span class="comment">// 起始组件</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>AMREX_GPU_HOST</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>AMREX_FORCE_INLINE</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="../../dd/de9/_amr_level_cong_8_h.html#ab37009098a73ca201aa908e6894773ca">  269</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/de9/_amr_level_cong_8_h.html#ab37009098a73ca201aa908e6894773ca">get_face_velocity</a>(<span class="keyword">const</span> amrex::Real time,                 <span class="comment">// 时间</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    amrex::FArrayBox&amp; vx,                                     <span class="comment">// x方向速度</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    amrex::FArrayBox&amp; vy,                                     <span class="comment">// y方向速度</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    amrex::GpuArray&lt;amrex::Real, BL_SPACEDIM&gt; dx,              <span class="comment">// 网格间距</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    amrex::GpuArray&lt;amrex::Real, BL_SPACEDIM&gt; prob_lo);        <span class="comment">// 问题下界</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment"> * Inlines.</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="keyword">inline</span> <a class="code hl_class" href="../../d2/d85/class_amr_level_cong.html">AmrLevelCong</a>&amp;</div>
+<div class="foldopen" id="foldopen00280" data-start="{" data-end="}">
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501">  280</a></span><a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501">AmrLevelCong::getLevel</a>(<span class="keywordtype">int</span> lev)</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>{</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">return</span> *(<a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767">AmrLevelCong</a>*)&amp;parent-&gt;<a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501">getLevel</a>(lev);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}</div>
+</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="keyword">inline</span> amrex::FluxRegister&amp;</div>
+<div class="foldopen" id="foldopen00286" data-start="{" data-end="}">
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">  286</a></span><a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">AmrLevelCong::getFluxReg</a>()</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>{</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    BL_ASSERT(<a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a1c6d1510b6a57c0cc905f70297c15826">flux_reg</a>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">return</span> *<a class="code hl_variable" href="../../d2/d85/class_amr_level_cong.html#a1c6d1510b6a57c0cc905f70297c15826">flux_reg</a>;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}</div>
+</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keyword">inline</span> amrex::FluxRegister&amp;</div>
+<div class="foldopen" id="foldopen00293" data-start="{" data-end="}">
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="../../d2/d85/class_amr_level_cong.html#a325253a79655f838b8c7609f462ef101">  293</a></span><a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">AmrLevelCong::getFluxReg</a>(<span class="keywordtype">int</span> lev)</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>{</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501">getLevel</a>(lev).<a class="code hl_function" href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">getFluxReg</a>();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
+</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#endif </span><span class="comment">/*_AmrLevelAdv_H_*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_a1615968a92950438f6e67a28e9d56e5c"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5c">StateType</a></div><div class="ttdeci">StateType</div><div class="ttdef"><b>定义</b> <a href="#l00023">AmrLevelCong.H:23</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_a1615968a92950438f6e67a28e9d56e5ca355baaecd829874ac38a8753212a747e"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5ca355baaecd829874ac38a8753212a747e">NUM_STATE_TYPE</a></div><div class="ttdeci">@ NUM_STATE_TYPE</div><div class="ttdef"><b>定义</b> <a href="#l00025">AmrLevelCong.H:25</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#a1615968a92950438f6e67a28e9d56e5cadd98d635e41dd186b57fdfc14ca25ad6">State_Type</a></div><div class="ttdeci">@ State_Type</div><div class="ttdef"><b>定义</b> <a href="#l00024">AmrLevelCong.H:24</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_a9e00f9d0e7328218f0f5c7de8b72e4ae"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#a9e00f9d0e7328218f0f5c7de8b72e4ae">nullfill</a></div><div class="ttdeci">void nullfill(amrex::Box const &amp;bx, amrex::FArrayBox &amp;data, const int dcomp, const int numcomp, amrex::Geometry const &amp;geom, const amrex::Real time, const amrex::Vector&lt; amrex::BCRec &gt; &amp;bcr, const int bcomp, const int scomp)</div></div>
+<div class="ttc" id="a_amr_level_cong_8_h_html_ab37009098a73ca201aa908e6894773ca"><div class="ttname"><a href="../../dd/de9/_amr_level_cong_8_h.html#ab37009098a73ca201aa908e6894773ca">get_face_velocity</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void get_face_velocity(const amrex::Real time, amrex::FArrayBox &amp;vx, amrex::FArrayBox &amp;vy, amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt; dx, amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt; prob_lo)</div></div>
+<div class="ttc" id="a_amr_level_cong_8cpp_html_a0a2134fa16137544aea2e6de54c3acd4"><div class="ttname"><a href="../../d4/d46/_amr_level_cong_8cpp.html#a0a2134fa16137544aea2e6de54c3acd4">n_cycle</a></div><div class="ttdeci">Vector&lt; int &gt; &amp; n_cycle</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00352">AmrLevelCong.cpp:351</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8cpp_html_a376865689dd2414070a8a49a58f5a09e"><div class="ttname"><a href="../../d4/d46/_amr_level_cong_8cpp.html#a376865689dd2414070a8a49a58f5a09e">post_regrid_flag</a></div><div class="ttdeci">Vector&lt; int &gt; const Vector&lt; IntVect &gt; Vector&lt; Real &gt; Vector&lt; Real &gt; Real int post_regrid_flag</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00357">AmrLevelCong.cpp:358</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8cpp_html_a7d7bcd6c6eb07797705bdf59975e754d"><div class="ttname"><a href="../../d4/d46/_amr_level_cong_8cpp.html#a7d7bcd6c6eb07797705bdf59975e754d">dt_level</a></div><div class="ttdeci">Vector&lt; int &gt; const Vector&lt; IntVect &gt; Vector&lt; Real &gt; Vector&lt; Real &gt; &amp; dt_level</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00355">AmrLevelCong.cpp:355</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8cpp_html_a85146e0cd88598ee77f265d7ca16c7ac"><div class="ttname"><a href="../../d4/d46/_amr_level_cong_8cpp.html#a85146e0cd88598ee77f265d7ca16c7ac">stop_time</a></div><div class="ttdeci">Vector&lt; int &gt; const Vector&lt; IntVect &gt; Vector&lt; Real &gt; Vector&lt; Real &gt; Real stop_time</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00356">AmrLevelCong.cpp:356</a></div></div>
+<div class="ttc" id="a_amr_level_cong_8cpp_html_acf0b3d8829aa27beb9fac54edb29f4e0"><div class="ttname"><a href="../../d4/d46/_amr_level_cong_8cpp.html#acf0b3d8829aa27beb9fac54edb29f4e0">dt_min</a></div><div class="ttdeci">Vector&lt; int &gt; const Vector&lt; IntVect &gt; Vector&lt; Real &gt; &amp; dt_min</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00354">AmrLevelCong.cpp:353</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html">AmrLevelCong</a></div><div class="ttdef"><b>定义</b> <a href="#l00046">AmrLevelCong.H:47</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a029e4c6767f22719d0a1274f92d473f4"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a029e4c6767f22719d0a1274f92d473f4">AmrLevelCong::NUM_GROW</a></div><div class="ttdeci">static int NUM_GROW</div><div class="ttdef"><b>定义</b> <a href="#l00193">AmrLevelCong.H:193</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a05588e18720fb9fa77006227279bed52"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a05588e18720fb9fa77006227279bed52">AmrLevelCong::checkPoint</a></div><div class="ttdeci">virtual void checkPoint(const std::string &amp;dir, std::ostream &amp;os, amrex::VisMF::How how=amrex::VisMF::NFiles, bool dump_old=true) override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00080">AmrLevelCong.cpp:80</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a07db12910358510dcc63fdfe15fac9d0"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a07db12910358510dcc63fdfe15fac9d0">AmrLevelCong::init</a></div><div class="ttdeci">virtual void init() override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00181">AmrLevelCong.cpp:181</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a0bb19f4a26367b0e41630b09a722396e"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a0bb19f4a26367b0e41630b09a722396e">AmrLevelCong::verbose</a></div><div class="ttdeci">static int verbose</div><div class="ttdef"><b>定义</b> <a href="#l00241">AmrLevelCong.H:241</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a12fa420f41fba5719bde5d79e872f7f2"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a12fa420f41fba5719bde5d79e872f7f2">AmrLevelCong::getFluxReg</a></div><div class="ttdeci">amrex::FluxRegister &amp; getFluxReg()</div><div class="ttdef"><b>定义</b> <a href="#l00286">AmrLevelCong.H:286</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a1c6d1510b6a57c0cc905f70297c15826"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a1c6d1510b6a57c0cc905f70297c15826">AmrLevelCong::flux_reg</a></div><div class="ttdeci">amrex::FluxRegister * flux_reg</div><div class="ttdef"><b>定义</b> <a href="#l00236">AmrLevelCong.H:236</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a22193720a686e2b128f65221674d491c"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a22193720a686e2b128f65221674d491c">AmrLevelCong::variableCleanUp</a></div><div class="ttdeci">static void variableCleanUp()</div><div class="ttdef"><b>定义</b> <a href="../../dc/d00/2phase_2variable__set_8cpp_source.html#l00098">variable_set.cpp:98</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a36d08d70de0f620661fd22545dfefa36"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a36d08d70de0f620661fd22545dfefa36">AmrLevelCong::errorEst</a></div><div class="ttdeci">virtual void errorEst(amrex::TagBoxArray &amp;tb, int clearval, int tagval, amrex::Real time, int n_error_buf=0, int ngrow=0) override</div><div class="ttdef"><b>定义</b> <a href="../../de/d89/2phase_2erro_est_8cpp_source.html#l00068">erroEst.cpp:68</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a3870169774b4021b9466bacdfd7d6fda"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a3870169774b4021b9466bacdfd7d6fda">AmrLevelCong::advance</a></div><div class="ttdeci">virtual amrex::Real advance(amrex::Real time, amrex::Real dt, int iteration, int ncycle) override</div><div class="ttdef"><b>定义</b> <a href="../../d6/d4d/_amr_level_cong__advance_8cpp_source.html#l00030">AmrLevelCong_advance.cpp:30</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a4317dee5945bedda52d7221d0ee5ac07"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a4317dee5945bedda52d7221d0ee5ac07">AmrLevelCong::phigrad</a></div><div class="ttdeci">static amrex::Vector&lt; amrex::Real &gt; phigrad</div><div class="ttdef"><b>定义</b> <a href="#l00203">AmrLevelCong.H:203</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a44d43702e219bd320f7f33d76cb90c91"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a44d43702e219bd320f7f33d76cb90c91">AmrLevelCong::post_restart</a></div><div class="ttdeci">virtual void post_restart() override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00444">AmrLevelCong.cpp:444</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a4cc39485f68950d2bd5a4dc2d9bf3e3f"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a4cc39485f68950d2bd5a4dc2d9bf3e3f">AmrLevelCong::post_regrid</a></div><div class="ttdeci">virtual void post_regrid(int lbase, int new_finest) override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00436">AmrLevelCong.cpp:436</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a5a29fe916fbf37d6be1b3170710b0f48"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a5a29fe916fbf37d6be1b3170710b0f48">AmrLevelCong::variableSetUp</a></div><div class="ttdeci">static void variableSetUp()</div><div class="ttdef"><b>定义</b> <a href="../../dc/d00/2phase_2variable__set_8cpp_source.html#l00020">variable_set.cpp:20</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a5efdc885b2d2e95496fa9b84f11ab315"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a5efdc885b2d2e95496fa9b84f11ab315">AmrLevelCong::initialTimeStep</a></div><div class="ttdeci">amrex::Real initialTimeStep()</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00281">AmrLevelCong.cpp:281</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a5f6da1fc08bcda7ac53f4ea276889428"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a5f6da1fc08bcda7ac53f4ea276889428">AmrLevelCong::NUM_STATE</a></div><div class="ttdeci">static int NUM_STATE</div><div class="ttdef"><b>定义</b> <a href="#l00192">AmrLevelCong.H:192</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a6f6606240d57fc42aa8d61fb7297bc35"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a6f6606240d57fc42aa8d61fb7297bc35">AmrLevelCong::post_timestep</a></div><div class="ttdeci">virtual void post_timestep(int iteration) override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00418">AmrLevelCong.cpp:418</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a70524ca4cf1b02c56c7436ad1720b0e7"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a70524ca4cf1b02c56c7436ad1720b0e7">AmrLevelCong::cfl</a></div><div class="ttdeci">static amrex::Real cfl</div><div class="ttdef"><b>定义</b> <a href="#l00242">AmrLevelCong.H:242</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a707932ecf0d1b31f6c1f2ddc2242c139"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a707932ecf0d1b31f6c1f2ddc2242c139">AmrLevelCong::initData</a></div><div class="ttdeci">virtual void initData() override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00102">AmrLevelCong.cpp:102</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a78511776da2c18d32bac60bf849eed43"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a78511776da2c18d32bac60bf849eed43">AmrLevelCong::compute_dSdt</a></div><div class="ttdeci">void compute_dSdt(int stage, const amrex::MultiFab &amp;S, amrex::MultiFab &amp;dSdt, amrex::Real dt, amrex::FluxRegister *fr_as_crse, amrex::FluxRegister *fr_as_fine)</div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a8bb96fba777e5a12e39aede987b7f501"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a8bb96fba777e5a12e39aede987b7f501">AmrLevelCong::getLevel</a></div><div class="ttdeci">AmrLevelCong &amp; getLevel(int lev)</div><div class="ttdef"><b>定义</b> <a href="#l00280">AmrLevelCong.H:280</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a8f7d5bdca4a5a6a121d7db2d77519e55"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a8f7d5bdca4a5a6a121d7db2d77519e55">AmrLevelCong::writePlotFile</a></div><div class="ttdeci">virtual void writePlotFile(const std::string &amp;dir, std::ostream &amp;os, amrex::VisMF::How how) override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00091">AmrLevelCong.cpp:91</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a927a0a6d1b842f74df726744f40d1783"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a927a0a6d1b842f74df726744f40d1783">AmrLevelCong::post_init</a></div><div class="ttdeci">virtual void post_init(amrex::Real stop_time) override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00451">AmrLevelCong.cpp:451</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_a92c0d2493565ca9fa1b27adb9a148e2d"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#a92c0d2493565ca9fa1b27adb9a148e2d">AmrLevelCong::tau_xyz</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, BL_SPACEDIM &gt; tau_xyz</div><div class="ttdef"><b>定义</b> <a href="#l00246">AmrLevelCong.H:246</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_aa588e316d985b0cecbfab087604f6b3a"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#aa588e316d985b0cecbfab087604f6b3a">AmrLevelCong::restart</a></div><div class="ttdeci">virtual void restart(amrex::Amr &amp;papa, std::istream &amp;is, bool bReadSpecial=false) override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00066">AmrLevelCong.cpp:66</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_aac1c62d1948e82f652a9ba83c03e1e1d"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#aac1c62d1948e82f652a9ba83c03e1e1d">AmrLevelCong::avgDown</a></div><div class="ttdeci">void avgDown()</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00520">AmrLevelCong.cpp:520</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_aac3a5752caa975fc0c56ec00cd5324f2"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#aac3a5752caa975fc0c56ec00cd5324f2">AmrLevelCong::d_prob_parm</a></div><div class="ttdeci">static ProbParm * d_prob_parm</div><div class="ttdef"><b>定义</b> <a href="#l00197">AmrLevelCong.H:197</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_aac7a5bd0d18f96e6d5458befa77a881e"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#aac7a5bd0d18f96e6d5458befa77a881e">AmrLevelCong::~AmrLevelCong</a></div><div class="ttdeci">virtual ~AmrLevelCong() override</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00058">AmrLevelCong.cpp:58</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_ab0abdbcb27e3f7b4cee7f98f9ce49767"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#ab0abdbcb27e3f7b4cee7f98f9ce49767">AmrLevelCong::AmrLevelCong</a></div><div class="ttdeci">AmrLevelCong()</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00034">AmrLevelCong.cpp:34</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_abfc4b4b88adcd13661d78604324a3f8a"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#abfc4b4b88adcd13661d78604324a3f8a">AmrLevelCong::estTimeStep</a></div><div class="ttdeci">amrex::Real estTimeStep(amrex::Real dt_old)</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00197">AmrLevelCong.cpp:197</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_ac691ad746468a088b82cd7d847b5400e"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#ac691ad746468a088b82cd7d847b5400e">AmrLevelCong::AmrLevelCong</a></div><div class="ttdeci">AmrLevelCong(amrex::Amr &amp;papa, int lev, const amrex::Geometry &amp;level_geom, const amrex::BoxArray &amp;bl, const amrex::DistributionMapping &amp;dm, amrex::Real time)</div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_ac98beb1909a6897e46e64f00da5a448b"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#ac98beb1909a6897e46e64f00da5a448b">AmrLevelCong::flux_solve_in_dim</a></div><div class="ttdeci">void flux_solve_in_dim(const FluxSolveParams &amp;params)</div><div class="ttdef"><b>定义</b> <a href="../../d6/d4d/_amr_level_cong__advance_8cpp_source.html#l00396">AmrLevelCong_advance.cpp:396</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_acd450843560e616e265351a98f6abbdb"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#acd450843560e616e265351a98f6abbdb">AmrLevelCong::do_reflux</a></div><div class="ttdeci">static int do_reflux</div><div class="ttdef"><b>定义</b> <a href="#l00243">AmrLevelCong.H:243</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_acfa06bad387b63ea45697de2227b7632"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#acfa06bad387b63ea45697de2227b7632">AmrLevelCong::read_params</a></div><div class="ttdeci">static void read_params()</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00467">AmrLevelCong.cpp:467</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_adb4313a30b3b80c55eb43d9f4e6496e1"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#adb4313a30b3b80c55eb43d9f4e6496e1">AmrLevelCong::phierr</a></div><div class="ttdeci">static amrex::Vector&lt; amrex::Real &gt; phierr</div><div class="ttdef"><b>定义</b> <a href="#l00202">AmrLevelCong.H:202</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_ae12e48f65b7586d64e9c687c9f2138a1"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#ae12e48f65b7586d64e9c687c9f2138a1">AmrLevelCong::h_prob_parm</a></div><div class="ttdeci">static ProbParm * h_prob_parm</div><div class="ttdef"><b>定义</b> <a href="#l00196">AmrLevelCong.H:196</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_ae790ab589ed60f9b8551a85407db1395"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#ae790ab589ed60f9b8551a85407db1395">AmrLevelCong::max_phierr_lev</a></div><div class="ttdeci">static int max_phierr_lev</div><div class="ttdef"><b>定义</b> <a href="#l00200">AmrLevelCong.H:200</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_af7aae0403a783b7ec24d578950152e89"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#af7aae0403a783b7ec24d578950152e89">AmrLevelCong::max_phigrad_lev</a></div><div class="ttdeci">static int max_phigrad_lev</div><div class="ttdef"><b>定义</b> <a href="#l00201">AmrLevelCong.H:201</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_af8ed03226ba5f746e6135d6dd18eeafc"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#af8ed03226ba5f746e6135d6dd18eeafc">AmrLevelCong::get_tagging_params</a></div><div class="ttdeci">static void get_tagging_params()</div><div class="ttdef"><b>定义</b> <a href="../../d6/dd5/_tagging__params_8cpp_source.html#l00012">Tagging_params.cpp:12</a></div></div>
+<div class="ttc" id="aclass_amr_level_cong_html_afb107f154f3c501daedea53e5260b6cf"><div class="ttname"><a href="../../d2/d85/class_amr_level_cong.html#afb107f154f3c501daedea53e5260b6cf">AmrLevelCong::reflux</a></div><div class="ttdeci">void reflux()</div><div class="ttdef"><b>定义</b> <a href="../../d4/d46/_amr_level_cong_8cpp_source.html#l00500">AmrLevelCong.cpp:500</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html">FluxSolveParams</a></div><div class="ttdef"><b>定义</b> <a href="#l00029">AmrLevelCong.H:29</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a1ca41d999b24a4f820af49cbcf92c8a0"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a1ca41d999b24a4f820af49cbcf92c8a0">FluxSolveParams::cellNcFlux</a></div><div class="ttdeci">amrex::FArrayBox &amp; cellNcFlux</div><div class="ttdef"><b>定义</b> <a href="#l00034">AmrLevelCong.H:34</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a25f2a0719e008b1a81c94033c5aed1d3"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a25f2a0719e008b1a81c94033c5aed1d3">FluxSolveParams::flux</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::FArrayBox *, AMREX_SPACEDIM &gt; &amp; flux</div><div class="ttdef"><b>定义</b> <a href="#l00031">AmrLevelCong.H:31</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a2c4a4e3d13e0232b18645934c22b4e4f"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a2c4a4e3d13e0232b18645934c22b4e4f">FluxSolveParams::primin</a></div><div class="ttdeci">const amrex::FArrayBox &amp; primin</div><div class="ttdef"><b>定义</b> <a href="#l00035">AmrLevelCong.H:35</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a2fcf2bd0b7e55042c4b72c817b8c4acf"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a2fcf2bd0b7e55042c4b72c817b8c4acf">FluxSolveParams::cellFlux</a></div><div class="ttdeci">amrex::FArrayBox &amp; cellFlux</div><div class="ttdef"><b>定义</b> <a href="#l00033">AmrLevelCong.H:33</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a45312b2d642596d90a3c682998c65546"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a45312b2d642596d90a3c682998c65546">FluxSolveParams::nbx</a></div><div class="ttdeci">const amrex::GpuArray&lt; amrex::Box, BL_SPACEDIM &gt; &amp; nbx</div><div class="ttdef"><b>定义</b> <a href="#l00038">AmrLevelCong.H:38</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a649d755ceeb98437443284d38bded500"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a649d755ceeb98437443284d38bded500">FluxSolveParams::consin</a></div><div class="ttdeci">const amrex::FArrayBox &amp; consin</div><div class="ttdef"><b>定义</b> <a href="#l00036">AmrLevelCong.H:36</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a7e0423ba67562b8636a2044b5ee3e7ea"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a7e0423ba67562b8636a2044b5ee3e7ea">FluxSolveParams::rhs</a></div><div class="ttdeci">amrex::FArrayBox &amp; rhs</div><div class="ttdef"><b>定义</b> <a href="#l00037">AmrLevelCong.H:37</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_a8b212538b822a1e0a6fbb829047d0c98"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#a8b212538b822a1e0a6fbb829047d0c98">FluxSolveParams::ncflux</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::FArrayBox *, AMREX_SPACEDIM &gt; &amp; ncflux</div><div class="ttdef"><b>定义</b> <a href="#l00032">AmrLevelCong.H:32</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_aaf096af6e10f79b6a19c01c5c869fc70"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#aaf096af6e10f79b6a19c01c5c869fc70">FluxSolveParams::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>定义</b> <a href="#l00039">AmrLevelCong.H:39</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_ab4f90a74e717409cc628b6da7a9b3023"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#ab4f90a74e717409cc628b6da7a9b3023">FluxSolveParams::RKTimeCoef</a></div><div class="ttdeci">amrex::Real RKTimeCoef</div><div class="ttdef"><b>定义</b> <a href="#l00040">AmrLevelCong.H:40</a></div></div>
+<div class="ttc" id="astruct_flux_solve_params_html_ae5ea3617eb52d406720129ada9c1cc35"><div class="ttname"><a href="../../db/d70/struct_flux_solve_params.html#ae5ea3617eb52d406720129ada9c1cc35">FluxSolveParams::bx</a></div><div class="ttdeci">const amrex::Box &amp; bx</div><div class="ttdef"><b>定义</b> <a href="#l00030">AmrLevelCong.H:30</a></div></div>
+<div class="ttc" id="astruct_prob_parm_html"><div class="ttname"><a href="../../d7/db7/struct_prob_parm.html">ProbParm</a></div><div class="ttdef"><b>定义</b> <a href="../../d1/de4/2phase_2_prob___parm_8_h_source.html#l00012">Prob_Parm.H:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_d6b1e77a8cecf6d5805b8727ab6e2ccd.html">amrex_level_Cong</a></li><li class="navelem"><a href="../../dd/de9/_amr_level_cong_8_h.html">AmrLevelCong.H</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
