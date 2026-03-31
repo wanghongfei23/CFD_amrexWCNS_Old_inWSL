@@ -1,7 +1,0 @@
-<map id="prim_to_cons" name="prim_to_cons">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,105,32"/>
-<area shape="rect" id="Node000002" href="$df/d33/2phase_2equation_8_h.html#afc95d4f913400192aa7bf9902ca649c8" title=" " alt="" coords="153,5,227,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,16,140,18,134,19,105,21"/>
-<area shape="rect" id="Node000003" href="$d7/db7/struct_prob_parm.html#a506f9938fbbf07d6d933e025ff581ec4" title=" " alt="" coords="275,5,429,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,16,262,19,257,19,227,21"/>
-</map>

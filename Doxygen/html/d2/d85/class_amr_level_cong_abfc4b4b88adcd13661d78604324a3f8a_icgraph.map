@@ -1,7 +1,0 @@
-<map id="AmrLevelCong::estTimeStep" name="AmrLevelCong::estTimeStep">
-<area shape="rect" id="Node000001" title=" " alt="" coords="255,31,444,57"/>
-<area shape="rect" id="Node000002" href="$d4/d46/_amr_level_cong_8cpp.html#adef55f659baa4f689645be91292a6065" title=" " alt="" coords="87,5,125,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,34,125,23,125,18,242,31"/>
-<area shape="rect" id="Node000003" href="$d2/d85/class_amr_level_cong.html#a5efdc885b2d2e95496fa9b84f11ab315" title=" " alt="" coords="5,56,207,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,56,207,61,207,56,242,55"/>
-</map>

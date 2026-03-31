@@ -1,9 +1,0 @@
-<map id="amrex_level_Cong" name="amrex_level_Cong">
-<area shape="rect" id="node1" href="dir_d6b1e77a8cecf6d5805b8727ab6e2ccd.html" title="amrex_level_Cong" alt="" coords="28,5,157,32"/>
-<area shape="rect" id="node2" href="dir_5924e207fa6f24800a64321d21af92a2.html" title="deriv" alt="" coords="5,80,55,107"/>
-<area shape="poly" id="edge1" href="dir_000001_000002.html" alt="" coords="84,31,53,70,49,66,79,34"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000001_000002.html" title="1" alt="" coords="56,63,63,79"/>
-<area shape="rect" id="node3" href="dir_c00bc6c244667b5c9be71457c8466c85.html" title="reconstruction_scheme" alt="" coords="78,80,235,107"/>
-<area shape="poly" id="edge2" href="dir_000001_000006.html" alt="" coords="105,30,138,68,133,68,103,35"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000001_000006.html" title="1" alt="" coords="136,52,143,68"/>
-</map>

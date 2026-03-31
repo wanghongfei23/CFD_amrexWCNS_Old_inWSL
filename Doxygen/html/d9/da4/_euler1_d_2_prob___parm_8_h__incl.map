@@ -1,7 +1,0 @@
-<map id="Euler1D/Prob_Parm.H" name="Euler1D/Prob_Parm.H">
-<area shape="rect" id="Node000001" title=" " alt="" coords="61,5,212,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,124,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,31,89,71,86,67,122,34"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="148,80,272,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,30,189,69,184,69,148,35"/>
-</map>

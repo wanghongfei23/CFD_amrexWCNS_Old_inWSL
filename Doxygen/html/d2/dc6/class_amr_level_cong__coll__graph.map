@@ -1,7 +1,0 @@
-<map id="AmrLevelCong" name="AmrLevelCong">
-<area shape="rect" id="Node000001" title=" " alt="" coords="73,125,180,152"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,126,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,44,123,124,118,125,77,48"/>
-<area shape="rect" id="Node000003" href="$d7/db7/struct_prob_parm.html" title=" " alt="" coords="150,5,229,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,45,136,127,131,123,173,46"/>
-</map>
