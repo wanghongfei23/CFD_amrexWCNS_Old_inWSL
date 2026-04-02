@@ -1,5 +1,8 @@
-// 特征系统实现文件（两相流）
-// 包含两相流欧拉方程特征值和特征向量的计算
+/**
+ * @file
+ * @brief 两相模型特征矩阵与 Roe 平均辅助量的实现。
+ * @ingroup reconstruction
+ */
 
 #include "eigen_system.H"
 #include "linear_algebra.H"
@@ -116,10 +119,10 @@ VarArray EigenSystem::average(VarArray primL,
     ProbParm const& pp) const
 {
     // 提取左值
-    Real ar1L = primL[0], ar2L = primL[1], cL = eos_prim<SoundSpeed>(primL, pp), rL = ar1L + ar2L;
+    Real ar1L = primL[0], ar2L = primL[1], cL = prims_to_eos<SoundSpeed>(primL, pp), rL = ar1L + ar2L;
 
     // 提取右值
-    Real ar1R = primR[0], ar2R = primR[1], cR = eos_prim<SoundSpeed>(primR, pp), rR = ar1R + ar2R;
+    Real ar1R = primR[0], ar2R = primR[1], cR = prims_to_eos<SoundSpeed>(primR, pp), rR = ar1R + ar2R;
 
     // 计算算数平均
     Real ar1_avg = 0.5 * (ar1L + ar1R);

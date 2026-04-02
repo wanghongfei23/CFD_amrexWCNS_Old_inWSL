@@ -1,5 +1,18 @@
+/**
+ * @file
+ * @brief 运行期调试输出与 ASCII/Tecplot 导出辅助函数。
+ * @ingroup amr_core
+ */
+
 #pragma once
 #include <AMReX_MultiFab.H>
+
+/**
+ * @brief 将一维 MultiFab 导出为简单 ASCII 列表。
+ * @param mf 待导出的状态场。
+ * @param geom 几何信息。
+ * @param filename 输出文件名。
+ */
 inline void Export1DEulerFieldToASCII(const amrex::MultiFab& mf, const amrex::Geometry& geom, const std::string& filename)
 {
     // 打开输出文件
@@ -38,6 +51,12 @@ inline void Export1DEulerFieldToASCII(const amrex::MultiFab& mf, const amrex::Ge
     outfile.close();
 }
 
+/**
+ * @brief 将二维 MultiFab 导出为 Tecplot 兼容的点格式 ASCII 文件。
+ * @param mf 待导出的状态场。
+ * @param geom 几何信息。
+ * @param filename 输出文件名。
+ */
 inline void Export2DEulerFieldToASCII(const amrex::MultiFab& mf, const amrex::Geometry& geom, const std::string& filename)
 {
     if (BL_SPACEDIM == 1) {
@@ -123,6 +142,10 @@ inline void Export2DEulerFieldToASCII(const amrex::MultiFab& mf, const amrex::Ge
     outfile.close();
 }
 
+/**
+ * @brief 将当前 AMR 层级上的状态场全部导出到 ASCII 文件。
+ * @param amr 当前 AMR 求解器对象。
+ */
 inline void ExportAllLevelsToFiles(amrex::Amr& amr)
 {
     // 获取 AMR 的层级数量
@@ -142,7 +165,11 @@ inline void ExportAllLevelsToFiles(amrex::Amr& amr)
     }
 }
 
-// 统计 Amr 对象中 level 0 的第一个变量的总和
+/**
+ * @brief 统计 level 0 上第一个状态分量的总和。
+ * @param amr 当前 AMR 求解器对象。
+ * @return 第一个状态分量在 level 0 的总和。
+ */
 inline amrex::Real SumFirstVariableOnLevel0(amrex::Amr& amr)
 {
     amrex::Real sum = 0.0;
@@ -165,6 +192,16 @@ inline amrex::Real SumFirstVariableOnLevel0(amrex::Amr& amr)
     return sum;
 }
 
+/**
+ * @brief 将某个网格点的时间历程附加写入 Tecplot 数据文件。
+ * @param time 当前物理时间。
+ * @param S_new 当前状态场。
+ * @param i x 方向索引。
+ * @param j y 方向索引。
+ * @param k z 方向索引。
+ * @param var_values 该点的状态值数组。
+ * @param residuals 该点的残差或诊断值数组。
+ */
 inline void WritePointDataToTecplot(amrex::Real time, const amrex::MultiFab& S_new, int i, int j, int k,
     const amrex::Real* var_values, const amrex::Real* residuals)
 {

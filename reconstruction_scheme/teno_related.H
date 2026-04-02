@@ -1,5 +1,8 @@
-// TENO相关头文件
-// 包含TENO（Targeted Essentially Non-Oscillatory）格式的相关函数
+/**
+ * @file
+ * @brief TENO 平滑度判据与相关辅助函数。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include <AMReX_Array.H>

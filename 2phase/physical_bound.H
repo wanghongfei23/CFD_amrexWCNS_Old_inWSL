@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @brief 两相状态的物理可接受性判据与辅助函数声明。
+ * @ingroup two_phase_model
+ */
+
 #pragma once
 #include "Prob_Parm.H"
 #include <AMReX_REAL.H>

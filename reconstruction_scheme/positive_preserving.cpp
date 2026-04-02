@@ -1,5 +1,8 @@
-// 保正性实现文件
-// 包含用于确保物理量保持正值的函数
+/**
+ * @file
+ * @brief 两相高阶重构保正限制器的实现。
+ * @ingroup reconstruction
+ */
 #include "positive_preserving.H"
 #include "deriv.H"
 
@@ -117,7 +120,7 @@ using namespace amrex;
 //             }
 
 //             // 计算一阶守恒通量
-//             VarArray fluxFirstOrder = Riemann_solver(iPrimL, iPrimR, norm, pp);
+//             VarArray fluxFirstOrder = Riemann_solver_1(iPrimL, iPrimR, norm, pp);
 
 //             // 计算一阶非守恒通量，以alpha du/dx为例
 //             // 导数部分通量左右单元相同为u_i+1/2

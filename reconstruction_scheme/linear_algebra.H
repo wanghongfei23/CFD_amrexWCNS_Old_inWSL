@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @brief 重构和时间推进中复用的轻量线性代数与方向遍历工具。
+ * @ingroup reconstruction
+ */
+
 #pragma once
 #include <AMReX_BLassert.H>
 #include <AMReX_Math.H>

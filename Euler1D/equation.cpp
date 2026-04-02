@@ -1,5 +1,8 @@
-// 方程求解器实现文件（一维）
-// 包含欧拉方程相关的计算和初始化函数
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中保留的历史草稿代码。
+ * @ingroup legacy_euler
+ */
 
 #include "equation.H"
 

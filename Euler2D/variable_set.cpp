@@ -1,5 +1,8 @@
-// 变量设置实现文件（二维）
-// 包含变量初始化和清理相关的函数
+/**
+ * @file
+ * @brief 二维单相 Euler 参考实现的状态描述符与边界注册实现。
+ * @ingroup legacy_euler
+ */
 
 #include "AmrLevelCong.H"
 #include <AMReX_GpuMemory.H>

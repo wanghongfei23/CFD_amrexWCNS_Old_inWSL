@@ -1,5 +1,9 @@
-// 方程求解器实现文件（两相流）
-// 包含两相流欧拉方程相关的计算和初始化函数
+/**
+ * @file
+ * @brief 两相方程实现相关的历史草稿与保留代码片段。
+ * @details 当前主实现位于 equation.H，本文件主要保留早期实验代码以供参考。
+ * @ingroup two_phase_model
+ */
 
 // #include "equation.H"
 

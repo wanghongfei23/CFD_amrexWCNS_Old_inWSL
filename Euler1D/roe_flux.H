@@ -1,14 +1,25 @@
-// Roe通量头文件
-// 包含Roe通量和HLLC通量的实现
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中的 Roe 与 HLLC 通量函数。
+ * @ingroup legacy_euler
+ */
 
 #pragma once
 #include <AMReX_Math.H>
 #include <AMReX_REAL.H>
 #include <AMReX_Vector.H>
 
-// Roe通量计算函数（一维）
-// 输入：左侧密度rl，右侧密度rr，左侧速度ul，右侧速度ur，左侧压力pl，右侧压力pr，气体绝热指数gamma
-// 输出：通量数组
+/**
+ * @brief 计算一维 Roe 数值通量。
+ * @param rl 左状态密度。
+ * @param rr 右状态密度。
+ * @param ul 左状态速度。
+ * @param ur 右状态速度。
+ * @param pl 左状态压力。
+ * @param pr 右状态压力。
+ * @param gamma 比热比。
+ * @return 三分量守恒通量。
+ */
 AMREX_GPU_HOST_DEVICE
 AMREX_FORCE_INLINE
 amrex::GpuArray<amrex::Real, 3> roe_flux_1d(amrex::Real rl, amrex::Real rr, amrex::Real ul, amrex::Real ur, amrex::Real pl, amrex::Real pr, amrex::Real gamma)
@@ -82,9 +93,17 @@ amrex::GpuArray<amrex::Real, 3> roe_flux_1d(amrex::Real rl, amrex::Real rr, amre
     return res;
 }
 
-// HLLC通量计算函数（一维）
-// 输入：左侧密度rl，右侧密度rr，左侧速度ul，右侧速度ur，左侧压力pl，右侧压力pr，气体绝热指数gamma
-// 输出：通量数组
+/**
+ * @brief 计算一维 HLLC 数值通量。
+ * @param rl 左状态密度。
+ * @param rr 右状态密度。
+ * @param ul 左状态速度。
+ * @param ur 右状态速度。
+ * @param pl 左状态压力。
+ * @param pr 右状态压力。
+ * @param gamma 比热比。
+ * @return 三分量守恒通量。
+ */
 AMREX_GPU_HOST_DEVICE
 AMREX_FORCE_INLINE
 amrex::GpuArray<amrex::Real, 3> hllc_flux_1D(amrex::Real rl, amrex::Real rr, amrex::Real ul, amrex::Real ur, amrex::Real pl, amrex::Real pr, amrex::Real gamma)

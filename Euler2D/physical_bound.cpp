@@ -1,5 +1,8 @@
-// 物理边界实现文件
-// 包含计算alpha值的函数，用于时间步进中的方向权重
+/**
+ * @file
+ * @brief 二维单相 Euler 参考实现中的物理约束辅助函数实现。
+ * @ingroup legacy_euler
+ */
 
 #include "physical_bound.H"
 

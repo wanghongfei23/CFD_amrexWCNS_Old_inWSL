@@ -1,12 +1,17 @@
-// 导数计算头文件
-// 包含一阶导数项的模板类和类型定义
+/**
+ * @file
+ * @brief 非守恒导数项接口与组合封装。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include "deriv_usr.H"
 #include "Prob_Parm.H"
 
-// 基类模板：不再使用 CRTP，改为组合
-// 用于计算一阶导数项
+/**
+ * @brief 一阶导数项的统一包装模板。
+ * @tparam Derived 提供系数、节点通量和界面通量实现的策略类。
+ */
 template <typename Derived>
 class FirstOrderDerivativeTerm {
 public:

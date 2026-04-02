@@ -1,5 +1,8 @@
-// 插值方案头文件
-// 包含各种数值插值方法的实现，如WENO、TENO等
+/**
+ * @file
+ * @brief WENO、TENO 等一维模板插值核函数。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include <AMReX_Array.H>

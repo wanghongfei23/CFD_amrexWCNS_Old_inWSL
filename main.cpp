@@ -1,5 +1,9 @@
-// 主程序文件
-// 包含程序的主入口和主要执行流程
+/**
+ * @file
+ * @brief twoPhaseSolver 的主程序入口。
+ * @details 负责初始化 AMReX、读取运行控制参数、执行主时间推进循环，并在运行前后导出调试数据。
+ * @ingroup app_entry
+ */
 
 #include <iomanip>
 #include <iostream>
@@ -17,14 +21,19 @@ using namespace amrex;
 #include <fstream>
 #include <iostream>
 
-// 声明获取LevelBld的函数
+/**
+ * @brief 返回全局 AMR 层级构建器。
+ * @return 指向 LevelBld 实例的指针。
+ */
 amrex::LevelBld* getLevelBld();
 
 #include <fstream> // 包含文件流头文件
 
-// 检查并打印NaN值的函数
-// 输入：Amr对象amr
-// 输出：是否检测到NaN值的布尔值
+/**
+ * @brief 扫描所有 AMR 层级并报告 NaN 所在位置。
+ * @param amr 当前求解器的 AMR 对象。
+ * @return 发现任意 NaN 时返回 true。
+ */
 bool CheckForNaNAndPrint(Amr& amr)
 {
     bool nanDetected = false;
@@ -76,9 +85,12 @@ bool CheckForNaNAndPrint(Amr& amr)
     return nanDetected;
 }
 
-// 主函数
-// 输入：命令行参数argc和argv
-// 输出：程序执行状态码
+/**
+ * @brief 运行 twoPhaseSolver 主流程。
+ * @param argc 命令行参数个数。
+ * @param argv 命令行参数数组。
+ * @return 进程退出码。
+ */
 int main(int argc,
     char* argv[])
 {

@@ -1,5 +1,8 @@
-// 方程测试文件
-// 包含方程求解器测试相关的函数
+/**
+ * @file
+ * @brief 两相状态方程与变量互转测试程序。
+ * @ingroup analysis_docs
+ */
 
 #include "equation.H"
 #include <fstream>
@@ -7,8 +10,12 @@
 #include <iostream>
 using namespace amrex;
 
-// 辅助函数：打印 VarArray
-// 输入：名称name，变量数组var，输出流out
+/**
+ * @brief 打印状态数组。
+ * @param name 标签名。
+ * @param var 状态数组。
+ * @param out 输出流。
+ */
 void printVarArray(const std::string& name, const VarArray& var, std::ostream& out)
 {
     out << name << ": [ ";
@@ -18,15 +25,25 @@ void printVarArray(const std::string& name, const VarArray& var, std::ostream& o
     out << " ]" << std::endl;
 }
 
-// 辅助函数：打印 GpuArray<Real, 3>
-// 输入：名称name，GPU数组arr，输出流out
+/**
+ * @brief 打印三维向量。
+ * @param name 标签名。
+ * @param arr 三维向量。
+ * @param out 输出流。
+ */
 void printGpuArray3(const std::string& name, const amrex::GpuArray<amrex::Real, 3>& arr, std::ostream& out)
 {
     out << name << ": [ " << arr[0] << ", " << arr[1] << ", " << arr[2] << " ]" << std::endl;
 }
 
-// 辅助函数：运行单个测试用例
-// 输入：测试名称testName，守恒变量cons，问题参数pp，输出文件outFile，维度dimension
+/**
+ * @brief 运行单个状态方程测试用例。
+ * @param testName 用例名称。
+ * @param cons 守恒变量输入。
+ * @param pp 物性参数。
+ * @param outFile 输出流。
+ * @param dimension 维度编号。
+ */
 void runTestCase(
     const std::string& testName,
     const VarArray& cons,
@@ -64,8 +81,8 @@ void runTestCase(
     }
 
     // 状态方程计算
-    Real pressure = eos_cons<Pressure>(cons, pp);
-    Real total_energy = eos_prim<TotalEnergy>(prim, pp);
+    Real pressure = cons_to_eos<Pressure>(cons, pp);
+    Real total_energy = prims_to_eos<TotalEnergy>(prim, pp);
     outFile << "Pressure from EOS: " << pressure << "\n";
     outFile << "Total Energy from EOS: " << total_energy << "\n";
 
@@ -94,6 +111,10 @@ void runTestCase(
     outFile << "\n";
 }
 
+/**
+ * @brief 执行状态方程与通量测试程序。
+ * @return 进程退出码。
+ */
 int main()
 {
     // 打开输出文件

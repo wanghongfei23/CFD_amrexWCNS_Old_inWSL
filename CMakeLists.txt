@@ -18,7 +18,9 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 设置 AMReX 安装路径
+# set(AMReX_DIR /opt/amrex_1d/lib/cmake/AMReX)
 set(AMReX_DIR /opt/amrex_2d/lib/cmake/AMReX)
+# set(AMReX_DIR /opt/amrex_3d/lib/cmake/AMReX)
 
 # 查找 AMReX 包
 find_package(AMReX REQUIRED)

@@ -1,5 +1,8 @@
-// AMR级别推进实现文件
-// 包含时间推进和通量计算相关的函数
+/**
+ * @file
+ * @brief AmrLevelCong 的时间推进、Runge-Kutta 子步和通量装配实现。
+ * @ingroup amr_core
+ */
 
 #include "AmrLevelCong.H"
 #include "deriv.H"
@@ -473,7 +476,7 @@ void AmrLevelCong::flux_solve_in_dim(const FluxSolveParams& params)
         amrex::GpuArray<VarArray, 2> stateLR = reconstruction<idim>(i, j, k, primin_array, NUM_STATE, pp, norm, dx);
 
         // 使用 Riemann 求解器计算通量
-        VarArray iFlux = Riemann_solver<idim>(i, j, k, primin_array, stateLR[0], stateLR[1], norm, pp, dx);
+        VarArray iFlux = Riemann_solver_1<idim>(i, j, k, primin_array, stateLR[0], stateLR[1], norm, pp, dx);
 
         // 对计算出的通量进行修正，使用四阶精度的中心差分格式
         VarArray consL, consR, fluxCellL, fluxCellR;
@@ -538,7 +541,7 @@ void AmrLevelCong::flux_solve_in_dim(const FluxSolveParams& params)
         bool leftFlag = containsInvalidValues(consStarL, pp, pqf);
         bool rightFlag = containsInvalidValues(consStarR, pp, pqf);
         if (leftFlag || rightFlag) {
-            VarArray foFlux = Riemann_solver2(i, j, k, primin_array, primL, primR, norm, pp), foncFluxL, foncFluxR;
+            VarArray foFlux = Riemann_solver_2(i, j, k, primin_array, primL, primR, norm, pp), foncFluxL, foncFluxR;
             foncFluxL.fill(0.0);
             foncFluxR.fill(0.0);
             auto foflux_var = advTerm.computeFlux(primL, primR, pp, norm, dx);

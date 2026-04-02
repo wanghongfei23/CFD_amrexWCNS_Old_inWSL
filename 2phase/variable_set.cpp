@@ -1,5 +1,8 @@
-// 变量设置实现文件（两相流）
-// 包含变量初始化和清理相关的函数
+/**
+ * @file
+ * @brief 两相求解器状态描述符、物理参数与边界组件注册实现。
+ * @ingroup two_phase_model
+ */
 
 #include "AmrLevelCong.H"
 #include <AMReX_GpuMemory.H>

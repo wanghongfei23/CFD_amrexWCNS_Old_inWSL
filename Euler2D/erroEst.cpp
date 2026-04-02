@@ -1,5 +1,8 @@
-// 误差估计实现文件（二维）
-// 包含用于网格自适应的误差估计函数
+/**
+ * @file
+ * @brief 二维单相 Euler 参考实现中的 AMR 标记逻辑。
+ * @ingroup legacy_euler
+ */
 
 #include "AmrLevelCong.H"
 #include "equation.H"

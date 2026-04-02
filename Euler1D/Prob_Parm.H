@@ -1,5 +1,8 @@
-// 问题参数头文件
-// 包含问题相关的参数和类型定义
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现的物性参数与变量编号。
+ * @ingroup legacy_euler
+ */
 
 #ifndef PROB_PARM_H_
 #define PROB_PARM_H_

@@ -1,5 +1,8 @@
-// AMR级别实现文件
-// 包含AmrLevelCong类的实现，用于处理自适应网格细化和时间步进
+/**
+ * @file
+ * @brief AmrLevelCong 的静态成员、参数读取与层级生命周期实现。
+ * @ingroup amr_core
+ */
 
 // #include <AMReX_GpuMemory.H>
 #include <AMReX_ParmParse.H>

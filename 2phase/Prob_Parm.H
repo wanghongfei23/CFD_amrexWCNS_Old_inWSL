@@ -1,5 +1,8 @@
-// 问题参数头文件（两相流）
-// 包含两相流问题相关的参数和类型定义
+/**
+ * @file
+ * @brief 两相 stiffened-gas 模型的物性参数与状态变量编号定义。
+ * @ingroup two_phase_model
+ */
 
 #pragma once
 
@@ -8,20 +11,26 @@
 
 // using namespace amrex::literals;
 
-// 定义包含问题特定变量的结构体
+/**
+ * @brief 两相 stiffened-gas 状态方程参数。
+ */
 struct ProbParm {
     // 两相的比热比
-    amrex::Real gamma[2] = { 6.12, 1.4 };
+    // amrex::Real gamma[2] = { 6.12, 1.4 }; // 水，空气
+    amrex::Real gamma[2] = { 1.4, 1.093 };  // 空气，SF6
 
     // 两相的参考压力
-    amrex::Real pInf[2] = { 3.43e8, 0.0 };
+    // amrex::Real pInf[2] = { 3.43e8, 0.0 }; // 水，空气
+    amrex::Real pInf[2] = { 0.0, 0.0 }; // 空气，SF6
 
     // 体积分数的小量阈值
     amrex::Real alphaEps = 1.1e-6;
 
-    // 计算平均比热比和参考压力
-    // 输入：第一相体积分数alpha1
-    // 输出：包含平均比热比和参考压力的数组
+    /**
+     * @brief 根据体积分数计算混合区的等效 $\gamma$ 和 $p^\infty$。
+     * @param alpha1 第一相体积分数。
+     * @return 返回 `{gamma_bar, pInf_bar}`。
+     */
     AMREX_FORCE_INLINE
     AMREX_GPU_HOST_DEVICE
     amrex::GpuArray<amrex::Real, 2> cal_gamma(amrex::Real alpha1) const
@@ -48,7 +57,10 @@ struct ProbParm {
     }
 };
 
-// 变量索引枚举
+/**
+ * @enum Variables
+ * @brief 两相求解器状态向量中的分量编号。
+ */
 enum Variables {
     AlphaRho1 = 0, // 第一相密度
     AlphaRho2, // 第二相密度
@@ -58,9 +70,9 @@ enum Variables {
     NVar // 变量总数
 };
 
-// 变量数组类型定义
+/// 状态向量类型别名。
 using VarArray = amrex::GpuArray<amrex::Real, NVar>;
-// 变量矩阵类型定义
+/// 特征矩阵类型别名。
 using VarMatrix = amrex::GpuArray<amrex::Real, NVar * NVar>;
 
 // 定义两相流标志

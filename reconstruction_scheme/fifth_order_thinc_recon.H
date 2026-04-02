@@ -1,5 +1,8 @@
-// 五阶THINC重构头文件
-// 包含THINC（Tangent of Hyperbola for INterface Capturing）重构方法的实现
+/**
+ * @file
+ * @brief 五阶 THINC/WENO 混合重构与界面捕捉实现。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include "eigen_system.H"

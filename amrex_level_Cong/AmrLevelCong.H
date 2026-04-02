@@ -1,5 +1,9 @@
-// AMR级别头文件
-// 包含AmrLevelCong类的定义，用于处理自适应网格细化和时间步进
+/**
+ * @file
+ * @brief AMR 层级对象 AmrLevelCong 的接口定义。
+ * @details 该头文件集中声明 AMR 生命周期、时间推进、回流、误差标记和边界辅助接口。
+ * @ingroup amr_core
+ */
 
 #ifndef _AmrLevelAdv_H_
 #define _AmrLevelAdv_H_
@@ -19,13 +23,19 @@
 // 问题相关结构体。在Exec目录下定义。
 #include "Prob_Parm.H"
 
-// 状态类型枚举
+/**
+ * @enum StateType
+ * @brief AMReX 状态描述符中的数据槽编号。
+ */
 enum StateType { 
     State_Type = 0,  // 状态类型
     NUM_STATE_TYPE   // 状态类型数量
 };
 
-// 通量求解参数结构体
+/**
+ * @struct FluxSolveParams
+ * @brief 单个方向通量离散所需的临时数据视图。
+ */
 struct FluxSolveParams {
     const amrex::Box& bx;                                  // 计算区域
     amrex::GpuArray<amrex::FArrayBox*, AMREX_SPACEDIM>& flux; // 通量数组
@@ -41,7 +51,8 @@ struct FluxSolveParams {
 };
 
 /**
- * AmrLevel派生类，用于双曲守恒方程
+ * @brief 基于 amrex::AmrLevel 的双曲守恒律层级对象。
+ * @details 该类负责管理状态变量、时间推进、回流、AMR 初始化与误差标记。
  */
 class AmrLevelCong
     : public amrex::AmrLevel {
@@ -122,7 +133,14 @@ public:
         int ncycle) override;                       // 循环次数
 
     /**
-     * 计算dSdt
+     * @brief 计算 Runge-Kutta 某一阶段的时间导数。
+     * @tparam RKOrder Runge-Kutta 阶数。
+     * @param stage 当前阶段编号。
+     * @param S 当前阶段的守恒变量场。
+     * @param dSdt 时间导数输出。
+     * @param dt 当前子步长。
+     * @param fr_as_crse 指向粗层通量寄存器的指针。
+     * @param fr_as_fine 指向细层通量寄存器的指针。
      */
     template <int RKOrder>
     void compute_dSdt(int stage, const amrex::MultiFab& S, amrex::MultiFab& dSdt, amrex::Real dt,
@@ -206,10 +224,16 @@ public:
 protected:
 #endif
 
-    // 从输入文件读取参数的函数。
+    /**
+     * @brief 读取 adv 段中的求解控制参数。
+     */
     static void read_params();
 
-    // Zouyicong添加
+    /**
+     * @brief 在指定方向上执行通量离散与右端项装配。
+     * @tparam idim 空间方向编号。
+     * @param params 当前方向的通量求解上下文。
+     */
     template <int idim>
     void flux_solve_in_dim(const FluxSolveParams& params);  // 通量求解参数
     
@@ -247,8 +271,8 @@ protected:
 };
 
 /**
- * 边界条件函数，不执行任何操作。
- * 参见bc_nullfill.cpp中的实现。
+ * @brief 为需要用户填充 ghost cell 的边界类型提供占位实现。
+ * @details 当前实现不写入任何值，主要用于保持接口完整性；真实用户边界应在该函数基础上扩展。
  */
 void nullfill(amrex::Box const& bx,         // 边界框
     amrex::FArrayBox& data,                  // 数据数组
@@ -261,8 +285,12 @@ void nullfill(amrex::Box const& bx,         // 边界框
     const int scomp);                        // 起始组件
 
 /**
- * 问题相关函数，计算每个面的Godunov速度。
- * 参见Exec目录下的face_velocity_?D_K.H中的实现。
+ * @brief 计算每个面的 Godunov 速度。
+ * @param time 当前时间。
+ * @param vx x 方向面速度。
+ * @param vy y 方向面速度。
+ * @param dx 网格间距。
+ * @param prob_lo 物理域下边界。
  */
 AMREX_GPU_HOST
 AMREX_FORCE_INLINE

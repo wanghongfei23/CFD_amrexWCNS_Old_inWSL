@@ -1,5 +1,8 @@
-// 保正性头文件
-// 包含用于确保物理量保持正值的函数和工具
+/**
+ * @file
+ * @brief 两相高阶重构中的保正限制器接口。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include "equation.H"
@@ -8,9 +11,11 @@
 #include <AMReX_FArrayBox.H>
 #include <AMReX_Gpu.H>
 
-// 检查数组是否包含NaN值
-// 输入：变量数组array
-// 输出：是否包含NaN值的布尔值
+/**
+ * @brief 检查状态数组中是否存在 NaN。
+ * @param array 待检查的状态数组。
+ * @return 存在 NaN 时返回 true。
+ */
 AMREX_GPU_HOST_DEVICE
 inline bool contains_nan(const VarArray& array)
 {
@@ -22,9 +27,14 @@ inline bool contains_nan(const VarArray& array)
     return false;
 }
 
-// 实施凸组合调整插值后的变量值
-// 输入：原始变量值W，高阶插值后的变量值W_interpolated，调整系数theta，起始组件索引scomp，组件的数量ncomp
-// 功能：根据theta值调整插值后的变量值
+/**
+ * @brief 使用凸组合将高阶重构结果拉回到物理可接受区间。
+ * @param W 单元中心参考状态。
+ * @param W_interpolated 待修正的高阶重构状态。
+ * @param theta 凸组合系数。
+ * @param scomp 起始分量编号。
+ * @param ncomp 参与修正的分量个数。
+ */
 AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE void apply_convex_combination(
     const VarArray& W, // 原始变量值
     VarArray& W_interpolated, // 高阶插值后的变量值
@@ -44,9 +54,13 @@ AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE void apply_convex_combination(
     }
 }
 
-// 检查变量数组是否包含无效值
-// 输入：变量数组varArray，问题参数pp，保正函数结构体pqf
-// 输出：是否包含无效值的布尔值
+/**
+ * @brief 检查状态是否违反保正约束。
+ * @param varArray 待检查的状态数组。
+ * @param pp 两相物性参数。
+ * @param pqf 保正目标函数集合。
+ * @return 任一约束失败时返回 true。
+ */
 AMREX_INLINE AMREX_GPU_HOST_DEVICE bool containsInvalidValues(const VarArray& varArray,
     const ProbParm& pp,
     const PositiveQuantityFunctions& pqf)
@@ -65,16 +79,26 @@ AMREX_INLINE AMREX_GPU_HOST_DEVICE bool containsInvalidValues(const VarArray& va
     return false;
 }
 
-// 计算theta值
-// 输入：守恒变量consStar，守恒变量consHLLC，问题参数pp，保正函数结构体pqf
-// 输出：theta值
+/**
+ * @brief 计算单个状态的保正缩放系数。
+ * @param consStar 高阶候选状态。
+ * @param consHLLC 一阶或低阶参考状态。
+ * @param pp 两相物性参数。
+ * @param pqf 保正目标函数集合。
+ * @return 限幅系数 `theta`。
+ */
 AMREX_GPU_HOST_DEVICE
 amrex::Real
 compute_theta(VarArray const& consStar, VarArray const& consHLLC, ProbParm const& pp, PositiveQuantityFunctions const& pqf);
 
-// 应用保正限制器
-// 输入：守恒变量值W，高阶插值后的守恒变量值W_interpolated，保正函数结构体pqf，问题参数pp，组件的数量ncomp
-// 功能：确保插值后的变量值保持正值
+/**
+ * @brief 对重构后的守恒变量应用保正限制器。
+ * @param W 单元中心守恒变量。
+ * @param W_interpolated 重构后的守恒变量。
+ * @param pqf 保正目标函数集合。
+ * @param pp 两相物性参数。
+ * @param ncomp 处理的状态分量数。
+ */
 AMREX_GPU_HOST_DEVICE void apply_positive_limiter(
     const VarArray& W, // 守恒变量值
     VarArray& W_interpolated, // 高阶插值后的守恒变量值
@@ -83,9 +107,19 @@ AMREX_GPU_HOST_DEVICE void apply_positive_limiter(
     int ncomp // 组件的数量
 );
 
-// 计算侧面的theta值
-// 输入：维度idim，组件数ncomp，原始变量iPrim，守恒变量iCons，通量iFlux，一阶通量fluxFirstOrder，乘数mult，问题参数pp，保正函数pqf
-// 输出：theta值
+/**
+ * @brief 为界面通量限制计算局部限幅系数。
+ * @param idim 空间方向编号。
+ * @param ncomp 状态分量数。
+ * @param iPrim 单元原始变量。
+ * @param iCons 单元守恒变量。
+ * @param iFlux 高阶界面通量。
+ * @param fluxFirstOrder 一阶参考通量。
+ * @param mult 时间步与网格尺度组合出的权重。
+ * @param pp 两相物性参数。
+ * @param pqf 保正目标函数集合。
+ * @return 限幅系数 `theta`。
+ */
 AMREX_GPU_HOST_DEVICE
 amrex::Real
 compute_theta_for_side(int idim, int ncomp,
@@ -95,9 +129,22 @@ compute_theta_for_side(int idim, int ncomp,
     const ProbParm& pp,
     const PositiveQuantityFunctions& pqf);
 
-// 应用保正通量限制器
-// 输入：计算区域bx，守恒量数组consin，原始量数组primin，旧数据数组olddatain，组件数ncomp，右端项数组rhs，通量数组flux，非守恒通量数组ncflux，时间步长dt，Runge-Kutta阶段stage，问题参数pp，保正函数pqf，网格间距dx
-// 功能：确保通量计算后物理量保持正值
+/**
+ * @brief 在通量差分阶段施加保正通量限制。
+ * @param bx 当前计算盒子。
+ * @param consin 守恒变量输入。
+ * @param primin 原始变量输入。
+ * @param olddatain 上一时间层数据。
+ * @param ncomp 状态分量数。
+ * @param rhs 右端项数组。
+ * @param flux 守恒通量数组。
+ * @param ncflux 非守恒通量数组。
+ * @param dt 当前子步长。
+ * @param stage Runge-Kutta 阶段。
+ * @param pp 两相物性参数。
+ * @param pqf 保正目标函数集合。
+ * @param dx 网格间距。
+ */
 AMREX_GPU_HOST_DEVICE void apply_positivive_preserving_flux_limiter(
     const amrex::Box& bx, // 计算区域
     const amrex::FArrayBox& consin, // 守恒量数组

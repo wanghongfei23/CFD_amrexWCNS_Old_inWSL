@@ -1,9 +1,17 @@
+/**
+ * @file
+ * @brief 二维单相 Euler 参考实现中的保正判据与边界辅助声明。
+ * @ingroup legacy_euler
+ */
+
 #pragma once
 #include "Prob_Parm.H"
 #include <AMReX_REAL.H>
 #include <AMReX_Vector.H>
 
-// 结构体，用于存储固定数量的保正函数
+/**
+ * @brief 二维 Euler 状态的保正目标函数集合。
+ */
 struct PositiveQuantityFunctions {
     amrex::Real eps[2]; // 使用 Vector 存储容差值
     amrex::Real epsHardSwitch[2];

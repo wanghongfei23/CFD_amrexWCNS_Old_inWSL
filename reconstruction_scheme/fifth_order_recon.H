@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @brief 基于特征分解的五阶重构实现。
+ * @ingroup reconstruction
+ */
+
 #pragma once
 #include "eigen_system.H"
 #include "interpolation_schemes.H"

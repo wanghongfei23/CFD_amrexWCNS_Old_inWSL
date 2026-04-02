@@ -1,5 +1,9 @@
-// 问题初始化实现文件
-// 包含问题初始化相关的函数
+/**
+ * @file
+ * @brief AMReX 问题初始化入口的空实现。
+ * @details 当前求解器不依赖 probin 文件额外参数，因此该文件仅保留 AMReX 约定接口。
+ * @ingroup amr_core
+ */
 
 #include <AMReX_REAL.H>
 

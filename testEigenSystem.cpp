@@ -1,13 +1,20 @@
-// 特征系统测试文件
-// 包含特征矩阵测试相关的函数
+/**
+ * @file
+ * @brief 两相特征矩阵一致性测试程序。
+ * @ingroup analysis_docs
+ */
 
 #include "eigen_system.H"
 #include <AMReX_Gpu.H>
 #include <AMReX_Print.H>
 #include <AMReX_REAL.H>
 
-// 辅助函数：打印矩阵（用于调试）
-// 输入：矩阵mat，行数rows，列数cols
+/**
+ * @brief 按行列格式打印矩阵。
+ * @param mat 待打印矩阵。
+ * @param rows 行数。
+ * @param cols 列数。
+ */
 void printMatrix(const VarMatrix& mat, int rows, int cols)
 {
     for (int i = 0; i < rows; ++i) {
@@ -18,9 +25,13 @@ void printMatrix(const VarMatrix& mat, int rows, int cols)
     }
 }
 
-// 辅助函数：检查矩阵是否为单位矩阵
-// 输入：矩阵mat，大小size，容差tol
-// 输出：是否为单位矩阵的布尔值
+/**
+ * @brief 判断矩阵是否近似单位矩阵。
+ * @param mat 待检查矩阵。
+ * @param size 矩阵阶数。
+ * @param tol 容差。
+ * @return 若矩阵近似单位矩阵则返回 true。
+ */
 bool isIdentityMatrix(const VarMatrix& mat, int size, amrex::Real tol = 1e-6)
 {
     for (int i = 0; i < size; ++i) {
@@ -34,8 +45,14 @@ bool isIdentityMatrix(const VarMatrix& mat, int size, amrex::Real tol = 1e-6)
     return true;
 }
 
-// 打印元素公式函数
-// 输入：左特征矩阵leftEig，右特征矩阵rightEig，行row，列col，大小size
+/**
+ * @brief 打印左右特征矩阵乘积中某个元素的展开公式。
+ * @param leftEig 左特征矩阵。
+ * @param rightEig 右特征矩阵。
+ * @param row 目标行号。
+ * @param col 目标列号。
+ * @param size 矩阵阶数。
+ */
 void printElementFormula(const VarMatrix& leftEig, const VarMatrix& rightEig, int row, int col, int size)
 {
     std::cout << "Formula for product[" << row << "][" << col << "]:\n";
@@ -63,8 +80,10 @@ void printElementFormula(const VarMatrix& leftEig, const VarMatrix& rightEig, in
     std::cout << "\nResult: product[" << row << "][" << col << "] = " << result << "\n\n";
 }
 
-// 测试主函数
-// 功能：测试特征系统的正确性
+/**
+ * @brief 执行特征矩阵一致性测试。
+ * @return 进程退出码。
+ */
 int main()
 {
     // 初始化输入参数

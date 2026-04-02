@@ -1,11 +1,16 @@
-// 导数用户实现头文件
-// 包含一阶导数项的用户实现
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中非守恒导数项的空策略。
+ * @ingroup legacy_euler
+ */
 
 #pragma once
 // #include "deriv.H"
 #include "equation.H"
 
-// 空AdvectionTerm实现
+/**
+ * @brief 不包含附加非守恒导数项的占位策略类。
+ */
 class FirstOrderDerivativeTermUsr {
 public:
     // 编译期确定的元信息

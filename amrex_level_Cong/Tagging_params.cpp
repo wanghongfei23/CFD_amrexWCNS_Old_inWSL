@@ -1,5 +1,8 @@
-// 标记参数实现文件
-// 包含网格标记相关的参数读取函数
+/**
+ * @file
+ * @brief AMR 标记参数的读取实现。
+ * @ingroup amr_core
+ */
 
 #include <AMReX_GpuMemory.H>
 #include <AMReX_ParmParse.H>

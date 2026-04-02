@@ -1,5 +1,8 @@
-// MUSCL重构头文件
-// 包含MUSCL插值和重构函数的实现
+/**
+ * @file
+ * @brief MUSCL 限幅重构实现。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include "linear_algebra.H"

@@ -1,13 +1,18 @@
-// 物理边界条件头文件
-// 包含保正函数和边界条件计算相关的声明
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中的保正判据与边界辅助声明。
+ * @ingroup legacy_euler
+ */
+
 #pragma once
 #include "Prob_Parm.H"
 #include <AMReX_Gpu.H>
 #include <AMReX_REAL.H>
 #include <AMReX_Vector.H>
 
-// 结构体，用于存储固定数量的保正函数
-// 保正函数确保计算过程中物理量（如密度、能量）保持正值
+/**
+ * @brief 一维 Euler 状态的保正目标函数集合。
+ */
 struct PositiveQuantityFunctions {
     amrex::Real eps[2]; // 容差值数组，用于保正计算
     amrex::Real epsHardSwitch[2]; // 硬开关容差值，用于更严格的保正检查
@@ -42,9 +47,13 @@ struct PositiveQuantityFunctions {
     }
 };
 
-// 计算Alpha值的函数，用于边界条件处理
-// 输入：网格步长dx，原始变量primitiveVars，问题参数pp
-// 输出：Alpha值数组，用于边界条件计算
+/**
+ * @brief 计算各方向时间步权重系数。
+ * @param dx 网格间距。
+ * @param primitiveVars 原始变量。
+ * @param pp 物性参数。
+ * @return 每个方向上的归一化权重。
+ */
 AMREX_GPU_HOST_DEVICE
 amrex::GpuArray<amrex::Real, BL_SPACEDIM> computeAlpha(const amrex::GpuArray<amrex::Real,
                                                            BL_SPACEDIM>& dx,

@@ -1,5 +1,8 @@
-// 误差估计实现文件（一维）
-// 包含用于网格自适应的误差估计函数
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中的 AMR 标记逻辑。
+ * @ingroup legacy_euler
+ */
 
 #include "AmrLevelCong.H"
 #include "equation.H"
@@ -40,14 +43,14 @@ computeTagValue(int i, int j, int k, amrex::Array4<amrex::Real const> const& S_n
     };
 
     // 计算各个维度上的标记
-    if constexpr (SpaceDim >= 1) {
-        res = res || computeFlag(1, 0, 0); // x方向
+    if constexpr (AMREX_SPACEDIM >= 1) {
+        res = res || computeFlag(1, 0, 0); // x 方向
     }
-    if constexpr (SpaceDim >= 2) {
-        res = res || computeFlag(0, 1, 0); // y方向
+    if constexpr (AMREX_SPACEDIM >= 2) {
+        res = res || computeFlag(0, 1, 0); // y 方向
     }
-    if constexpr (SpaceDim >= 3) {
-        res = res || computeFlag(0, 0, 1); // z方向
+    if constexpr (AMREX_SPACEDIM >= 3) {
+        res = res || computeFlag(0, 0, 1); // z 方向
     }
 
     return res;

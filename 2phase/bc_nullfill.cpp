@@ -1,5 +1,8 @@
-// 边界填充实现文件（两相流）
-// 包含用于处理边界条件的函数
+/**
+ * @file
+ * @brief 两相求解器的用户边界 ghost-cell 填充占位实现。
+ * @ingroup two_phase_model
+ */
 
 #include <AMReX_FArrayBox.H>
 #include <AMReX_Geometry.H>

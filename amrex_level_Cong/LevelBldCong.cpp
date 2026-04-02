@@ -1,5 +1,8 @@
-// 级别构建器实现文件
-// 包含LevelBldAdv类的实现，用于构建AMR级别
+/**
+ * @file
+ * @brief AMReX 层级构建器 LevelBldAdv 的实现。
+ * @ingroup amr_core
+ */
 
 #include "AmrLevelCong.H"
 #include <AMReX_LevelBld.H>

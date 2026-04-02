@@ -1,5 +1,8 @@
-// 物理边界实现文件（两相流）
-// 包含物理边界相关的计算函数
+/**
+ * @file
+ * @brief 两相状态物理约束辅助函数的实现。
+ * @ingroup two_phase_model
+ */
 
 #include "physical_bound.H"
 #include "equation.H"
@@ -24,7 +27,7 @@ GpuArray<Real, BL_SPACEDIM> computeAlpha(const GpuArray<Real, BL_SPACEDIM>& dx, 
     }
 
     // 计算声速
-    Real c = eos_prim<SoundSpeed>(primitiveVars, pp);
+    Real c = prims_to_eos<SoundSpeed>(primitiveVars, pp);
 
     // 计算每个维度的 tau
     GpuArray<Real, BL_SPACEDIM> tau;
@@ -65,7 +68,7 @@ PositiveQuantityFunctions::operator()(const VarArray& U, const ProbParm& pp) con
     result[1] = U[AlphaRho2]; // 第二相密度
     result[2] = U[Alpha1]; // 第一相体积分数
     result[3] = 1 - U[Alpha1]; // 第二相体积分数
-    result[4] = eos_cons<SoundSpeedSqrDensity>(U, pp); // 声速平方密度
+    result[4] = cons_to_eos<SoundSpeedSqrDensity>(U, pp); // 声速平方密度
 
     return result;
 }

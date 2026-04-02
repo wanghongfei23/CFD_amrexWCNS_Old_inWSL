@@ -1,5 +1,8 @@
-// 物理边界实现文件（一维）
-// 包含物理边界相关的函数
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中的物理约束辅助函数实现。
+ * @ingroup legacy_euler
+ */
 
 #include "physical_bound.H"
 

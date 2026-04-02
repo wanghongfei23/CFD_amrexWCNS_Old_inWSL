@@ -1,5 +1,8 @@
-// 特征系统实现文件（二维）
-// 包含二维欧拉方程特征值和特征向量的计算
+/**
+ * @file
+ * @brief 二维单相 Euler 参考实现中的特征矩阵构造与变量变换。
+ * @ingroup legacy_euler
+ */
 
 #include "eigen_system.H"
 #include "equation.H"

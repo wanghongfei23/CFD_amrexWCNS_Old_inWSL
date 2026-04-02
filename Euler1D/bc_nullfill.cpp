@@ -1,5 +1,8 @@
-// 边界填充实现文件（一维）
-// 包含用于处理边界条件的函数
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现中的用户边界填充占位实现。
+ * @ingroup legacy_euler
+ */
 
 #include <AMReX_FArrayBox.H>
 #include <AMReX_Geometry.H>

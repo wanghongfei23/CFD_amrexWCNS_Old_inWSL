@@ -1,5 +1,8 @@
-// 方程头文件（二维）
-// 包含二维欧拉方程相关的函数和数据初始化
+/**
+ * @file
+ * @brief 二维单相 Euler 参考实现的状态方程与初值定义。
+ * @ingroup legacy_euler
+ */
 
 #pragma once
 
@@ -350,7 +353,7 @@ VarArray HLLCFlux2D2(amrex::Real rl, amrex::Real rr,
 AMREX_GPU_HOST_DEVICE
 AMREX_FORCE_INLINE
 VarArray
-Riemann_solver(int /*i*/, int /*j*/, int /*k*/, const amrex::Array4<const amrex::Real>& /*prim_array*/, VarArray const& stateL, VarArray const& stateR, amrex::GpuArray<amrex::Real, 3> norm, ProbParm const& pp)
+Riemann_solver_1(int /*i*/, int /*j*/, int /*k*/, const amrex::Array4<const amrex::Real>& /*prim_array*/, VarArray const& stateL, VarArray const& stateR, amrex::GpuArray<amrex::Real, 3> norm, ProbParm const& pp)
 {
     return HLLCFlux2D2(stateL[0], stateR[0],
         stateL[1], stateR[1],

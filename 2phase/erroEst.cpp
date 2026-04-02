@@ -1,5 +1,8 @@
-// 误差估计实现文件（两相流）
-// 包含用于网格自适应的误差估计函数
+/**
+ * @file
+ * @brief 两相求解器的 AMR 误差估计与网格标记逻辑。
+ * @ingroup two_phase_model
+ */
 
 #include "AmrLevelCong.H"
 #include "equation.H"

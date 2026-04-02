@@ -1,4 +1,9 @@
-// // deriv/AdvectionTerm.H
+/**
+ * @file
+ * @brief 两相模型中非守恒导数项的用户策略实现。
+ * @ingroup two_phase_model
+ */
+
 #pragma once
 #include "equation.H"
 
@@ -118,8 +123,8 @@ public:
         };
 
         // 计算声速
-        Real cl = eos_prim<SoundSpeed>(stateL, pp); // 左侧声速
-        Real cr = eos_prim<SoundSpeed>(stateR, pp); // 右侧声速
+        Real cl = prims_to_eos<SoundSpeed>(stateL, pp); // 左侧声速
+        Real cr = prims_to_eos<SoundSpeed>(stateR, pp); // 右侧声速
 
         // if (std::isnan(cl) || cl < 0) {
         //     std::string stateL_str = "StateL: [";

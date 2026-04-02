@@ -1,5 +1,8 @@
-// 一阶重构头文件
-// 包含一阶重构函数的实现
+/**
+ * @file
+ * @brief 一阶 Godunov 型重构实现。
+ * @ingroup reconstruction
+ */
 
 #pragma once
 #include "equation.H"

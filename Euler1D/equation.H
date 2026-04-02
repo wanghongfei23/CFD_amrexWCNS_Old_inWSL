@@ -1,5 +1,8 @@
-// 方程头文件
-// 包含欧拉方程相关的函数和数据初始化
+/**
+ * @file
+ * @brief 一维单相 Euler 参考实现的状态方程与初值定义。
+ * @ingroup legacy_euler
+ */
 
 #pragma once
 
@@ -194,7 +197,7 @@ VarArray prim_to_cons(VarArray prim, ProbParm const& pp)
 AMREX_GPU_HOST_DEVICE
 AMREX_FORCE_INLINE
 VarArray
-Riemann_solver(int /*i*/, int /*j*/, int /*k*/, const amrex::Array4<const amrex::Real>& /*prim_array*/, VarArray const& stateL, VarArray const& stateR, amrex::GpuArray<amrex::Real, 3> norm, ProbParm const& pp)
+Riemann_solver_1(int /*i*/, int /*j*/, int /*k*/, const amrex::Array4<const amrex::Real>& /*prim_array*/, VarArray const& stateL, VarArray const& stateR, amrex::GpuArray<amrex::Real, 3> norm, ProbParm const& pp)
 {
     return hllc_flux_1D(stateL[0], stateR[0], stateL[1], stateR[1], stateL[2], stateR[2], pp.gamma);
 }
