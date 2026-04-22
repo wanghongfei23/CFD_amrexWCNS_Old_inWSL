@@ -11,8 +11,8 @@
 		],
 		"files" : 
 		[
-			"/opt/amrex_3d/lib/cmake/AMReX/AMReXTargets.cmake",
-			"/opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake",
+			"/opt/amrex_2d/lib/cmake/AMReX/AMReXTargets.cmake",
+			"/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -43,7 +43,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 86,
+				"line" : 78,
 				"parent" : 4
 			}
 		]
@@ -53,10 +53,10 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "AMReX::Flags_Fortran::@6890427a1f51a3e7e1df",
+	"id" : "AMReX::Flags_INLINE::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"local" : true,
-	"name" : "AMReX::Flags_Fortran",
+	"name" : "AMReX::Flags_INLINE",
 	"paths" : 
 	{
 		"build" : ".",

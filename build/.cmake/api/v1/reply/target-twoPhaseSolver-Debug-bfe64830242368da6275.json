@@ -84,7 +84,7 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "AMReX::amrex_3d::@6890427a1f51a3e7e1df"
+			"id" : "AMReX::amrex_2d::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 7,
@@ -104,7 +104,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"define" : "AMREX_SPACEDIM=3"
+					"define" : "AMREX_SPACEDIM=2"
 				}
 			],
 			"includes" : 
@@ -128,7 +128,7 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/opt/amrex_3d/include"
+					"path" : "/opt/amrex_2d/include"
 				}
 			],
 			"language" : "CXX",
@@ -184,7 +184,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/opt/amrex_3d/lib/libamrex_3d.a",
+				"fragment" : "/opt/amrex_2d/lib/libamrex_2d.a",
 				"role" : "libraries"
 			},
 			{
@@ -199,7 +199,7 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "AMReX::amrex_3d::@6890427a1f51a3e7e1df"
+			"id" : "AMReX::amrex_2d::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 7,

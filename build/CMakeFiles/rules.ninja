@@ -24,7 +24,7 @@ rule CXX_SCAN__twoPhaseSolver_Debug
 # Rule to generate ninja dyndep files for CXX.
 
 rule CXX_DYNDEP__twoPhaseSolver_Debug
-  command = /usr/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/twoPhaseSolver.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
+  command = /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/twoPhaseSolver.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
   rspfile_content = $in
@@ -74,7 +74,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial -B/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build
+  command = /usr/sbin/cmake --regenerate-during-build -S/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial -B/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build
   description = Re-running CMake...
   generator = 1
 

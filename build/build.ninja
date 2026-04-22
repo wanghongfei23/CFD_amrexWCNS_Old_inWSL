@@ -51,130 +51,130 @@ build cmake_object_order_depends_target_twoPhaseSolver: phony || .
 
 build CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/bc_nullfill.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/eigen_system.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/erroEst.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/physical_bound.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/variable_set.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/Adv_prob.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong_advance.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/LevelBldCong.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/Tagging_params.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/main.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/main.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
 build CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme/positive_preserving.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=3
+  DEFINES = -DAMREX_SPACEDIM=2
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o.d
   FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_3d/include
+  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
@@ -187,12 +187,12 @@ build CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cp
 #############################################
 # Link the executable twoPhaseSolver
 
-build twoPhaseSolver: CXX_EXECUTABLE_LINKER__twoPhaseSolver_Debug CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o CMakeFiles/twoPhaseSolver.dir/main.cpp.o CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o | /opt/amrex_3d/lib/libamrex_3d.a /usr/lib/libmpi.so
+build twoPhaseSolver: CXX_EXECUTABLE_LINKER__twoPhaseSolver_Debug CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o CMakeFiles/twoPhaseSolver.dir/main.cpp.o CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o | /opt/amrex_2d/lib/libamrex_2d.a /usr/lib/libmpi.so
   CONFIG = Debug
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/link.d
   FLAGS = -O3 -g
   LINK_FLAGS = -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags -Wl,--dependency-file=CMakeFiles/twoPhaseSolver.dir/link.d
-  LINK_LIBRARIES = /opt/amrex_3d/lib/libamrex_3d.a  /usr/lib/libmpi.so
+  LINK_LIBRARIES = /opt/amrex_2d/lib/libamrex_2d.a  /usr/lib/libmpi.so
   OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -217,7 +217,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build && /usr/bin/cmake --regenerate-during-build -S/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial -B/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build
+  COMMAND = cd /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build && /usr/sbin/cmake --regenerate-during-build -S/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial -B/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -244,14 +244,14 @@ build all: phony twoPhaseSolver
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/cmake_install.cmake: RERUN_CMAKE | /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/CMakeLists.txt /opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake /opt/amrex_3d/lib/cmake/AMReX/AMReXConfigVersion.cmake /opt/amrex_3d/lib/cmake/AMReX/AMReXTargets-release.cmake /opt/amrex_3d/lib/cmake/AMReX/AMReXTargets.cmake /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindMPI.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.0/CMakeCCompiler.cmake CMakeFiles/4.3.0/CMakeCXXCompiler.cmake CMakeFiles/4.3.0/CMakeSystem.cmake
+build build.ninja /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/cmake_install.cmake: RERUN_CMAKE | /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/CMakeLists.txt /opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake /opt/amrex_2d/lib/cmake/AMReX/AMReXConfigVersion.cmake /opt/amrex_2d/lib/cmake/AMReX/AMReXTargets-release.cmake /opt/amrex_2d/lib/cmake/AMReX/AMReXTargets.cmake /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindMPI.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.0/CMakeCCompiler.cmake CMakeFiles/4.3.0/CMakeCXXCompiler.cmake CMakeFiles/4.3.0/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/CMakeLists.txt /opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake /opt/amrex_3d/lib/cmake/AMReX/AMReXConfigVersion.cmake /opt/amrex_3d/lib/cmake/AMReX/AMReXTargets-release.cmake /opt/amrex_3d/lib/cmake/AMReX/AMReXTargets.cmake /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindMPI.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.0/CMakeCCompiler.cmake CMakeFiles/4.3.0/CMakeCXXCompiler.cmake CMakeFiles/4.3.0/CMakeSystem.cmake: phony
+build /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/CMakeLists.txt /opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake /opt/amrex_2d/lib/cmake/AMReX/AMReXConfigVersion.cmake /opt/amrex_2d/lib/cmake/AMReX/AMReXTargets-release.cmake /opt/amrex_2d/lib/cmake/AMReX/AMReXTargets.cmake /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindMPI.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.0/CMakeCCompiler.cmake CMakeFiles/4.3.0/CMakeCXXCompiler.cmake CMakeFiles/4.3.0/CMakeSystem.cmake: phony
 
 
 #############################################

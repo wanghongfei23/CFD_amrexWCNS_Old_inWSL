@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/opt/amrex_3d/lib/libamrex_3d.a"
+			"path" : "/opt/amrex_2d/lib/libamrex_2d.a"
 		}
 	],
 	"backtrace" : 5,
@@ -18,8 +18,8 @@
 		],
 		"files" : 
 		[
-			"/opt/amrex_3d/lib/cmake/AMReX/AMReXTargets.cmake",
-			"/opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake",
+			"/opt/amrex_2d/lib/cmake/AMReX/AMReXTargets.cmake",
+			"/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -66,7 +66,7 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "AMReX::amrex_3d::@6890427a1f51a3e7e1df",
+	"id" : "AMReX::amrex_2d::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceCompileDependencies" : 
 	[
@@ -99,8 +99,8 @@
 		}
 	],
 	"local" : true,
-	"name" : "AMReX::amrex_3d",
-	"nameOnDisk" : "libamrex_3d.a",
+	"name" : "AMReX::amrex_2d",
+	"nameOnDisk" : "libamrex_2d.a",
 	"paths" : 
 	{
 		"build" : ".",

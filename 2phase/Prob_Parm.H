@@ -12,9 +12,28 @@
 // using namespace amrex::literals;
 
 /**
+ * @enum CaseType
+ * @brief 算例类型枚举，用于选择不同的初始化算例。
+ */
+enum CaseType {
+    CASE_1D_BASE = 0,          // 1D 基础两相流配置
+    CASE_1D_SHOCK_TUBE,         // 1D 两相激波管
+    CASE_1D_SHOCK_INTERFACE,    // 1D 激波与静止界面相互作用
+    CASE_2D_BASE,               // 2D 基础水柱配置
+    CASE_2D_MACH2_4_SHOCK,      // 2D Mach 2.4 激波撞击水柱
+    CASE_2D_MACH10_SHOCK,       // 2D Mach 10 激波撞击水柱
+    CASE_2D_RMI_SF6_CASE1,      // 2D RMI_SF6 case1-半边截断
+    CASE_2D_RMI_SF6_SQUARE,     // 2D RMI_SF6 方块
+    CASE_3D_RMI_SF6             // 3D Richtmyer–Meshkov不稳定性
+};
+
+/**
  * @brief 两相 stiffened-gas 状态方程参数。
  */
 struct ProbParm {
+    // 算例类型选择
+    CaseType case_type = CASE_2D_RMI_SF6_CASE1; 
+
     // 两相的比热比
     // amrex::Real gamma[2] = { 6.12, 1.4 }; // 水，空气
     amrex::Real gamma[2] = { 1.4, 1.093 };  // 空气，SF6

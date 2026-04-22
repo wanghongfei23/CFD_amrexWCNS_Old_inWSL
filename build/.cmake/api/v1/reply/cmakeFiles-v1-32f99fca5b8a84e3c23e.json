@@ -193,11 +193,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/amrex_3d/lib/cmake/AMReX/AMReXConfigVersion.cmake"
+			"path" : "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake"
+			"path" : "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -271,11 +271,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/amrex_3d/lib/cmake/AMReX/AMReXTargets.cmake"
+			"path" : "/opt/amrex_2d/lib/cmake/AMReX/AMReXTargets.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/amrex_3d/lib/cmake/AMReX/AMReXTargets-release.cmake"
+			"path" : "/opt/amrex_2d/lib/cmake/AMReX/AMReXTargets-release.cmake"
 		},
 		{
 			"isCMake" : true,

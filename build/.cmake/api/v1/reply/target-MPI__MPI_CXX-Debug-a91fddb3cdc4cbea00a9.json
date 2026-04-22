@@ -16,7 +16,7 @@
 		[
 			"/usr/share/cmake/Modules/FindMPI.cmake",
 			"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
-			"/opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake",
+			"/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -97,7 +97,7 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "MPI::MPI_C::@6890427a1f51a3e7e1df",
+	"id" : "MPI::MPI_CXX::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceLinkLibraries" : 
 	[
@@ -107,7 +107,7 @@
 		}
 	],
 	"local" : true,
-	"name" : "MPI::MPI_C",
+	"name" : "MPI::MPI_CXX",
 	"paths" : 
 	{
 		"build" : ".",
