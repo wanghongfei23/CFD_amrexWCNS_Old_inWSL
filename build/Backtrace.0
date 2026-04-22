@@ -9,37 +9,30 @@ Host Name: wanghf
             readelf -wl my_exefile | grep my_line_address'
     to find out the offset for that line.
 
- 0: ./twoPhaseSolver(+0x120ab3) [0x5664cfd5dab3]
+ 0: ./twoPhaseSolver(+0x13afb3) [0x5ec4aacbcfb3]
     ?? ??:0
 
- 1: /usr/lib/libc.so.6(+0x3e2d0) [0x7fbc30e4d2d0]
-
- 2: ./twoPhaseSolver(+0x405a7) [0x5664cfc7d5a7]
-    cons_to_eos<(EOSType)0>(amrex::GpuArray<double, 6u>, ProbParm const&)::{lambda(double, double, double)#1}::operator()(double, double, double) const at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.H:52
- (inlined by) double cons_to_eos<(EOSType)0>(amrex::GpuArray<double, 6u>, ProbParm const&) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.H:71
- (inlined by) cons_to_prim(amrex::GpuArray<double, 6u>, ProbParm const&) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.H:150
- (inlined by) cal_u_max(int, int, int, amrex::Array4<double const> const&, amrex::Array4<double> const&, ProbParm const&, amrex::GpuArray<double, 2u>) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.H:740
- (inlined by) operator() at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong.cpp:235
- (inlined by) call_f_intvect_inner<AmrLevelCong::estTimeStep(amrex::Real)::<lambda(int, int, int)>, 0, 1> at /opt/amrex_2d/include/AMReX_GpuLaunchFunctsC.H:42
- (inlined by) call_f_intvect_handler<AmrLevelCong::estTimeStep(amrex::Real)::<lambda(int, int, int)>, 2> at /opt/amrex_2d/include/AMReX_GpuLaunchFunctsC.H:78
- (inlined by) ParallelFor_impND<2, AmrLevelCong::estTimeStep(amrex::Real)::<lambda(int, int, int)>, 2> at /opt/amrex_2d/include/AMReX_GpuLaunchFunctsC.H:266
- (inlined by) ParallelFor<AmrLevelCong::estTimeStep(amrex::Real)::<lambda(int, int, int)>, 2> at /opt/amrex_2d/include/AMReX_GpuLaunchFunctsC.H:291
- (inlined by) AmrLevelCong::estTimeStep(double) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong.cpp:234
-
- 3: ./twoPhaseSolver(+0x41131) [0x5664cfc7e131]
-    AmrLevelCong::computeInitialDt(int, int, amrex::Vector<int, std::allocator<int> >&, amrex::Vector<amrex::IntVectND<2>, std::allocator<amrex::IntVectND<2> > > const&, amrex::Vector<double, std::allocator<double> >&, double) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong.cpp:321 (discriminator 4)
- (inlined by) AmrLevelCong::computeInitialDt(int, int, amrex::Vector<int, std::allocator<int> >&, amrex::Vector<amrex::IntVectND<2>, std::allocator<amrex::IntVectND<2> > > const&, amrex::Vector<double, std::allocator<double> >&, double) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong.cpp:300 (discriminator 4)
-
- 4: ./twoPhaseSolver(+0x26b137) [0x5664cfea8137]
+ 1: ./twoPhaseSolver(+0xaf162) [0x5ec4aac31162]
     ?? ??:0
 
- 5: ./twoPhaseSolver(+0x323b1) [0x5664cfc6f3b1]
-    main at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp:150
+ 2: ./twoPhaseSolver(+0xacf03) [0x5ec4aac2ef03]
+    ?? ??:0
 
- 6: /usr/lib/libc.so.6(+0x276c1) [0x7fbc30e366c1]
+ 3: ./twoPhaseSolver(+0xaf295) [0x5ec4aac31295]
+    ?? ??:0
 
- 7: /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7fbc30e367f9]
+ 4: ./twoPhaseSolver(+0x8acb4) [0x5ec4aac0ccb4]
+    ?? ??:0
 
- 8: ./twoPhaseSolver(+0x34705) [0x5664cfc71705]
+ 5: ./twoPhaseSolver(+0x32499) [0x5ec4aabb4499]
+    std::_Function_base::~_Function_base() at /usr/include/c++/15.2.1/bits/std_function.h:245
+ (inlined by) std::function<void ()>::~function() at /usr/include/c++/15.2.1/bits/std_function.h:336
+ (inlined by) main at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp:97
+
+ 6: /usr/lib/libc.so.6(+0x276c1) [0x75cb074366c1]
+
+ 7: /usr/lib/libc.so.6(__libc_start_main+0x89) [0x75cb074367f9]
+
+ 8: ./twoPhaseSolver(+0x34965) [0x5ec4aabb6965]
     ?? ??:0
 

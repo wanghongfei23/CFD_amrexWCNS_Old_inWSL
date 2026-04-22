@@ -139,23 +139,23 @@ int main(int argc,
 
         amr.init(strt_time, stop_time); // 初始化模拟
 
-        auto rho_start = SumFirstVariableOnLevel0(amr); // 记录初始密度
-        ExportAllLevelsToFiles(amr); // 导出所有层级到文件
+        // auto rho_start = SumFirstVariableOnLevel0(amr); // 记录初始密度
+        // ExportAllLevelsToFiles(amr); // 导出所有层级到文件
         // volatile bool nanDetected = true;
 
         // 模拟主循环
         while (amr.okToContinue() && (amr.levelSteps(0) < max_step || max_step < 0) && (amr.cumTime() < stop_time || stop_time < 0.0)) {
             // 执行粗网格时间步，递归调用timeStep()
             amr.coarseTimeStep(stop_time);
-            bool nanDetected = CheckForNaNAndPrint(amr); // 检查NaN值
-            amrex::ParallelDescriptor::Barrier("Sync before Abort"); // 同步所有进程
+            // bool nanDetected = CheckForNaNAndPrint(amr); // 检查NaN值
+            // amrex::ParallelDescriptor::Barrier("Sync before Abort"); // 同步所有进程
 
-            // 如果检测到NaN值，终止模拟
-            if (nanDetected) {
-                // 所有进程同步后调用 Abort
-                amrex::Abort("NaN detected in the simulation.");
-                break; // 防止后续代码执行（尽管 Abort 会直接退出）
-            }
+            // // 如果检测到NaN值，终止模拟
+            // if (nanDetected) {
+            //     // 所有进程同步后调用 Abort
+            //     amrex::Abort("NaN detected in the simulation.");
+            //     break; // 防止后续代码执行（尽管 Abort 会直接退出）
+            // }
         }
 
         // 写入最终的检查点和绘图文件
@@ -166,11 +166,11 @@ int main(int argc,
         if (amr.stepOfLastPlotFile() < amr.levelSteps(0)) {
             amr.writePlotFile();
         }
-        auto rho_end = SumFirstVariableOnLevel0(amr); // 记录最终密度
+        // auto rho_end = SumFirstVariableOnLevel0(amr); // 记录最终密度
 
-        std::cout << "density loss= " << rho_start - rho_end << std::endl; // 打印密度损失
+        // std::cout << "density loss= " << rho_start - rho_end << std::endl; // 打印密度损失
 
-        ExportAllLevelsToFiles(amr); // 导出所有层级到文件
+        // ExportAllLevelsToFiles(amr); // 导出所有层级到文件
     }
 
     auto dRunTime2 = amrex::second() - dRunTime1; // 计算运行时间

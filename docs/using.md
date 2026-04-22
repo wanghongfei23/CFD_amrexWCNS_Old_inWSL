@@ -1,0 +1,1 @@
+mpiexec -n 8 ./twoPhaseSolver ../data/inputs2phase2dRMI_SF6_3half

@@ -18,10 +18,11 @@ struct ProbParm {
     // 两相的比热比
     // amrex::Real gamma[2] = { 6.12, 1.4 }; // 水，空气
     amrex::Real gamma[2] = { 1.4, 1.093 };  // 空气，SF6
+    // amrex::Real gamma[2] = { 1.093, 1.4 };  // SF6，空气
 
     // 两相的参考压力
     // amrex::Real pInf[2] = { 3.43e8, 0.0 }; // 水，空气
-    amrex::Real pInf[2] = { 0.0, 0.0 }; // 空气，SF6
+    amrex::Real pInf[2] = { 0.0, 0.0 }; // 空气，SF6/SF6，空气
 
     // 体积分数的小量阈值
     amrex::Real alphaEps = 1.1e-6;

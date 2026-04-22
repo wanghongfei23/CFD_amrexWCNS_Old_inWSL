@@ -335,7 +335,7 @@ amrex::Real cons_to_eos(VarArray cons, ProbParm const& pp)
     
     // 提取守恒变量
     Real rho1 = cons[AlphaRho1], rho2 = cons[AlphaRho2];
-    Real AMREX_D_DECL(rhou = cons[XMom], rhov = cons[YMom], rhow = cons[YMom]);
+    Real AMREX_D_DECL(rhou = cons[XMom], rhov = cons[YMom], rhow = cons[ZMom]);
     Real rhoE = cons[Energy], alpha1 = cons[Alpha1];
 
     // 计算动能

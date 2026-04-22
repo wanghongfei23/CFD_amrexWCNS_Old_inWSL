@@ -1,0 +1,67 @@
+{
+	"abstract" : true,
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"find_package"
+		],
+		"files" : 
+		[
+			"/opt/amrex_3d/lib/cmake/AMReX/AMReXTargets.cmake",
+			"/opt/amrex_3d/lib/cmake/AMReX/AMReXConfig.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 27,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 274,
+				"parent" : 2
+			},
+			{
+				"file" : 0,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 4
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "AMReX::Flags_CXX::@6890427a1f51a3e7e1df",
+	"imported" : true,
+	"local" : true,
+	"name" : "AMReX::Flags_CXX",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

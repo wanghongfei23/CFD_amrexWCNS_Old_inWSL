@@ -39,7 +39,7 @@ AMREX_GPU_HOST_DEVICE
 {
     using namespace amrex;
     Real rho1 = cons[AlphaRho1], rho2 = cons[AlphaRho2]; // 两相密度
-    Real AMREX_D_DECL(rhou = cons[XMom], rhov = cons[YMom], rhow = cons[YMom]); // 动量分量
+    Real AMREX_D_DECL(rhou = cons[XMom], rhov = cons[YMom], rhow = cons[ZMom]); // 动量分量
     Real rhoE = cons[Energy], alpha1 = cons[Alpha1]; // 总能量和相分数
 
     Real halfRhoU_sqr = (AMREX_D_TERM(rhou * rhou, +rhov * rhov, +rhow * rhow)) / 2; // 动能
@@ -1017,48 +1017,95 @@ initdata(int level, amrex::Real time,
             // 激波位置：x = 3.2（激波从右向左传播）
             // ========================================================================
 
-            constexpr Real x_shock = 3.2;          // 激波面位置 x_shock
-            constexpr Real x_1 = 2.9;          // 基准位置 x_1
-            constexpr Real varepsilon = 0.2;          // 扰动振幅 varepsilon
-            constexpr Real epss = 1e-8;            // 小量用于避免浮点误差
+            // constexpr Real x_shock = 3.2;          // 激波面位置 x_shock
+            // constexpr Real x_1 = 2.9;          // 基准位置 x_1
+            // constexpr Real varepsilon = 0.2;          // 扰动振幅 varepsilon
+            // constexpr Real epss = 1e-8;            // 小量用于避免浮点误差
 
-            // 计算扰动界面 x 坐标（作为 y 的函数）
-            Real x_interface = x_1 - varepsilon * std::sin(2.0 * M_PI * (y + 0.25));
+            // // 计算扰动界面 x 坐标（作为 y 的函数）
+            // Real x_interface = x_1 - varepsilon * std::sin(2.0 * M_PI * (y + 0.25));
 
-            // 判断空间位置 → 三区域划分
-            if (x < x_interface) {
-                // 区域 1: SF6（重流体，左侧）
-                prim[AlphaRho1] = epss;          // α₁ρ₁ ≈ 0 (空气几乎为0)
-                prim[AlphaRho2] = 5.04;          // α₂ρ₂ = ρ_SF6
-                prim[XMom]      = 0.0;           // u = 0
-                prim[YMom]      = 0.0;           // v = 0
-                prim[Energy]    = 1.0;           // p = 1.0
-                prim[Alpha1]    = epss;          // α₁ ≈ 0
-            } else if (x > x_shock + epss) {
-                // 区域 2: 已受冲击空气（激波后，右侧）
-                prim[AlphaRho1] = 1.411;         // α₁ρ₁ = ρ_post_air
-                prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
-                prim[XMom]      = -0.39;         // u = -0.39（向左）
-                prim[YMom]      = 0.0;           // v = 0
-                prim[Energy]    = 1.628;         // p = 1.628
-                prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
-            } else {
-                // 区域 3: 未受冲击空气（激波前，介于界面与激波面之间）
-                prim[AlphaRho1] = 1.0;           // α₁ρ₁ = ρ_air
-                prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
-                prim[XMom]      = 0.0;           // u = 0
-                prim[YMom]      = 0.0;           // v = 0
-                prim[Energy]    = 1.0;           // p = 1.0
-                prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+            // // 判断空间位置 → 三区域划分
+            // if (x < x_interface) {
+            //     // 区域 1: SF6（重流体，左侧）
+            //     prim[AlphaRho1] = epss;          // α₁ρ₁ ≈ 0 (空气几乎为0)
+            //     prim[AlphaRho2] = 5.04;          // α₂ρ₂ = ρ_SF6
+            //     prim[XMom]      = 0.0;           // u = 0
+            //     prim[YMom]      = 0.0;           // v = 0
+            //     prim[Energy]    = 1.0;           // p = 1.0
+            //     prim[Alpha1]    = epss;          // α₁ ≈ 0
+            // } else if (x > x_shock + epss) {
+            //     // 区域 2: 已受冲击空气（激波后，右侧）
+            //     prim[AlphaRho1] = 1.411;         // α₁ρ₁ = ρ_post_air
+            //     prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
+            //     prim[XMom]      = -0.39;         // u = -0.39（向左）
+            //     prim[YMom]      = 0.0;           // v = 0
+            //     prim[Energy]    = 1.628;         // p = 1.628
+            //     prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+            // } else {
+            //     // 区域 3: 未受冲击空气（激波前，介于界面与激波面之间）
+            //     prim[AlphaRho1] = 1.0;           // α₁ρ₁ = ρ_air
+            //     prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
+            //     prim[XMom]      = 0.0;           // u = 0
+            //     prim[YMom]      = 0.0;           // v = 0
+            //     prim[Energy]    = 1.0;           // p = 1.0
+            //     prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+            // }
+
+
+            // ========================================================================
+            // 【算例】5：RMI_SF6 方块
+            // 描述：2D Richtmyer–Meshkov 不稳定性（SF6方块–空气）
+            // 激波马赫数：1.2
+            // 激波位置：0.2
+            // 相1，相2：  SF6，空气
+            // ========================================================================
+
+            constexpr Real x_shock = 0.2;     // 激波初始位置（左侧）
+            constexpr Real epss    = 1e-8;    // 小量
+
+            // -------------------------
+            // 理想方块界面参数
+            // -------------------------
+            constexpr Real x_c = 0.5;         // 方块中心 x 坐标
+            constexpr Real y_c = 0.0;         // 方块中心 y 坐标
+            constexpr Real L   = 0.4;         // 方块边长
+
+            // 理想方块内部判定
+            bool in_square = (std::abs(x - x_c) <= 0.5 * L) &&
+                            (std::abs(y - y_c) <= 0.5 * L);
+
+            // 分区：
+            // x < x_shock         -> 激波后空气（左侧）
+            // x_shock ~ square    -> 激波前空气
+            // in_square           -> SF6方块
+            if (in_square) {
+                // 区域 1: SF6方块内部（重流体）
+                prim[AlphaRho1] = 5.04;       // α₁ρ₁ = ρ_SF6 (相1现在是SF6)
+                prim[AlphaRho2] = epss;       // α₂ρ₂ ≈ 0
+                prim[XMom]      = 0.0;
+                prim[YMom]      = 0.0;
+                prim[Energy]    = 1.0;
+                prim[Alpha1]    = 1.0 - epss; // α₁ ≈ 1 (SF6体积分数接近1)
             }
-
-
-            // ========================================================================
-            // 【算例】5：2D tin-air implosion 锡-空气内爆
-            // 描述：2D Richtmyer–Meshkov 不稳定性（空气–SF6）
-            // ========================================================================
-
-
+            else if (x < x_shock - epss) {
+                // 区域 2: 已受冲击空气（激波后，左侧，轻流体）
+                prim[AlphaRho1] = epss;       // α₁ρ₁ ≈ 0 (SF6几乎为0)
+                prim[AlphaRho2] = 1.411;      // α₂ρ₂ = ρ_post_air (相2是空气)
+                prim[XMom]      = 0.39;       // 向右传播时，速度应为正
+                prim[YMom]      = 0.0;
+                prim[Energy]    = 1.628;
+                prim[Alpha1]    = epss;       // α₁ ≈ 0 (SF6体积分数接近0)
+            }
+            else {
+                // 区域 3: 未受冲击空气（激波前，轻流体）
+                prim[AlphaRho1] = epss;       // α₁ρ₁ ≈ 0
+                prim[AlphaRho2] = 1.0;        // α₂ρ₂ = ρ_air (相2是空气)
+                prim[XMom]      = 0.0;
+                prim[YMom]      = 0.0;
+                prim[Energy]    = 1.0;
+                prim[Alpha1]    = epss;       // α₁ ≈ 0
+            }
 
             // 将原始变量转换为守恒变量
             VarArray cons = prim_to_cons(prim, pp);
@@ -1074,3 +1121,102 @@ initdata(int level, amrex::Real time,
     }
 }
 #endif
+
+#if BL_SPACEDIM == 3
+/**
+ * @brief 初始化三维算例的守恒量场。
+ * @details 提供多种三维两相流算例配置。
+ */
+AMREX_GPU_HOST_DEVICE
+AMREX_FORCE_INLINE void
+initdata(int level, amrex::Real time,
+    const amrex::Box& box, amrex::FArrayBox& state,
+    const amrex::Real* dx, const amrex::Real* problo, const ProbParm& pp)
+{
+    using namespace amrex;
+
+    // 原始变量数组
+    VarArray prim;
+
+    // 创建状态数组的 Array4 视图
+    Array4<Real> state_arr = state.array();
+
+    // 遍历网格框中的所有单元格（三维情况）
+    const int i_lo = box.smallEnd(0);
+    const int i_hi = box.bigEnd(0);
+    const int j_lo = box.smallEnd(1);
+    const int j_hi = box.bigEnd(1);
+    const int k_lo = box.smallEnd(2);
+    const int k_hi = box.bigEnd(2);
+
+    for (int k = k_lo; k <= k_hi; ++k) {
+        for (int j = j_lo; j <= j_hi; ++j) {
+            for (int i = i_lo; i <= i_hi; ++i) {
+                // 计算单元格中心的物理坐标
+                Real x = problo[0] + (i + 0.5) * dx[0];
+                Real y = problo[1] + (j + 0.5) * dx[1];
+                Real z = problo[2] + (k + 0.5) * dx[2];
+
+                // ========================================================================
+                //【算例】1：三维Richtmyer–Meshkov不稳定性
+                // 描述：3D Richtmyer–Meshkov 不稳定性（空气–SF6）
+                // 激波马赫数：
+                // 激波位置：x = 3.2
+                // 相1，相2：空气，SF6
+                // ========================================================================
+                constexpr Real x_shock = 3.2;          // 激波面位置 x_shock
+                constexpr Real x_1 = 2.9;          // 基准位置 x_1
+                constexpr Real varepsilon = 0.2;          // 扰动振幅 varepsilon
+                constexpr Real epss = 1e-8;            // 小量用于避免浮点误差
+                constexpr Real lamba = 1.0;            // 激波波速 lamba
+
+                // 计算扰动界面 x 坐标（作为 y 和 z 的函数，三维扰动）
+                Real x_interface = x_1 - varepsilon * (std::sin(2.0 * M_PI * (y + 0.25)/lamba) * std::sin(2.0 * M_PI * (z + 0.25)/lamba));
+
+                // 判断空间位置 → 三区域划分
+                if (x < x_interface) {
+                    // 区域 1: SF6（重流体，左侧）
+                    prim[AlphaRho1] = epss;          // α₁ρ₁ ≈ 0 (空气几乎为0)
+                    prim[AlphaRho2] = 5.04;          // α₂ρ₂ = ρ_SF6
+                    prim[XMom]      = 0.0;           // u = 0
+                    prim[YMom]      = 0.0;           // v = 0
+                    prim[ZMom]      = 0.0;           // w = 0
+                    prim[Energy]    = 1.0;           // p = 1.0
+                    prim[Alpha1]    = epss;          // α₁ ≈ 0
+                } else if (x > x_shock + epss) {
+                    // 区域 2: 已受冲击空气（激波后，右侧）
+                    prim[AlphaRho1] = 1.411;         // α₁ρ₁ = ρ_post_air
+                    prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
+                    prim[XMom]      = -0.39;         // u = -0.39（向左）
+                    prim[YMom]      = 0.0;           // v = 0
+                    prim[ZMom]      = 0.0;           // w = 0
+                    prim[Energy]    = 1.628;         // p = 1.628
+                    prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+                } else {
+                    // 区域 3: 未受冲击空气（激波前，介于界面与激波面之间）
+                    prim[AlphaRho1] = 1.0;           // α₁ρ₁ = ρ_air
+                    prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
+                    prim[XMom]      = 0.0;           // u = 0
+                    prim[YMom]      = 0.0;           // v = 0
+                    prim[ZMom]      = 0.0;           // w = 0
+                    prim[Energy]    = 1.0;           // p = 1.0
+                    prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+                }
+
+                // 将原始变量转换为守恒变量
+                VarArray cons = prim_to_cons(prim, pp);
+
+                // 使用 Array4 将守恒变量存储到状态数组中
+                state_arr(i, j, k, AlphaRho1) = cons[AlphaRho1];
+                state_arr(i, j, k, AlphaRho2) = cons[AlphaRho2];
+                state_arr(i, j, k, XMom) = cons[XMom];
+                state_arr(i, j, k, YMom) = cons[YMom];
+                state_arr(i, j, k, ZMom) = cons[ZMom];
+                state_arr(i, j, k, Energy) = cons[Energy];
+                state_arr(i, j, k, Alpha1) = cons[Alpha1];
+            }
+        }
+    }
+}
+#endif
+

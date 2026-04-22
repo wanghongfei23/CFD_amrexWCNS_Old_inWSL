@@ -1,0 +1,107 @@
+# ------------------  INPUTS TO MAIN PROGRAM  -------------------
+# 【算例】RMI_SF6
+# 描述：2D Richtmyer-Meshkov 不稳定性（空气-SF6）
+# 激波位置：x = 3.2（激波从右向左传播）
+
+max_step = 10000000
+stop_time = 8.0
+# stop_time = 10.0
+# stop_time = 1.6e-5
+
+# PROBLEM SIZE & GEOMETRY
+geometry.is_periodic = 0 0      # 0 => non-periodic in x/y-directions
+geometry.coord_sys   = 0        # 0 => cartesian coordinates
+geometry.prob_lo     = 0 -0.5      # Lower bounds [x, y] = [0, 0]
+geometry.prob_hi     = 1.5 0.5  # Upper bounds [x, y] = [4.0, 0.5]
+# amr.n_cell           = 1000 352  # Number of cells [x, y] 
+amr.n_cell           = 480 320  # Number of cells [x, y] 
+
+
+# TIME STEP CONTROL 
+adv.cfl            = 0.5        # CFL number for hyperbolic system
+
+adv.do_reflux = 1
+adv.num_state = 5               # 新增Y方向动量
+
+# VERBOSITY
+adv.v              = 1          # Verbosity in Adv
+amr.v              = 1          # Verbosity in Amr
+
+
+#BOUNDARY---------------------------------------
+# Boundary Condition Types (BCType)
+# ---------------------------------
+# | Value | Boundary Type         | Description                                                                 |
+# |-------|-----------------------|-----------------------------------------------------------------------------|
+# | -666  | bogus                | Invalid or undefined boundary type.                                         |
+# | -1    | reflect_odd          | Reflection from interior cells with sign changed, q(−i)=−q(i).               |
+# | 0     | int_dir              | Interior, including periodic boundary.                                      |
+# | 1     | reflect_even         | Reflection from interior cells with sign unchanged, q(−i)=q(i).              |
+# | 2     | foextrap             | First Order Extrapolation from last cell in interior.                        |
+# | 3     | ext_dir              | External Dirichlet. User must fill ghost cells; boundary is on domain face.  |
+# | 4     | hoextrap             | High Order Extrapolation; boundary is on domain face.                        |
+# | 5     | hoextrapcc           | High Order Extrapolation; boundary is at ghost cell center outside domain.   |
+# | 6     | ext_dir_cc           | External Dirichlet. User must fill ghost cells; boundary is at ghost center. |
+# | 7     | direction_dependent  | Direction-dependent boundary condition.                                      |
+# | 1001  | user_1               | User-defined boundary condition. User must fill ghost cells.                 |
+# | 1002  | user_2               | User-defined boundary condition. User must fill ghost cells.                 |
+# | 1003  | user_3               | User-defined boundary condition. User must fill ghost cells.                 |
+# ---------------------------------
+# BOUNDARY CONDITIONS
+# ---------------------------
+# X-direction boundaries (0) - 左右边界：自由传出 (foextrap = 2)
+amr.density1_lo_bc_0 = 2
+amr.density2_lo_bc_0 = 2
+amr.Momentum_X_lo_bc_0 = 2
+amr.Momentum_Y_lo_bc_0 = 2
+amr.energy_lo_bc_0 = 2
+amr.volumeFraction1_lo_bc_0 = 2
+
+amr.density1_hi_bc_0 = 2
+amr.density2_hi_bc_0 = 2
+amr.Momentum_X_hi_bc_0 = 2
+amr.Momentum_Y_hi_bc_0 = 2
+amr.energy_hi_bc_0 = 2
+amr.volumeFraction1_hi_bc_0 = 2
+
+# Y-direction boundaries (1) - 上下边界：反射边界 (reflect_even = 1)
+amr.density1_lo_bc_1 = 1
+amr.density2_lo_bc_1 = 1
+amr.Momentum_X_lo_bc_1 = 1
+amr.Momentum_Y_lo_bc_1 = -1     # Y动量在反射边界使用reflect_odd
+amr.energy_lo_bc_1 = 1
+amr.volumeFraction1_lo_bc_1 = 1
+
+amr.density1_hi_bc_1 = 1
+amr.density2_hi_bc_1 = 1
+amr.Momentum_X_hi_bc_1 = 1
+amr.Momentum_Y_hi_bc_1 = -1     # Y动量在反射边界使用reflect_odd
+amr.energy_hi_bc_1 = 1
+amr.volumeFraction1_hi_bc_1 = 1
+
+# REFINEMENT / REGRIDDING
+amr.max_level       = 3         # Maximum level number allowed
+# amr.max_level       = 2         # Maximum level number allowed
+amr.ref_ratio       = 2 2       # Refinement ratio [x, y]
+amr.regrid_int      = 4         # How often to regrid
+amr.blocking_factor = 8         # Block factor in grid generation
+amr.max_grid_size   = 64        # Increased for 2D grids
+
+# CHECKPOINT FILES
+amr.checkpoint_files_output = 1
+amr.check_file              = chk 
+amr.check_int               = 500
+
+#amr.restart=chk00000
+
+# PLOTFILES
+amr.plot_files_output = 1    
+amr.plot_file         = plt     
+amr.plot_int          = 100  
+
+# TRACER PARTICLES
+adv.do_tracers = 0              
+
+# ERROR TAGGING
+tagging.phierr = 1.01          
+tagging.max_phierr_lev = 10

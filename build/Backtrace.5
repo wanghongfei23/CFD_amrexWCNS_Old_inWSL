@@ -1,0 +1,38 @@
+Host Name: wanghf
+=== If no file names and line numbers are shown below, one can run
+            addr2line -Cpfie my_exefile my_line_address
+    to convert `my_line_address` (e.g., 0x4a6b) into file name and line number.
+    Or one can use amrex/Tools/Backtrace/parse_bt.py.
+
+=== Please note that the line number reported by addr2line may not be accurate.
+    One can use
+            readelf -wl my_exefile | grep my_line_address'
+    to find out the offset for that line.
+
+ 0: ./twoPhaseSolver(+0x13afb3) [0x639b4ca14fb3]
+    ?? ??:0
+
+ 1: ./twoPhaseSolver(+0xaf162) [0x639b4c989162]
+    ?? ??:0
+
+ 2: ./twoPhaseSolver(+0xacf03) [0x639b4c986f03]
+    ?? ??:0
+
+ 3: ./twoPhaseSolver(+0xaf295) [0x639b4c989295]
+    ?? ??:0
+
+ 4: ./twoPhaseSolver(+0x8acb4) [0x639b4c964cb4]
+    ?? ??:0
+
+ 5: ./twoPhaseSolver(+0x32499) [0x639b4c90c499]
+    std::_Function_base::~_Function_base() at /usr/include/c++/15.2.1/bits/std_function.h:245
+ (inlined by) std::function<void ()>::~function() at /usr/include/c++/15.2.1/bits/std_function.h:336
+ (inlined by) main at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp:97
+
+ 6: /usr/lib/libc.so.6(+0x276c1) [0x7b3087c366c1]
+
+ 7: /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7b3087c367f9]
+
+ 8: ./twoPhaseSolver(+0x34965) [0x639b4c90e965]
+    ?? ??:0
+
