@@ -195,7 +195,7 @@ void AmrLevelCong::compute_dSdt(int stage,
 // 获取旧数据（用于保正限制器）
 const MultiFab& old_data = get_old_data(State_Type);
 
-// 创建原始变量数组（带鬼细胞）
+// 创建原始变量数组（带虚拟点）
 MultiFab prim(grids, dmap, NUM_STATE, NUM_GROW, MFInfo(), Factory());
 
 // 对每个网格块执行转换
@@ -266,7 +266,7 @@ void cons_to_prim_for_array4(const amrex::Box& ghost_box,
 ```
 
 **参数说明**:
-- `[in] ghost_box`: 包含鬼细胞的计算区域
+- `[in] ghost_box`: 包含虚拟点的计算区域
 - `[out] prim_array`: 原始变量输出数组
 - `[in] statein_array`: 守恒变量输入数组
 - `[in] pp`: 问题参数（包含状态方程参数）

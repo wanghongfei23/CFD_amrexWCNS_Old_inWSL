@@ -16,15 +16,18 @@
  * @brief 算例类型枚举，用于选择不同的初始化算例。
  */
 enum CaseType {
-    CASE_1D_BASE = 0,          // 1D 基础两相流配置
-    CASE_1D_SHOCK_TUBE,         // 1D 两相激波管
-    CASE_1D_SHOCK_INTERFACE,    // 1D 激波与静止界面相互作用
-    CASE_2D_BASE,               // 2D 基础水柱配置
-    CASE_2D_MACH2_4_SHOCK,      // 2D Mach 2.4 激波撞击水柱
-    CASE_2D_MACH10_SHOCK,       // 2D Mach 10 激波撞击水柱
-    CASE_2D_RMI_SF6_CASE1,      // 2D RMI_SF6 case1-半边截断
-    CASE_2D_RMI_SF6_SQUARE,     // 2D RMI_SF6 方块
-    CASE_3D_RMI_SF6             // 3D Richtmyer–Meshkov不稳定性
+    // 1D
+    Case_1D_CenteredWater_Air_Moving = 0,          // 中心水区域，整体运动（水/空气）
+    Case_1D_ShockTube_Water_Air,                   // 水-空气激波管
+    Case_1D_ShockInterface_Water_Air,              // 激波与水-空气界面作用
+    // 2D
+    Case_2D_WaterColumn_Air_Stationary,            // 静止水柱配置（水/空气）
+    Case_2D_ShockImpact_Water_Air_Mach2_4,         // 马赫2.4激波撞击水柱（水/空气）
+    Case_2D_ShockImpact_Water_Air_Mach10,          // 马赫10激波撞击水柱（水/空气）
+    Case_2D_RMI_Air_SF6_Perturbed,                 // 扰动界面的空气-SF6 RMI
+    Case_2D_RMI_SF6_Air_Square,                    // 方形SF6-空气 RMI
+    // 3D
+    Case_3D_RMI_Air_SF6_Perturbed                  // 三维扰动界面的空气-SF6 RMI
 };
 
 /**
@@ -32,7 +35,7 @@ enum CaseType {
  */
 struct ProbParm {
     // 算例类型选择
-    CaseType case_type = CASE_2D_RMI_SF6_CASE1; 
+    CaseType case_type = Case_2D_RMI_Air_SF6_Perturbed; 
 
     // 两相的比热比
     // amrex::Real gamma[2] = { 6.12, 1.4 }; // 水，空气

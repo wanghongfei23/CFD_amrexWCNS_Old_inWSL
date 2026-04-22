@@ -11,6 +11,7 @@
 
 #include "AmrLevelCong.H"
 #include "equation.H"
+#include "initialization.H"
 
 using namespace amrex;
 
@@ -20,7 +21,7 @@ Real AmrLevelCong::cfl = 0.5; // CFL数
 int AmrLevelCong::do_reflux = 0; // 是否进行通量回流
 
 int AmrLevelCong::NUM_STATE = 3; // 状态变量数量
-int AmrLevelCong::NUM_GROW = 3; // 鬼细胞数量
+int AmrLevelCong::NUM_GROW = 3; // 虚拟点数量
 
 ProbParm* AmrLevelCong::h_prob_parm = nullptr; // 主机端问题参数
 ProbParm* AmrLevelCong::d_prob_parm = nullptr; // 设备端问题参数

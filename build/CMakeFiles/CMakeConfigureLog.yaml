@@ -10515,3 +10515,403 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-A2Kl8n"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-A2Kl8n"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -O3"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-A2Kl8n'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_2cddb
+        [1/2] /usr/sbin/gcc   -O3 -o CMakeFiles/cmTC_2cddb.dir/test_mpi.c.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-A2Kl8n/test_mpi.c
+        [2/2] : && /usr/sbin/gcc -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_2cddb.dir/test_mpi.c.o -o cmTC_2cddb  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-3iZwlS"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-3iZwlS"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-3iZwlS'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_c53de
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-3iZwlS/test_mpi.cpp -MT CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_c53de.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_c53de.dir/CXX.dd @CMakeFiles/cmTC_c53de.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-3iZwlS/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_c53de.dir/test_mpi.cpp.o -o cmTC_c53de  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1841 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-UEwwWt"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-UEwwWt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-UEwwWt'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_dffa6
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-UEwwWt/test_mpi.cpp -MT CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_dffa6.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_dffa6.dir/CXX.dd @CMakeFiles/cmTC_dffa6.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-UEwwWt/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_dffa6.dir/test_mpi.cpp.o -o cmTC_dffa6  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-uAdZzf"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-uAdZzf"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -O3"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-uAdZzf'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_aadbf
+        [1/2] /usr/sbin/gcc   -O3 -o CMakeFiles/cmTC_aadbf.dir/test_mpi.c.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-uAdZzf/test_mpi.c
+        [2/2] : && /usr/sbin/gcc -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_aadbf.dir/test_mpi.c.o -o cmTC_aadbf  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-7SQiGl"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-7SQiGl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-7SQiGl'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_90654
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-7SQiGl/test_mpi.cpp -MT CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_90654.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_90654.dir/CXX.dd @CMakeFiles/cmTC_90654.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-7SQiGl/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_90654.dir/test_mpi.cpp.o -o cmTC_90654  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1841 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x3Uy8h"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x3Uy8h"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x3Uy8h'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_ae13d
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x3Uy8h/test_mpi.cpp -MT CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_ae13d.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_ae13d.dir/CXX.dd @CMakeFiles/cmTC_ae13d.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x3Uy8h/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_ae13d.dir/test_mpi.cpp.o -o cmTC_ae13d  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-1GkEwf"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-1GkEwf"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -O3"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-1GkEwf'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_74e39
+        [1/2] /usr/sbin/gcc   -O3 -o CMakeFiles/cmTC_74e39.dir/test_mpi.c.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-1GkEwf/test_mpi.c
+        [2/2] : && /usr/sbin/gcc -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_74e39.dir/test_mpi.c.o -o cmTC_74e39  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-vxkbUN"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-vxkbUN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-vxkbUN'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_c2bf7
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-vxkbUN/test_mpi.cpp -MT CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_c2bf7.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_c2bf7.dir/CXX.dd @CMakeFiles/cmTC_c2bf7.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-vxkbUN/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_c2bf7.dir/test_mpi.cpp.o -o cmTC_c2bf7  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1841 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-aE83dW"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-aE83dW"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-aE83dW'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_39fb8
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-aE83dW/test_mpi.cpp -MT CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_39fb8.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_39fb8.dir/CXX.dd @CMakeFiles/cmTC_39fb8.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-aE83dW/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_39fb8.dir/test_mpi.cpp.o -o cmTC_39fb8  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x7dkPh"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x7dkPh"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: " -O3"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x7dkPh'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_e57ae
+        [1/2] /usr/sbin/gcc   -O3 -o CMakeFiles/cmTC_e57ae.dir/test_mpi.c.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-x7dkPh/test_mpi.c
+        [2/2] : && /usr/sbin/gcc -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_e57ae.dir/test_mpi.c.o -o cmTC_e57ae  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1491 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1814 (_MPI_check_lang_works)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-odW6wY"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-odW6wY"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-odW6wY'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_f544d
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-odW6wY/test_mpi.cpp -MT CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_f544d.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_f544d.dir/CXX.dd @CMakeFiles/cmTC_f544d.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-odW6wY/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_f544d.dir/test_mpi.cpp.o -o cmTC_f544d  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1447 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1841 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/opt/amrex_2d/lib/cmake/AMReX/AMReXConfig.cmake:203 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-FtdK3u"
+      binary: "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-FtdK3u"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/opt/amrex_2d/lib/cmake/AMReX/AMReXCMakeModules"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-FtdK3u'
+        
+        Run Build Command(s): /usr/sbin/ninja -v cmTC_962fd
+        [1/4] /usr/sbin/g++   -O3  -std=gnu++23 -E -x c++ /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-FtdK3u/test_mpi.cpp -MT CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o.ddi -MD -MF CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o.ddi.d -fmodules-ts -fdeps-file=CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o.ddi -fdeps-target=CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o -fdeps-format=p1689r5 -o CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o.ddi.i
+        [2/4] /usr/sbin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/cmTC_962fd.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=CMakeFiles/cmTC_962fd.dir/CXX.dd @CMakeFiles/cmTC_962fd.dir/CXX.dd.rsp
+        [3/4] /usr/sbin/g++   -O3  -std=gnu++23 -fmodules-ts -fmodule-mapper=CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/CMakeScratch/TryCompile-FtdK3u/test_mpi.cpp
+        [4/4] : && /usr/sbin/g++ -O3 -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_962fd.dir/test_mpi.cpp.o -o cmTC_962fd  /usr/lib/libmpi.so && :
+        
+      exitCode: 0
+...

@@ -208,7 +208,7 @@ public:
         int n_error_buf = 0, int ngrow = 0) override;     // 误差缓冲区和增长层数
 
     static int NUM_STATE;  // 状态变量数量
-    static int NUM_GROW;   // 鬼细胞数量
+    static int NUM_GROW;   // 虚拟点数量
 
     // ProbParm类实例
     static ProbParm* h_prob_parm;  // 主机端问题参数
