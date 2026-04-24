@@ -217,7 +217,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build && /usr/sbin/cmake --regenerate-during-build -S/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial -B/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build
+  COMMAND = cd /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build && /usr/bin/cmake --regenerate-during-build -S/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial -B/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1

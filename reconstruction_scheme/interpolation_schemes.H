@@ -273,3 +273,93 @@ amrex::Real Teno5_CongZ(amrex::GpuArray<amrex::Real, 5> q)
         return q[2];
     }
 }
+
+AMREX_GPU_HOST_DEVICE
+AMREX_FORCE_INLINE
+amrex::Real TCNS_AS(amrex::GpuArray<amrex::Real, 5> q) {
+  amrex::Real eps = 1e-40; // 1e-10;
+  amrex::GpuArray<amrex::Real, 3> beta = {
+      1.0 / 1.0 * std::pow(1.0 * q[0] - 2.0 * q[1] + 1.0 * q[2], 2) +
+          1.0 / 4.0 * std::pow(1.0 * q[0] - 4.0 * q[1] + 3.0 * q[2], 2),
+
+      1.0 / 1.0 * std::pow(1.0 * q[1] - 2.0 * q[2] + 1.0 * q[3], 2) +
+          1.0 / 4.0 * std::pow(1.0 * q[1] + 0.0 * q[2] - 1.0 * q[3], 2),
+
+      1.0 / 1.0 * std::pow(1.0 * q[2] - 2.0 * q[3] + 1.0 * q[4], 2) +
+          1.0 / 4.0 * std::pow(3.0 * q[2] - 4.0 * q[3] + 1.0 * q[4], 2)};
+
+  unsigned short minBeta = 0;
+  if (beta[1] < beta[minBeta]) minBeta = 1;
+  if (beta[2] < beta[minBeta]) minBeta = 2;
+  
+  amrex::Real epsilon_A = 2.7551e-7;
+
+  amrex::GpuArray<amrex::Real, 4> delta_q;
+  delta_q[0] = q[0] - q[1];
+  delta_q[1] = q[1] - q[2];
+  delta_q[2] = q[2] - q[3];
+  delta_q[3] = q[3] - q[4];
+  
+  // 计算η值
+  amrex::Real eta_im1 = (std::abs(2.0*delta_q[1]*delta_q[0]) + epsilon_A) / 
+                  (std::pow(delta_q[1], 2) + std::pow(delta_q[0], 2) + epsilon_A);
+  
+  amrex::Real eta_i = (std::abs(2.0*delta_q[2]*delta_q[1]) + epsilon_A) / 
+                (std::pow(delta_q[2], 2) + std::pow(delta_q[1], 2) + epsilon_A);
+  
+  amrex::Real eta_ip1 = (std::abs(2.0*delta_q[3]*delta_q[2]) + epsilon_A) / 
+                  (std::pow(delta_q[3], 2) + std::pow(delta_q[2], 2) + epsilon_A);
+  
+  amrex::Real eta_min = std::min(std::min(eta_im1, eta_i), eta_ip1);
+
+  amrex::Real x = std::min(0.24, eta_min);
+
+  // 计算C_T_prime
+  amrex::Real xx = x * x;
+  amrex::Real xxx = x * xx;
+  // Ff3_5_9
+  amrex::Real C_T = 26.778 * xxx - 11.3915 * xx + 0.700688 * x + 0.148606;
+  
+  amrex::Real CT_1 = 1 - C_T;
+  amrex::Real tau = std::abs(beta[2] - beta[0]);
+  amrex::Real rr = C_T * tau - CT_1 * beta[minBeta];
+  amrex::Real ll = tau * beta[minBeta];
+  
+  unsigned short flag = 0;
+  if (ll < rr * beta[0])
+    flag += 1;
+  if (ll < rr * beta[1])
+    flag += 2;
+  if (ll < rr * beta[2])
+    flag += 4;
+  
+  switch (flag) {
+  case 0:
+    /* 1,1,1 */
+    return 3.0 / 128.0 * q[0] - 5.0 / 32.0 * q[1] + 45.0 / 64.0 * q[2] +
+           15.0 / 32.0 * q[3] - 5.0 / 128.0 * q[4];
+  case 1:
+    /* 0,1,1 */
+    return -1.0 / 16.0 * q[1] + 9.0 / 16.0 * q[2] + 9.0 / 16.0 * q[3] -
+           1.0 / 16.0 * q[4];
+  case 2:
+    /* 1,0,1 */
+    return 3.0 / 8.0 * q[2] + 3.0 / 4.0 * q[3] - 1.0 / 8.0 * q[4];
+  case 3:
+    /* 0,0,1 */
+    return 3.0 / 8.0 * q[2] + 3.0 / 4.0 * q[3] - 1.0 / 8.0 * q[4];
+  case 4:
+    /* 1,1,0 */
+    return 1.0 / 16.0 * q[0] - 5.0 / 16.0 * q[1] + 15.0 / 16.0 * q[2] +
+           5.0 / 16.0 * q[3];
+  case 5:
+    /* 0,1,0 */
+    return -1.0 / 8.0 * q[1] + 3.0 / 4.0 * q[2] + 3.0 / 8.0 * q[3];
+  case 6:
+    /* 1,0,0 */
+    return 3.0 / 8.0 * q[0] - 5.0 / 4.0 * q[1] + 15.0 / 8.0 * q[2];
+  default:
+    /* 0,0,0 */
+    return q[2];
+  }
+}

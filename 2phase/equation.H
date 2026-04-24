@@ -578,11 +578,6 @@ Riemann_solver_2(int i, int j, int k, const amrex::Array4<const amrex::Real>& pr
         res[Alpha1] = 0;
         return res;
     }
-
-
-
-
-
 }
 
 /**

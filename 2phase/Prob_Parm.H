@@ -26,6 +26,7 @@ enum CaseType {
     Case_2D_ShockImpact_Water_Air_Mach10,          // 马赫10激波撞击水柱（水/空气）
     Case_2D_RMI_Air_SF6_Perturbed,                 // 扰动界面的空气-SF6 RMI
     Case_2D_RMI_SF6_Air_Square,                    // 方形SF6-空气 RMI
+    Case_2D_RMI_SF6_Air_Sector,                    // 扇形区域SF6-空气 RMI
     // 3D
     Case_3D_RMI_Air_SF6_Perturbed                  // 三维扰动界面的空气-SF6 RMI
 };
@@ -34,13 +35,13 @@ enum CaseType {
  * @brief 两相 stiffened-gas 状态方程参数。
  */
 struct ProbParm {
-    // 算例类型选择
-    CaseType case_type = Case_2D_RMI_Air_SF6_Perturbed; 
+    // 【王鸿飞】算例选择
+    CaseType case_type = Case_2D_RMI_SF6_Air_Square; 
 
     // 两相的比热比
     // amrex::Real gamma[2] = { 6.12, 1.4 }; // 水，空气
-    amrex::Real gamma[2] = { 1.4, 1.093 };  // 空气，SF6
-    // amrex::Real gamma[2] = { 1.093, 1.4 };  // SF6，空气
+    // amrex::Real gamma[2] = { 1.4, 1.093 };  // 空气，SF6
+    amrex::Real gamma[2] = { 1.093, 1.4 };  // SF6，空气
 
     // 两相的参考压力
     // amrex::Real pInf[2] = { 3.43e8, 0.0 }; // 水，空气

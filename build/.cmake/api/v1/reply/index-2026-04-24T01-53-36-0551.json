@@ -8,9 +8,9 @@
 		},
 		"paths" : 
 		{
-			"cmake" : "/usr/sbin/cmake",
-			"cpack" : "/usr/sbin/cpack",
-			"ctest" : "/usr/sbin/ctest",
+			"cmake" : "/usr/bin/cmake",
+			"cpack" : "/usr/bin/cpack",
+			"ctest" : "/usr/bin/ctest",
 			"root" : "/usr/share/cmake"
 		},
 		"version" : 
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-62a5fc41b15e56e8fdda.json",
+			"jsonFile" : "cache-v2-da43fa37cc3fbca59628.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -90,7 +90,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-62a5fc41b15e56e8fdda.json",
+						"jsonFile" : "cache-v2-da43fa37cc3fbca59628.json",
 						"kind" : "cache",
 						"version" : 
 						{

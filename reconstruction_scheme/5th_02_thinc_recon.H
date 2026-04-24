@@ -132,10 +132,11 @@ primitive_reconstruction(int i, int j, int k,
     }
 
     // 对左、右状态的数据进行 WENO5 重构
+    // 【王鸿飞】thinc+格式选择
     VarArray primReconL, primReconR;
     for (int ivar = 0; ivar < NUM_STATE; ivar++) {
-        primReconL[ivar] = weno_is(qL[ivar]);
-        primReconR[ivar] = weno_is(qR[ivar]);
+        primReconL[ivar] = TCNS_AS(qL[ivar]);
+        primReconR[ivar] = TCNS_AS(qR[ivar]);
     }
 
     VarArray primCellL, primCellR;

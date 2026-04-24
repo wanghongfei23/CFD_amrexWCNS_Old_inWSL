@@ -8,14 +8,22 @@
 #include "deriv.H"
 #include "equation.H"
 
-// #include "first_order_recon.H"
-// #include "positive_preserving.H"
+// 【王鸿飞】重构方法
+// 重构方法
+// #include "1th_01_recon.H"      // 一阶重构方法
+// #include "2th_01_muscl_recon.H"  // 二阶MUSCL重构方法
+// #include "5th_01_recon.H"      // 五阶重构方法
+#include "5th_02_thinc_recon.H" // 五阶THINC重构方法
 
-// #include "fifth_order_recon.H"
-#include "fifth_order_thinc_recon.H" // 五阶THINC重构方法
-// #include "muscl_recon.H"
-#include "output_tmp.H" // 临时输出功能
-// #include "roe_flux.H"
+// 物理约束
+// #include "positive_preserving.H" // 保正性处理
+
+// 通量计算
+// #include "roe_flux.H"           // Roe通量计算
+
+// 输出功能
+#include "output_tmp.H"             // 临时输出功能
+
 /**
  * 在此级别上推进网格。
  * 实现时间步进、通量计算和重构等核心功能

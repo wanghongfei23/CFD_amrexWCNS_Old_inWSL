@@ -9,30 +9,39 @@ Host Name: wanghf
             readelf -wl my_exefile | grep my_line_address'
     to find out the offset for that line.
 
- 0: ./twoPhaseSolver(+0x13afb3) [0x5ca841447fb3]
+ 0: ./twoPhaseSolver(+0x116433) [0x5b7bfd6dd433]
     ?? ??:0
 
- 1: ./twoPhaseSolver(+0xaf162) [0x5ca8413bc162]
+ 1: /usr/lib/libc.so.6(+0x3e2d0) [0x795998e4d2d0]
+
+ 2: ./twoPhaseSolver(+0x170af0) [0x5b7bfd737af0]
     ?? ??:0
 
- 2: ./twoPhaseSolver(+0xacf03) [0x5ca8413b9f03]
+ 3: ./twoPhaseSolver(+0x16a271) [0x5b7bfd731271]
     ?? ??:0
 
- 3: ./twoPhaseSolver(+0xaf295) [0x5ca8413bc295]
+ 4: ./twoPhaseSolver(+0x460f4) [0x5b7bfd60d0f4]
+    std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() at /usr/include/c++/15.2.1/bits/stl_vector.h:802
+ (inlined by) amrex::Vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~Vector() at /opt/amrex_2d/include/AMReX_Vector.H:24
+ (inlined by) amrex::MFInfo::~MFInfo() at /opt/amrex_2d/include/AMReX_FabArray.H:66
+ (inlined by) amrex::MultiFab amrex::detail::make_mf_crse_patch<amrex::MultiFab, 0>(amrex::FabArrayBase::FPinfo const&, int) at /opt/amrex_2d/include/AMReX_FillPatchUtil_I.H:315
+ (inlined by) void amrex::FillPatcher<amrex::MultiFab>::storeRKCoarseData<3ul>(double, double, amrex::MultiFab const&, std::array<amrex::MultiFab, 3ul> const&) at /opt/amrex_2d/include/AMReX_FillPatcher.H:422
+ (inlined by) void amrex::AmrLevel::storeRKCoarseData<3ul>(int, double, double, amrex::MultiFab const&, std::array<amrex::MultiFab, 3ul> const&) at /opt/amrex_2d/include/AMReX_AmrLevel.H:677
+ (inlined by) operator() at /opt/amrex_2d/include/AMReX_AmrLevel.H:639
+ (inlined by) RK3<amrex::MultiFab, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&, const amrex::MultiFab&, amrex::Real, amrex::Real)>, amrex::AmrLevel::RK<AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&, const amrex::MultiFab&, amrex::Real, amrex::Real)>, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&)> >(int, int, amrex::Real, amrex::Real, int, int, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&, const amrex::MultiFab&, amrex::Real, amrex::Real)>&&, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&)>&&)::<lambda(int, amrex::MultiFab&, amrex::Real)>, amrex::AmrLevel::RK<AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&, const amrex::MultiFab&, amrex::Real, amrex::Real)>, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&)> >(int, int, amrex::Real, amrex::Real, int, int, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&, const amrex::MultiFab&, amrex::Real, amrex::Real)>&&, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&)>&&)::<lambda(amrex::Array<amrex::MultiFab, 3>&)>, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&)> > at /opt/amrex_2d/include/AMReX_RungeKutta.H:229
+ (inlined by) RK<AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&, const amrex::MultiFab&, amrex::Real, amrex::Real)>, AmrLevelCong::advance(amrex::Real, amrex::Real, int, int)::<lambda(int, amrex::MultiFab&)> > at /opt/amrex_2d/include/AMReX_AmrLevel.H:633
+ (inlined by) AmrLevelCong::advance(double, double, int, int) at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong/AmrLevelCong_advance.cpp:192
+
+ 5: ./twoPhaseSolver(+0x260150) [0x5b7bfd827150]
     ?? ??:0
 
- 4: ./twoPhaseSolver(+0x8acb4) [0x5ca841397cb4]
-    ?? ??:0
+ 6: ./twoPhaseSolver(+0x32372) [0x5b7bfd5f9372]
+    main at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp:147
 
- 5: ./twoPhaseSolver(+0x32499) [0x5ca84133f499]
-    std::_Function_base::~_Function_base() at /usr/include/c++/15.2.1/bits/std_function.h:245
- (inlined by) std::function<void ()>::~function() at /usr/include/c++/15.2.1/bits/std_function.h:336
- (inlined by) main at /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/main.cpp:97
+ 7: /usr/lib/libc.so.6(+0x276c1) [0x795998e366c1]
 
- 6: /usr/lib/libc.so.6(+0x276c1) [0x71cd80e366c1]
+ 8: /usr/lib/libc.so.6(__libc_start_main+0x89) [0x795998e367f9]
 
- 7: /usr/lib/libc.so.6(__libc_start_main+0x89) [0x71cd80e367f9]
-
- 8: ./twoPhaseSolver(+0x34965) [0x5ca841341965]
+ 9: ./twoPhaseSolver(+0x34615) [0x5b7bfd5fb615]
     ?? ??:0
 

@@ -46,8 +46,7 @@ initdata(int level, amrex::Real time,
                 // ============================================================================
                 // 1D算例：基础一维两相流配置
                 // ============================================================================
-                // 算例类型: CASE_1D_BASE
-                // 维度: 一维
+                // 编号: 1d_01
                 // 描述: 中心区域为水，两侧为空气，整体以相同速度运动
                 // 区域划分:
                 //   - 水区域: 0.25 <= x < 0.75
@@ -85,8 +84,7 @@ initdata(int level, amrex::Real time,
                 // ============================================================================
                 // 1D算例：一维两相激波管
                 // ============================================================================
-                // 算例类型: CASE_1D_SHOCK_TUBE
-                // 维度: 一维
+                // 编号: 1d_02
                 // 描述: 左侧为高压水，右侧为低压空气，模拟激波管问题
                 // 区域划分:
                 //   - 高压水区域: x < 0.8
@@ -124,8 +122,7 @@ initdata(int level, amrex::Real time,
                 // ============================================================================
                 // 1D算例：激波与静止界面相互作用
                 // ============================================================================
-                // 算例类型: CASE_1D_SHOCK_INTERFACE
-                // 维度: 一维
+                // 编号: 1d_03
                 // 描述: 三段区域配置，包含高速水流、静止水和空气
                 // 区域划分:
                 //   - 高速水流区域: 0.0 < x < 1.31
@@ -234,8 +231,7 @@ initdata(int level, amrex::Real time,
                     // ============================================================================
                     // 2D算例：基础二维水柱配置
                     // ============================================================================
-                    // 算例类型: CASE_2D_BASE
-                    // 维度: 二维
+                    // 编号: 2d_01
                     // 描述: 简单的水柱和空气区域划分，无激波
                     // 区域划分:
                     //   - 水柱内部: 中心(0.04, 0.00) m，半径0.011 m
@@ -282,8 +278,7 @@ initdata(int level, amrex::Real time,
                     // ============================================================================
                     // 2D算例：Mach 2.4 激波撞击水柱
                     // ============================================================================
-                    // 算例类型: CASE_2D_MACH2_4_SHOCK
-                    // 维度: 二维
+                    // 编号: 2d_02
                     // 描述: 左侧为高速高压空气（激波后），中间为水柱，右侧为静止空气
                     // 区域划分:
                     //   - 激波后空气: x <= 0.029
@@ -343,8 +338,7 @@ initdata(int level, amrex::Real time,
                     // ============================================================================
                     // 2D算例：马赫 10 激波撞击水柱
                     // ============================================================================
-                    // 算例类型: CASE_2D_MACH10_SHOCK
-                    // 维度: 二维
+                    // 编号: 2d_03
                     // 描述: 左侧为极高速度高压空气（激波后），中间为小水柱，右侧为静止空气
                     // 区域划分:
                     //   - 激波后空气: x <= 0.009
@@ -404,8 +398,7 @@ initdata(int level, amrex::Real time,
                     // ============================================================================
                     // 2D算例：RMI_SF6 case1-半边截断
                     // ============================================================================
-                    // 算例类型: CASE_2D_RMI_SF6_CASE1
-                    // 维度: 二维
+                    // 编号: 2d_04
                     // 描述: 2D Richtmyer–Meshkov 不稳定性（空气–SF6）
                     // 区域划分:
                     //   - SF6区域: x < x_interface（重流体，左侧）
@@ -466,8 +459,7 @@ initdata(int level, amrex::Real time,
                     // ============================================================================
                     // 2D算例：RMI_SF6 方块
                     // ============================================================================
-                    // 算例类型: CASE_2D_RMI_SF6_SQUARE
-                    // 维度: 二维
+                    // 编号: 2d_05
                     // 描述: 2D Richtmyer–Meshkov 不稳定性（SF6方块–空气）
                     // 区域划分:
                     //   - SF6方块: 中心(0.5, 0.0) m，边长0.4 m
@@ -532,6 +524,92 @@ initdata(int level, amrex::Real time,
                         prim[YMom]      = 0.0;
                         prim[Energy]    = 1.0;
                         prim[Alpha1]    = epss;       // α₁ ≈ 0
+                    }
+                    break;
+                }
+                case Case_2D_RMI_SF6_Air_Sector: {
+                    // ============================================================================
+                    // 2D算例：扇形区域内的RMI问题（参考RMI_SF6 case1-半边截断）
+                    // ============================================================================
+                    // 编号: 2d_06
+                    // 描述: 90度扇形区域内的Richtmyer–Meshkov不稳定性（空气–SF6）
+                    // 区域划分:
+                    //   - 扇形内部:
+                    //     * SF6区域: 靠近扇形中心，重流体（环形）
+                    //     * 激波后空气: 靠近扇形边缘，已受冲击（环形）
+                    //     * 激波前空气: 介于界面与激波面之间（环形）
+                    //   - 扇形外部: 其他区域
+                    // 激波: 初始激波位于扇形边缘（环形）
+                    // 界面: 扰动界面（环形）
+                    // ============================================================================
+                    constexpr Real sector_center_x = 0.0;    // 扇形中心 x 坐标 [m]
+                    constexpr Real sector_center_y = 0.0;    // 扇形中心 y 坐标 [m]
+                    constexpr Real sector_radius_inner = 0.0; // 扇形内半径 [m] - 与计算域边界一致
+                    constexpr Real sector_radius_outer = 3.5; // 扇形外半径 [m]
+                    constexpr Real sector_angle_start = 0.0;   // 扇形起始角度 [弧度]
+                    constexpr Real sector_angle_end = M_PI / 2; // 扇形结束角度 [弧度] (90度)
+                    
+                    // RMI参数（环形设置）
+                    constexpr Real shock_radius = 3.2;          // 激波面半径
+                    constexpr Real interface_radius = 2.9;      // 基准界面半径
+                    constexpr Real varepsilon = 0.2;            // 扰动振幅
+                    constexpr Real epss = 1e-8;                // 小量用于避免浮点误差
+
+                    // 计算到中心的距离
+                    Real distance = std::sqrt((x - sector_center_x) * (x - sector_center_x) + 
+                                           (y - sector_center_y) * (y - sector_center_y));
+                    
+                    // 计算角度（相对于x轴正方向）
+                    Real angle = std::atan2(y - sector_center_y, x - sector_center_x);
+                    // 确保角度在[0, 2π)范围内
+                    if (angle < 0) angle += 2 * M_PI;
+
+                    // 判断是否在扇形区域内
+                    bool in_sector = (distance >= sector_radius_inner) && 
+                                    (distance <= sector_radius_outer) && 
+                                    (angle >= sector_angle_start) && 
+                                    (angle <= sector_angle_end);
+
+                    if (in_sector) {
+                        // 在扇形区域内，使用环形设置
+                        // 计算扰动界面半径（作为角度的函数）
+                        Real interface_radius_perturbed = interface_radius - varepsilon * std::sin(2.0 * M_PI * (angle + 0.25));
+
+                        // 判断空间位置 → 三区域划分（环形）
+                        if (distance < interface_radius_perturbed) {
+                            // 区域 1: SF6（重流体，靠近中心）
+                            prim[AlphaRho1] = epss;          // α₁ρ₁ ≈ 0 (空气几乎为0)
+                            prim[AlphaRho2] = 5.04;          // α₂ρ₂ = ρ_SF6
+                            prim[XMom]      = 0.0;           // u = 0
+                            prim[YMom]      = 0.0;           // v = 0
+                            prim[Energy]    = 1.0;           // p = 1.0
+                            prim[Alpha1]    = epss;          // α₁ ≈ 0
+                        } else if (distance > shock_radius + epss) {
+                            // 区域 2: 已受冲击空气（激波后，靠近边缘）
+                            prim[AlphaRho1] = 1.411;         // α₁ρ₁ = ρ_post_air
+                            prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
+                            // 激波向内传播，速度方向指向中心
+                            prim[XMom]      = -0.39 * (x - sector_center_x) / distance; // 径向速度
+                            prim[YMom]      = -0.39 * (y - sector_center_y) / distance; // 径向速度
+                            prim[Energy]    = 1.628;         // p = 1.628
+                            prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+                        } else {
+                            // 区域 3: 未受冲击空气（激波前，介于界面与激波面之间）
+                            prim[AlphaRho1] = 1.0;           // α₁ρ₁ = ρ_air
+                            prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
+                            prim[XMom]      = 0.0;           // u = 0
+                            prim[YMom]      = 0.0;           // v = 0
+                            prim[Energy]    = 1.0;           // p = 1.0
+                            prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
+                        }
+                    } else {
+                        // 区域：扇形外部（SF6）
+                        prim[AlphaRho1] = epss;    // α1ρ1 (kg/m^3)
+                        prim[AlphaRho2] = 5.04;    // α2ρ2 (kg/m^3)
+                        prim[XMom] = 0.0;          // u (m/s)
+                        prim[YMom] = 0.0;          // v (m/s)
+                        prim[Energy] = 1.0;        // p = 1.0
+                        prim[Alpha1] = epss;       // α1
                     }
                     break;
                 }
@@ -600,8 +678,7 @@ initdata(int level, amrex::Real time,
                         // ============================================================================
                         // 3D算例：三维Richtmyer–Meshkov不稳定性
                         // ============================================================================
-                        // 算例类型: CASE_3D_RMI_SF6
-                        // 维度: 三维
+                        // 编号: 3d_01
                         // 描述: 3D Richtmyer–Meshkov 不稳定性（空气–SF6）
                         // 区域划分:
                         //   - SF6区域: x < x_interface（重流体，左侧）
@@ -662,72 +739,7 @@ initdata(int level, amrex::Real time,
                         }
                         break;
                     }
-                    default: {
-                        // ============================================================================
-                        // 算例模板：三维默认算例 - 三维Richtmyer–Meshkov不稳定性
-                        // ============================================================================
-                        // 算例类型: 默认算例（三维Richtmyer–Meshkov不稳定性）
-                        // 维度: 三维
-                        // 描述: 3D Richtmyer–Meshkov 不稳定性（空气–SF6）
-                        // 区域划分:
-                        //   - SF6区域: x < x_interface（重流体，左侧）
-                        //     * 密度: 5.04 kg/m^3
-                        //     * 速度: (0.0, 0.0, 0.0) m/s
-                        //     * 压力: 1.0
-                        //     * 体积分数: alpha1 = 0.0
-                        //   - 激波后空气: x > x_shock（已受冲击空气，右侧）
-                        //     * 密度: 1.411 kg/m^3
-                        //     * 速度: (-0.39, 0.0, 0.0) m/s
-                        //     * 压力: 1.628
-                        //     * 体积分数: alpha1 = 1.0
-                        //   - 激波前空气: 介于界面与激波面之间
-                        //     * 密度: 1.0 kg/m^3
-                        //     * 速度: (0.0, 0.0, 0.0) m/s
-                        //     * 压力: 1.0
-                        //     * 体积分数: alpha1 = 1.0
-                        // 激波: 初始激波位于 x=3.2 处
-                        // 界面: 扰动界面 x_interface = 2.9 - 0.2 * sin(2π(y + 0.25)) * sin(2π(z + 0.25))
-                        // ============================================================================
-                        constexpr Real x_shock = 3.2;          // 激波面位置 x_shock
-                        constexpr Real x_1 = 2.9;          // 基准位置 x_1
-                        constexpr Real varepsilon = 0.2;          // 扰动振幅 varepsilon
-                        constexpr Real epss = 1e-8;            // 小量用于避免浮点误差
-                        constexpr Real lamba = 1.0;            // 激波波速 lamba
 
-                        // 计算扰动界面 x 坐标（作为 y 和 z 的函数，三维扰动）
-                        Real x_interface = x_1 - varepsilon * (std::sin(2.0 * M_PI * (y + 0.25)/lamba) * std::sin(2.0 * M_PI * (z + 0.25)/lamba));
-
-                        // 判断空间位置 → 三区域划分
-                        if (x < x_interface) {
-                            // 区域 1: SF6（重流体，左侧）
-                            prim[AlphaRho1] = epss;          // α₁ρ₁ ≈ 0 (空气几乎为0)
-                            prim[AlphaRho2] = 5.04;          // α₂ρ₂ = ρ_SF6
-                            prim[XMom]      = 0.0;           // u = 0
-                            prim[YMom]      = 0.0;           // v = 0
-                            prim[ZMom]      = 0.0;           // w = 0
-                            prim[Energy]    = 1.0;           // p = 1.0
-                            prim[Alpha1]    = epss;          // α₁ ≈ 0
-                        } else if (x > x_shock + epss) {
-                            // 区域 2: 已受冲击空气（激波后，右侧）
-                            prim[AlphaRho1] = 1.411;         // α₁ρ₁ = ρ_post_air
-                            prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
-                            prim[XMom]      = -0.39;         // u = -0.39（向左）
-                            prim[YMom]      = 0.0;           // v = 0
-                            prim[ZMom]      = 0.0;           // w = 0
-                            prim[Energy]    = 1.628;         // p = 1.628
-                            prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
-                        } else {
-                            // 区域 3: 未受冲击空气（激波前，介于界面与激波面之间）
-                            prim[AlphaRho1] = 1.0;           // α₁ρ₁ = ρ_air
-                            prim[AlphaRho2] = epss;          // α₂ρ₂ ≈ 0
-                            prim[XMom]      = 0.0;           // u = 0
-                            prim[YMom]      = 0.0;           // v = 0
-                            prim[ZMom]      = 0.0;           // w = 0
-                            prim[Energy]    = 1.0;           // p = 1.0
-                            prim[Alpha1]    = 1.0 - epss;    // α₁ ≈ 1
-                        }
-                        break;
-                    }
                 }
 
                 // 将原始变量转换为守恒变量

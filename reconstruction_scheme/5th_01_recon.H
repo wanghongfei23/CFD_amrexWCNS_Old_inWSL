@@ -76,11 +76,14 @@ AMREX_GPU_HOST_DEVICE
     }
 
     // 对左、右特征矩阵的数据进行 WENO5 重构
+    // 【王鸿飞】格式选择
     VarArray charReconL, charReconR;
     for (int ivar = 0; ivar < NUM_STATE; ivar++) {
-        charReconL[ivar] = weno_is(qL[ivar]);
-        charReconR[ivar] = weno_is(qR[ivar]);
+        charReconL[ivar] = TCNS_AS(qL[ivar]);
+        charReconR[ivar] = TCNS_AS(qR[ivar]);
     }
+    // TCNS_AS
+    // weno_is
 
     // 使用 LA_M_X 进行矩阵-向量乘法，将计算结果存入 res
     VarArray consL = eig.char_to_cons(charReconL, pp); // 计算并将结果存储到 res 中
