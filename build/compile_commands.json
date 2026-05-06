@@ -13,12 +13,6 @@
 },
 {
   "directory": "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build",
-  "command": "/usr/sbin/g++ -DAMREX_SPACEDIM=2 -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include  -O3 -g -std=gnu++23 -o CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.cpp",
-  "file": "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.cpp",
-  "output": "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o"
-},
-{
-  "directory": "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build",
   "command": "/usr/sbin/g++ -DAMREX_SPACEDIM=2 -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include  -O3 -g -std=gnu++23 -o CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o -c /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/erroEst.cpp",
   "file": "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/erroEst.cpp",
   "output": "/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/build/CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o"

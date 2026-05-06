@@ -76,7 +76,7 @@ AMREX_GPU_HOST_DEVICE
     }
 
     // 对左、右特征矩阵的数据进行 WENO5 重构
-    // 【王鸿飞】格式选择
+    // 【临时定位】格式选择
     VarArray charReconL, charReconR;
     for (int ivar = 0; ivar < NUM_STATE; ivar++) {
         charReconL[ivar] = TCNS_AS(qL[ivar]);

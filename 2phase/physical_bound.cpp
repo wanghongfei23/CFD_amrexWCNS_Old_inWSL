@@ -44,7 +44,6 @@ GpuArray<Real, BL_SPACEDIM> computeAlpha(const GpuArray<Real, BL_SPACEDIM>& dx, 
     for (int i = 0; i < BL_SPACEDIM; ++i) {
         alpha[i] = tau[i] / tau_sum;
     }
-
     return alpha;
 }
 

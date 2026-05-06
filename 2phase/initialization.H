@@ -613,6 +613,106 @@ initdata(int level, amrex::Real time,
                     }
                     break;
                 }
+                case Case_2D_Tin_Air_Implosion: {
+                    // ============================================================================
+                    // 2D算例：tin-air implosion
+                    // ============================================================================
+                    // 描述: 完整计算域上的锡-空气汇聚型内爆。
+                    // 计算域: x in [-25, 25], y in [-25, 25]。
+                    // 结构:
+                    //   - r <= r_interface(theta): 空气腔体
+                    //   - r_interface(theta) < r <= 24: 未受冲击的锡
+                    //   - r > 24: 已受冲击的锡
+                    // ============================================================================
+                    constexpr int subcell_samples = 10;
+                    constexpr Real cavity_base_radius = 20.0;
+                    constexpr Real shock_radius = 24.0;
+                    constexpr Real rho_tin_preshock = 7.28;
+                    constexpr Real p_tin_preshock = 1.0;
+                    constexpr Real rho_tin_postshock = 11.84;
+                    constexpr Real p_tin_postshock = 1.0e6;
+                    constexpr Real gamma_tin = 3.27;
+                    constexpr Real p_inf_tin = 149500.0;
+                    constexpr Real rho_air = 0.001;
+                    constexpr Real p_air = 1.0;
+                    constexpr Real gamma_air = 1.4;
+                    constexpr Real p_inf_air = 0.0;
+                    constexpr Real epss = 1.0e-8;
+                    constexpr Real pi_over_2 = 0.5 * M_PI;
+
+                    const Real e_tin_preshock = (p_tin_preshock + gamma_tin * p_inf_tin)
+                        / ((gamma_tin - 1.0) * rho_tin_preshock);
+                    const Real e_tin_postshock = (p_tin_postshock + gamma_tin * p_inf_tin)
+                        / ((gamma_tin - 1.0) * rho_tin_postshock);
+                    const Real e_air = (p_air + gamma_air * p_inf_air)
+                        / ((gamma_air - 1.0) * rho_air);
+
+                    const Real sample_dx = dx[0] / subcell_samples;
+                    const Real sample_dy = dx[1] / subcell_samples;
+                    const Real cell_x_lo = x - 0.5 * dx[0];
+                    const Real cell_y_lo = y - 0.5 * dx[1];
+
+                    int num_inside_shock = 0;
+                    int num_inside_cavity = 0;
+
+                    for (int sy = 0; sy < subcell_samples; ++sy) {
+                        for (int sx = 0; sx < subcell_samples; ++sx) {
+                            const Real sample_x = cell_x_lo + (sx + 0.5) * sample_dx;
+                            const Real sample_y = cell_y_lo + (sy + 0.5) * sample_dy;
+                            const Real radius = std::sqrt(sample_x * sample_x + sample_y * sample_y);
+
+                            if (radius <= shock_radius) {
+                                ++num_inside_shock;
+                            }
+
+                            const Real theta = std::atan2(sample_y, sample_x) - pi_over_2;
+                            const Real r_interface = cavity_base_radius
+                                + 0.4 * std::cos(22.0 * theta)
+                                + 0.4 * std::cos(17.0 * theta)
+                                + 0.3 * std::cos(29.0 * theta);
+
+                            if (radius <= r_interface) {
+                                ++num_inside_cavity;
+                            }
+                        }
+                    }
+
+                    const Real inv_total_samples = 1.0 / (subcell_samples * subcell_samples);
+                    const Real shock_inside_fraction = num_inside_shock * inv_total_samples;
+
+                    const Real rho1 = shock_inside_fraction * rho_tin_preshock
+                        + (1.0 - shock_inside_fraction) * rho_tin_postshock;
+                    const Real e1 = shock_inside_fraction * e_tin_preshock
+                        + (1.0 - shock_inside_fraction) * e_tin_postshock;
+
+                    Real alpha1 = 1.0 - num_inside_cavity * inv_total_samples;
+                    if (alpha1 < epss) {
+                        alpha1 = epss;
+                    }
+                    if (alpha1 > 1.0 - epss) {
+                        alpha1 = 1.0 - epss;
+                    }
+                    const Real alpha2 = 1.0 - alpha1;
+                    const Real rho2 = rho_air;
+
+                    const Real total_internal_energy = alpha1 * rho1 * e1 + alpha2 * rho2 * e_air;
+                    const Real gamma1_minus_1 = gamma_tin - 1.0;
+                    const Real gamma2_minus_1 = gamma_air - 1.0;
+                    const Real inv_gamma_minus_1 = alpha1 / gamma1_minus_1 + alpha2 / gamma2_minus_1;
+                    const Real gamma_bar = 1.0 / inv_gamma_minus_1 + 1.0;
+                    const Real gamma_pinf_bar = alpha1 * gamma_tin * p_inf_tin / gamma1_minus_1
+                        + alpha2 * gamma_air * p_inf_air / gamma2_minus_1;
+                    const Real p_inf_bar = gamma_pinf_bar * (gamma_bar - 1.0) / gamma_bar;
+                    const Real pressure = (gamma_bar - 1.0) * total_internal_energy - gamma_bar * p_inf_bar;
+
+                    prim[AlphaRho1] = alpha1 * rho1;
+                    prim[AlphaRho2] = alpha2 * rho2;
+                    prim[XMom] = 0.0;
+                    prim[YMom] = 0.0;
+                    prim[Energy] = pressure;
+                    prim[Alpha1] = alpha1;
+                    break;
+                }
 
             }
 
@@ -706,7 +806,8 @@ initdata(int level, amrex::Real time,
                         constexpr Real lamba = 1.0;            // 激波波速 lamba
 
                         // 计算扰动界面 x 坐标（作为 y 和 z 的函数，三维扰动）
-                        Real x_interface = x_1 - varepsilon * (std::sin(2.0 * M_PI * (y + 0.25)/lamba) * std::sin(2.0 * M_PI * (z + 0.25)/lamba));
+                        // Real x_interface = x_1 - varepsilon * (std::sin(2.0 * M_PI * (y + 0.25)/lamba) * std::sin(2.0 * M_PI * (z + 0.25)/lamba));
+                        Real x_interface = x_1 + varepsilon * (std::sin(2.0 * M_PI * (y + 0.25)/lamba) * std::sin(2.0 * M_PI * (z + 0.25)/lamba));
 
                         // 判断空间位置 → 三区域划分
                         if (x < x_interface) {

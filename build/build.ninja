@@ -69,16 +69,6 @@ build CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o: CXX_COMPILER__two
   OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
   TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
 
-build CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/equation.cpp || cmake_object_order_depends_target_twoPhaseSolver
-  CONFIG = Debug
-  DEFINES = -DAMREX_SPACEDIM=2
-  DEP_FILE = CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o.d
-  FLAGS = -O3 -g -std=gnu++23
-  INCLUDES = -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/reconstruction_scheme -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/deriv -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase -I/home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/amrex_level_Cong -isystem /opt/amrex_2d/include
-  OBJECT_DIR = CMakeFiles/twoPhaseSolver.dir
-  OBJECT_FILE_DIR = CMakeFiles/twoPhaseSolver.dir/2phase
-  TARGET_SUPPORT_DIR = CMakeFiles/twoPhaseSolver.dir
-
 build CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o: CXX_COMPILER__twoPhaseSolver_unscanned_Debug /home/archwanghongfei/Documents/GitHubWSL/CFD_inWSL_MF_initial/2phase/erroEst.cpp || cmake_object_order_depends_target_twoPhaseSolver
   CONFIG = Debug
   DEFINES = -DAMREX_SPACEDIM=2
@@ -187,7 +177,7 @@ build CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cp
 #############################################
 # Link the executable twoPhaseSolver
 
-build twoPhaseSolver: CXX_EXECUTABLE_LINKER__twoPhaseSolver_Debug CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/equation.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o CMakeFiles/twoPhaseSolver.dir/main.cpp.o CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o | /opt/amrex_2d/lib/libamrex_2d.a /usr/lib/libmpi.so
+build twoPhaseSolver: CXX_EXECUTABLE_LINKER__twoPhaseSolver_Debug CMakeFiles/twoPhaseSolver.dir/2phase/bc_nullfill.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/eigen_system.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/erroEst.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/physical_bound.cpp.o CMakeFiles/twoPhaseSolver.dir/2phase/variable_set.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Adv_prob.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/AmrLevelCong_advance.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/LevelBldCong.cpp.o CMakeFiles/twoPhaseSolver.dir/amrex_level_Cong/Tagging_params.cpp.o CMakeFiles/twoPhaseSolver.dir/main.cpp.o CMakeFiles/twoPhaseSolver.dir/reconstruction_scheme/positive_preserving.cpp.o | /opt/amrex_2d/lib/libamrex_2d.a /usr/lib/libmpi.so
   CONFIG = Debug
   DEP_FILE = CMakeFiles/twoPhaseSolver.dir/link.d
   FLAGS = -O3 -g

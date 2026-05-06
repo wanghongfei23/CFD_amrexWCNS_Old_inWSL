@@ -18,7 +18,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 设置 AMReX 安装路径
-# 【王鸿飞】维数控制
+# 【临时定位】维数控制
 # set(AMReX_DIR /opt/amrex_1d/lib/cmake/AMReX)
 set(AMReX_DIR /opt/amrex_2d/lib/cmake/AMReX)
 # set(AMReX_DIR /opt/amrex_3d/lib/cmake/AMReX)

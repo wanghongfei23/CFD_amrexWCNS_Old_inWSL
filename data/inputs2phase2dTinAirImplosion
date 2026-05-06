@@ -1,0 +1,80 @@
+# ------------------  INPUTS TO MAIN PROGRAM  -------------------
+# 【算例】tin_air_implosion
+# 描述：二维锡-空气汇聚型内爆，使用完整计算域，中心空气腔体带角向扰动。
+
+max_step = 10000000
+stop_time = 0.08
+
+# PROBLEM SIZE & GEOMETRY
+geometry.is_periodic = 0 0
+geometry.coord_sys   = 0
+geometry.prob_lo     = -25 -25
+geometry.prob_hi     = 25 25
+# amr.n_cell           = 512 512
+amr.n_cell           = 1600 1600
+
+# TIME STEP CONTROL
+adv.cfl            = 0.5
+adv.do_reflux      = 1
+adv.num_state      = 5
+
+# VERBOSITY
+adv.v              = 1
+amr.v              = 1
+
+# BOUNDARY CONDITIONS
+# x-low: transmissive
+amr.density1_lo_bc_0 = 2
+amr.density2_lo_bc_0 = 2
+amr.Momentum_X_lo_bc_0 = 2
+amr.Momentum_Y_lo_bc_0 = 2
+amr.energy_lo_bc_0 = 2
+amr.volumeFraction1_lo_bc_0 = 2
+
+# x-high: transmissive
+amr.density1_hi_bc_0 = 2
+amr.density2_hi_bc_0 = 2
+amr.Momentum_X_hi_bc_0 = 2
+amr.Momentum_Y_hi_bc_0 = 2
+amr.energy_hi_bc_0 = 2
+amr.volumeFraction1_hi_bc_0 = 2
+
+# y-low: transmissive
+amr.density1_lo_bc_1 = 2
+amr.density2_lo_bc_1 = 2
+amr.Momentum_X_lo_bc_1 = 2
+amr.Momentum_Y_lo_bc_1 = 2
+amr.energy_lo_bc_1 = 2
+amr.volumeFraction1_lo_bc_1 = 2
+
+# y-high: transmissive
+amr.density1_hi_bc_1 = 2
+amr.density2_hi_bc_1 = 2
+amr.Momentum_X_hi_bc_1 = 2
+amr.Momentum_Y_hi_bc_1 = 2
+amr.energy_hi_bc_1 = 2
+amr.volumeFraction1_hi_bc_1 = 2
+
+# REFINEMENT / REGRIDDING
+amr.max_level       = 2
+amr.ref_ratio       = 2 2
+amr.regrid_int      = 4
+amr.blocking_factor = 8
+amr.max_grid_size   = 64
+
+# CHECKPOINT FILES
+amr.checkpoint_files_output = 1
+amr.check_file              = chk
+amr.check_int               = 200
+
+# PLOTFILES
+amr.plot_files_output = 1
+amr.plot_file         = plt
+amr.plot_int          = 100
+
+# TRACER PARTICLES
+adv.do_tracers = 0
+
+# ERROR TAGGING
+tagging.phierr = 1.01
+tagging.max_phierr_lev = 10

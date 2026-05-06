@@ -8,7 +8,7 @@
 #include "deriv.H"
 #include "equation.H"
 
-// 【王鸿飞】重构方法
+// 【临时定位】重构方法
 // 重构方法
 // #include "1th_01_recon.H"      // 一阶重构方法
 // #include "2th_01_muscl_recon.H"  // 二阶MUSCL重构方法

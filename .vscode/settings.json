@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "inputs*": "plaintext", // 以 inputs 开头的文件都会被 VSCode 识别为纯文本文件
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
