@@ -77,13 +77,19 @@ AMREX_GPU_HOST_DEVICE
 
     // 对左、右特征矩阵的数据进行 WENO5 重构
     // 【临时定位】格式选择
+    // 可用格式:
+    // TCNS_AS: TCNS-AS 格式
+    // weno_is: WENO-IS 格式
+    // weno5_Z: WENO-Z 格式
+    // weno5_Z_norm: WENO-Z 归一化格式
+    // weno5_JSchen: WENO-JS 改进格式
+    // WENO3: 三阶 WENO 格式
+    // Teno5_CongZ: TENO5 格式
     VarArray charReconL, charReconR;
     for (int ivar = 0; ivar < NUM_STATE; ivar++) {
         charReconL[ivar] = TCNS_AS(qL[ivar]);
         charReconR[ivar] = TCNS_AS(qR[ivar]);
     }
-    // TCNS_AS
-    // weno_is
 
     // 使用 LA_M_X 进行矩阵-向量乘法，将计算结果存入 res
     VarArray consL = eig.char_to_cons(charReconL, pp); // 计算并将结果存储到 res 中

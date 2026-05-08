@@ -133,13 +133,19 @@ primitive_reconstruction(int i, int j, int k,
 
     // 对左、右状态的数据进行 WENO5 重构
     // 【临时定位】thinc+格式选择
+    // 可用格式:
+    // TCNS_AS: TCNS-AS 格式
+    // weno_is: WENO-IS 格式
+    // weno5_Z: WENO-Z 格式
+    // weno5_Z_norm: WENO-Z 归一化格式
+    // weno5_JSchen: WENO-JS 改进格式
+    // WENO3: 三阶 WENO 格式
+    // Teno5_CongZ: TENO5 格式
     VarArray primReconL, primReconR;
     for (int ivar = 0; ivar < NUM_STATE; ivar++) {
-        primReconL[ivar] = TCNS_AS(qL[ivar]);
-        primReconR[ivar] = TCNS_AS(qR[ivar]);
+        primReconL[ivar] = weno5_JSchen(qL[ivar]);
+        primReconR[ivar] = weno5_JSchen(qR[ivar]);
     }
-    // TCNS_AS
-    // weno_is
 
     VarArray primCellL, primCellR;
 

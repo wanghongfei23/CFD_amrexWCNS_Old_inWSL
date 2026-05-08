@@ -80,7 +80,7 @@ amr.energy_hi_bc_1 = 1
 amr.volumeFraction1_hi_bc_1 = 1
 
 # REFINEMENT / REGRIDDING
-amr.max_level       = 3         # Maximum level number allowed
+amr.max_level       = 2         # Maximum level number allowed
 # amr.max_level       = 2         # Maximum level number allowed
 amr.ref_ratio       = 2 2       # Refinement ratio [x, y]
 amr.regrid_int      = 4         # How often to regrid
